@@ -1,14 +1,9 @@
+import Header from './pages/Header/Header'
 
-import { useState } from 'react'
-import './App.css'
-import '../src/pages/LandingPage'
-
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    
-  )
+function App (){
+    return (
+        <Header />
+    )
 }
 
-export default App
+export default App 
