@@ -1,12 +1,11 @@
-import Header from './pages/Header/Header'
+import Header from "./pages/Header/Header";
 
-function App (){
-
-    return (
-        <Header />
-
-
-    )
+function App() {
+  return (
+    <div>
+      <Header />
+    </div>
+  );
 }
 
-export default App 
+export default App;
