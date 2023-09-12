@@ -23,15 +23,23 @@
     margin-bottom: 5px;
     justify-content: center;
     margin-top: 0px;
-    
+    position: relative;
   }
-  svg{
+  .input-iconeLupa:focus {
+    outline: none; 
+
+  }
+  #lupa{
     margin-left:5px;
     padding-top: 8px;
     opacity: 60%;
-    
+    position: relative;
   }
   .divInput{
     border: solid #150C01 1px;
     border-radius: 5px;
+    position: relative;
+  }
+  .container {
+    text-align: center; /* Centralizar as divs horizontalmente (opcional) */
   }

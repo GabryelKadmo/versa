@@ -26,8 +26,11 @@ import {
   IconCoin,
   IconChevronDown,
 } from "@tabler/icons-react";
+//---------
 import "./Header.css";
 import { AiOutlineSearch } from "react-icons/ai";
+import img from "../images/VERSA.png";
+//---------
 const useStyles = createStyles((theme) => ({
   link: {
     display: "flex",
