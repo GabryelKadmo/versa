@@ -1,12 +1,15 @@
 import Header from './pages/Header/Header'
+import {LandingPage} from './pages/LandingPage/LandingPage'
 
-function App (){
+export default function App (){
 
     return (
-        <Header />
-
+        <div>
+        <Header/>
+        <LandingPage/>
+        </div>
 
     )
 }
 
-export default App 
+

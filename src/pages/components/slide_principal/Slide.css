@@ -1,0 +1,14 @@
+.caixa_slide{
+    margin-top: -100px;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide_centro{
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    width: 1588px;
+}
