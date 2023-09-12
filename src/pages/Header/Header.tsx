@@ -1,14 +1,11 @@
 import {
   createStyles,
   Header,
-  HoverCard,
   Group,
   Button,
   UnstyledButton,
   Text,
-  SimpleGrid,
   ThemeIcon,
-  Anchor,
   Divider,
   Center,
   Box,
@@ -29,7 +26,11 @@ import {
   IconCoin,
   IconChevronDown,
 } from "@tabler/icons-react";
-
+//---------
+import "./Header.css";
+import { AiOutlineSearch } from "react-icons/ai";
+import img from "../images/VERSA.png";
+//---------
 const useStyles = createStyles((theme) => ({
   link: {
     display: "flex",
@@ -167,74 +168,31 @@ export default function HeaderMegaMenu() {
             spacing={0}
             className={classes.hiddenMobile}
           >
-            <a href="#" className={classes.link}>
+            <a href="#" id="header-home" className={classes.link}>
               Home
             </a>
-            <HoverCard
-              width={600}
-              position="bottom"
-              radius="md"
-              shadow="md"
-              withinPortal
-            >
-              <HoverCard.Target>
-                <a href="#" className={classes.link}>
-                  <Center inline>
-                    <Box component="span" mr={5}>
-                      Features
-                    </Box>
-                    <IconChevronDown
-                      size={16}
-                      color={theme.fn.primaryColor()}
-                    />
-                  </Center>
-                </a>
-              </HoverCard.Target>
 
-              <HoverCard.Dropdown sx={{ overflow: "hidden" }}>
-                <Group position="apart" px="md">
-                  <Text fw={500}>Features</Text>
-                  <Anchor href="#" fz="xs">
-                    View all
-                  </Anchor>
-                </Group>
-
-                <Divider
-                  my="sm"
-                  mx="-md"
-                  color={theme.colorScheme === "dark" ? "dark.5" : "gray.1"}
-                />
-
-                <SimpleGrid cols={2} spacing={0}>
-                  {links}
-                </SimpleGrid>
-
-                <div className={classes.dropdownFooter}>
-                  <Group position="apart">
-                    <div>
-                      <Text fw={500} fz="sm">
-                        Get started
-                      </Text>
-                      <Text size="xs" color="dimmed">
-                        Their food sources have decreased, and their numbers
-                      </Text>
-                    </div>
-                    <Button variant="default">Get started</Button>
-                  </Group>
-                </div>
-              </HoverCard.Dropdown>
-            </HoverCard>
-            <a href="#" className={classes.link}>
-              Learn
+            <a href="#" id="header-things" className={classes.link}>
+              Novidades
             </a>
-            <a href="#" className={classes.link}>
-              Academy
+            <a href="#" id="header-things" className={classes.link}>
+              Camisas
+            </a>
+            <a href="#" id="header-things" className={classes.link}>
+              Moletons
+            </a>
+            <a href="#" id="header-things" className={classes.link}>
+              Pacotes
             </a>
           </Group>
-
+          <div className="divInput">
+            <AiOutlineSearch />
+            <input placeholder={"Search"} className="input-iconeLupa"></input>
+          </div>
           <Group className={classes.hiddenMobile}>
-            <Button variant="default">Log in</Button>
-            <Button>Sign up</Button>
+            <Button variant="default" id="button">
+              Entrar
+            </Button>
           </Group>
 
           <Burger
