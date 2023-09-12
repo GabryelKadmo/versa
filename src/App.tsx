@@ -1,13 +1,15 @@
 
 import { useState } from 'react'
-import './App.css'
-import '../src/pages/LandingPage'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    
+    <div>
+
+      <h1>Ta quebrado</h1>
+
+    </div>
   )
 }
 
