@@ -1,12 +1,12 @@
 import * as React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
-import { MantineProvider } from '@mantine/core';
+import { ChakraProvider } from '@chakra-ui/react'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <MantineProvider>
+    <ChakraProvider>
       <App />
-    </MantineProvider>
+    </ChakraProvider>
   </React.StrictMode>,
 )
