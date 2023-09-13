@@ -15,21 +15,16 @@ import {
   ScrollArea,
   rem,
 } from "@mantine/core";
-import { MantineLogo } from "@mantine/ds";
 import { useDisclosure } from "@mantine/hooks";
-import {
-  IconNotification,
-  IconCode,
-  IconBook,
-  IconChartPie3,
-  IconFingerprint,
-  IconCoin,
-  IconChevronDown,
-} from "@tabler/icons-react";
+
 //---------
 import "./Header.css";
 import { AiOutlineSearch } from "react-icons/ai";
-import img from "../images/VERSA.png";
+import img from "../images/Logo/VERSA.png";
+import { Link } from "react-router-dom";
+import React, { useState } from "react";
+// const [mostrarHeader, setMostrarHeader] = useState(true);
+
 //---------
 const useStyles = createStyles((theme) => ({
   link: {
@@ -100,68 +95,17 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-const mockdata = [
-  {
-    icon: IconCode,
-    title: "Open source",
-    description: "This Pokémon’s cry is very loud and distracting",
-  },
-  {
-    icon: IconCoin,
-    title: "Free for everyone",
-    description: "The fluid of Smeargle’s tail secretions changes",
-  },
-  {
-    icon: IconBook,
-    title: "Documentation",
-    description: "Yanma is capable of seeing 360 degrees without",
-  },
-  {
-    icon: IconFingerprint,
-    title: "Security",
-    description: "The shell’s rounded shape and the grooves on its.",
-  },
-  {
-    icon: IconChartPie3,
-    title: "Analytics",
-    description: "This Pokémon uses its flying ability to quickly chase",
-  },
-  {
-    icon: IconNotification,
-    title: "Notifications",
-    description: "Combusken battles with the intensely hot flames it spews",
-  },
-];
-
 export default function HeaderMegaMenu() {
   const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] =
     useDisclosure(false);
   const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false);
   const { classes, theme } = useStyles();
 
-  const links = mockdata.map((item) => (
-    <UnstyledButton className={classes.subLink} key={item.title}>
-      <Group noWrap align="flex-start">
-        <ThemeIcon size={34} variant="default" radius="md">
-          <item.icon size={rem(22)} color={theme.fn.primaryColor()} />
-        </ThemeIcon>
-        <div>
-          <Text size="sm" fw={500}>
-            {item.title}
-          </Text>
-          <Text size="xs" color="dimmed">
-            {item.description}
-          </Text>
-        </div>
-      </Group>
-    </UnstyledButton>
-  ));
-
   return (
     <Box pb={120}>
       <Header height={60} px="md">
         <Group position="apart" sx={{ height: "100%" }}>
-          <MantineLogo size={30} />
+          <img id="versaLsogo" src={img} />
 
           <Group
             sx={{ height: "100%" }}
@@ -190,7 +134,7 @@ export default function HeaderMegaMenu() {
             <input placeholder={"Search"} className="input-iconeLupa"></input>
           </div>
           <Group className={classes.hiddenMobile}>
-            <Button variant="default" id="button">
+            <Button variant="default" id="LoginButton">
               Entrar
             </Button>
           </Group>
@@ -224,27 +168,26 @@ export default function HeaderMegaMenu() {
           <UnstyledButton className={classes.link} onClick={toggleLinks}>
             <Center inline>
               <Box component="span" mr={5}>
-                Features
+                Novidades
               </Box>
-              <IconChevronDown size={16} color={theme.fn.primaryColor()} />
             </Center>
           </UnstyledButton>
-          <Collapse in={linksOpened}>{links}</Collapse>
           <a href="#" className={classes.link}>
-            Learn
+            Camisas
           </a>
           <a href="#" className={classes.link}>
-            Academy
+            Moletons
           </a>
-
+          <a href="#" className={classes.link}>
+            Pacotes
+          </a>
           <Divider
             my="sm"
             color={theme.colorScheme === "dark" ? "dark.5" : "gray.1"}
           />
 
           <Group position="center" grow pb="xl" px="md">
-            <Button variant="default">Log in</Button>
-            <Button>Sign up</Button>
+            <Button variant="default">Entrar</Button>
           </Group>
         </ScrollArea>
       </Drawer>

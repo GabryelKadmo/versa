@@ -1,13 +1,11 @@
-import './LandingPage.css'
-import {Slide} from '../components/slide_principal/Slide'
+import "./LandingPage.css";
+import "./../components/Header/Header";
+import { Slide } from "../components/slide_principal/Slide";
 
-export function LandingPage(){
-    return(
-        <div>
-            <Slide/>
-            <h2>asfadgd</h2>
-        </div>
-        
-        
-    )
+export function LandingPage() {
+  return (
+    <div>
+      <Slide />
+    </div>
+  );
 }

@@ -1,0 +1,67 @@
+#Textos{
+
+
+}
+
+#nomesInputs{
+    width: 43px;
+    height: 21px;
+    top: 115px;
+    left: -6px;
+    
+    
+}
+#container{
+    padding-left: 320px;
+    padding-bottom: 100px;
+}
+#loginText{
+    width: 404px;
+    Height:60px;
+    top: 43px;
+    left: -7px;
+    font-family: poppins;
+    font-weight: 500;
+    size: 13px;
+    line-height: 19.5px;
+    color: #52525280;
+    margin-top: 0px;
+}
+#h1Text{
+    width: 241px;
+    height: 48px;
+    margin-right: 100px;
+    margin-top: 50px;
+    font-family: Poppins;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 48px;
+    letter-spacing: 0em;
+    text-align: left;
+    align-items: center ;
+}
+
+#loginImage{
+    width: 963px;
+    height: 1020px;
+	position:absolute;
+	right:0px;
+	top:0px;
+    bottom: 0px;
+}
+#tagLogin{
+    align-items: end;
+}
+
+#criarButton{
+
+    background-color: #272525;
+    font-family: Poppins;
+    border-radius: 10px;
+    color: #fff;
+    padding: 24px, 32px, 24px, 32px;
+    gap: 16px;
+    width: 388px;
+    height: 35px;
+
+}
