@@ -1,0 +1,20 @@
+@font-face {
+    font-family: Syne;
+    src: url(https://fonts.googleapis.com/css?family=Syne);
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url(https://fonts.googleapis.com/css?family=Poppins);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Syne, Poppins, sans-serif;
+}
+
+body{
+    background: #E5E5E5;
+    height: 100vh;
+}
