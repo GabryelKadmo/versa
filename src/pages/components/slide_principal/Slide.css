@@ -1,7 +1,18 @@
+ @font-face {
+    font-family: Syne;
+    src: url(https://fonts.googleapis.com/css?family=Syne);
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url(https://fonts.googleapis.com/css?family=Poppins);
+} 
+
 .caixa_slide{
     margin-top: -100px;
     /* border: 1px solid red; */
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -10,5 +21,21 @@
     /* border: 1px solid red; */
     display: flex;
     flex-direction: column;
-    width: 83%;
+    width: 85%;
+}
+
+.texto_versa{
+    /* border: 1px solid red; */
+    margin-top: 89px;
+    margin-bottom: 89px;
+}
+
+.texto_versa h1{
+    text-align: center;
+    font-family: Syne;
+    font-size: 44px;
+    font-weight: 800;
+    /* line-height: 141.5%; */
+    /* width: 1268px; */
+    font-style: normal;
 }

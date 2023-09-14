@@ -1,0 +1,30 @@
+@font-face {
+    font-family: Syne;
+    src: url(https://fonts.googleapis.com/css?family=Syne);
+}
+
+.container_am{
+    /* border: 1px solid red; */
+    position: relative;
+    width: 99.92%;
+    
+}
+
+.img_fundo{
+    position: absolute;
+    width: 100%;
+    
+}
+
+.am{
+    color: white;
+    position: absolute;
+    font-size: 160px;
+    font-family: Syne;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 150%;
+    text-transform: uppercase;
+    right: 144px;
+    top: 318px;
+}
