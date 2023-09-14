@@ -7,6 +7,9 @@ export function Slide() {
       <div className="slide_centro">
         <img src={SlideCentro} alt="Slide do centro" />
       </div>
+      <div className="texto_versa">
+        <h1>VISTA-SE COM CONFIANÇA, <br />ESCOLHA VERSA</h1>
+      </div>
     </div>
   );
 }
