@@ -1,0 +1,47 @@
+.container_as{
+    
+    width: 85%;
+    margin: 69px auto;
+    /* border: 1px solid red; */
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;   
+}
+
+.imagem_as{
+    width: 1617px;
+}
+
+.opcao_estilo{
+    margin-top: 47px;
+    margin-right: 70px;
+    width: 506px;
+    
+}
+
+.opcao_estilo p{
+    font-family: Roboto;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 141.5%;
+}
+
+.opcao_estilo button{
+    margin-top: 16px;
+    width: 359px;
+    height: 63px;
+    background: #FFF;
+    border-radius: 40px;
+    font-family: Roboto;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 141.5%;
+    font-variant: all-small-caps;
+    transition: transform 0.8s;
+}
+
+.opcao_estilo button:hover{
+    transform: scale(0.98);
+}
