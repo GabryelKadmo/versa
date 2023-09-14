@@ -4,11 +4,13 @@ import { LandingPage } from "./pages/LandingPage/LandingPage";
 import LoginPage from "./pages/Registro/RegisterPage";
 import Layout from "./pages/components/Layout/Layout";
 import NovidadesPage from "./pages/Novidades/NovidadesPage";
+import RegisterPage from "./pages/Registro/RegisterPage";
 
 export default function App() {
   return (
     <div>
-      <BrowserRouter>
+      <RegisterPage />
+      {/* <BrowserRouter>
         <Layout>
           <Routes>
             <Route path="/" element={<LandingPage />} />
@@ -16,7 +18,7 @@ export default function App() {
             <Route path="/NovidadesPage" element={<NovidadesPage />} />
           </Routes>
         </Layout>
-      </BrowserRouter>
+      </BrowserRouter> */}
     </div>
   );
 }

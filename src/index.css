@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap');
+
 @font-face {
     font-family: Syne;
     src: url(https://fonts.googleapis.com/css?family=Syne);
@@ -8,14 +10,15 @@
     src: url(https://fonts.googleapis.com/css?family=Poppins);
 }
 
+.registerfont{
+    font-family: 'Poppins', sans-serif;
+}
 *{
     margin: 0;
     padding: 0;
-    font-family: Syne, Poppins, sans-serif;
 }
 
 body{
     background: #fff;
-    height: 100vh;
 }
 

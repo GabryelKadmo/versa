@@ -1,58 +1,22 @@
-#Textos{
 
-
-}
-
-#nomesInputs{
-    width: 43px;
-    height: 21px;
-    top: 115px;
-    left: -6px;
-    
-    
-}
-#container{
-    padding-left: 320px;
-    padding-bottom: 100px;
-}
-#loginText{
-    width: 404px;
-    Height:60px;
-    top: 43px;
-    left: -7px;
-    font-family: poppins;
-    font-weight: 500;
-    size: 13px;
-    line-height: 19.5px;
-    color: #52525280;
-    margin-top: 0px;
-}
-#h1Text{
-    width: 241px;
-    height: 48px;
-    margin-right: 100px;
-    margin-top: 50px;
-    font-family: Poppins;
-    font-size: 32px;
-    font-weight: 500;
-    line-height: 48px;
-    letter-spacing: 0em;
-    text-align: left;
-    align-items: center ;
+.registerImage{
+    width: 100%;
 }
 
-#loginImage{
-    width: 963px;
-    height: 1020px;
-	position:absolute;
-	right:0px;
-	top:0px;
-    bottom: 0px;
-}
-#tagLogin{
-    align-items: end;
+.registerText{
+    color: #525252;
+    opacity: 50%;
+    font-size: 18px;
 }
 
+#loginInputs{
+display: flex;
+}
+.inputsRegistro{
+font-size: 21px;
+font-weight: bold;
+margin-bottom: 0px;
+}
 #criarButton{
 
     background-color: #272525;
@@ -64,4 +28,43 @@
     width: 388px;
     height: 35px;
 
+}
+#registerInputs input{
+height: 50px;
+border-radius: 10px;
+border: 1px solid #D9D9D9;
+padding: 12px;
+margin-bottom: 15px;
+margin-top: 5px;
+}
+
+.fisrt-inf-index{
+    padding: 100px;
+
+}
+#criarButton{
+height: 50px;
+font-weight: bold;
+font-size: 18px;
+}
+#registerText{
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+}
+
+.teste{
+height: 300px;
+}
+.registerfont{
+    overflow-y: hidden; 
+}
+@media (max-width: 1491px) {
+    .fisrt-inf-index{
+        padding: 10px;
+    }
+}
+@media (max-width: 998px) {
+    .fisrt-inf-index{
+        padding: 25px;
+    }
 }
