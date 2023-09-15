@@ -106,7 +106,6 @@ export default function HeaderMegaMenu() {
       <Header height={60} px="md">
         <Group position="apart" sx={{ height: "100%" }}>
           <img id="versaLsogo" src={img} />
-
           <Group
             sx={{ height: "100%" }}
             spacing={0}

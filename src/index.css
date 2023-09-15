@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap');
 
 .registerfont{
     font-family: 'Poppins', sans-serif;
@@ -6,7 +7,6 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: Syne, Poppins, sans-serif;
 }
 
 body{

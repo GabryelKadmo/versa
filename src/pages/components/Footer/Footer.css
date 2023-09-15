@@ -1,0 +1,28 @@
+.logoFooter{
+    padding-left: 10px;
+    justify-content: start;
+}
+.menuFooter {
+    opacity: 60%;
+    color: #1B1819;
+    font-size: 14px;
+}
+.informacoesFooter{
+    opacity: 60%;
+    color: #1B1819; 
+    font-size: 14px;
+    padding: 0%;
+}
+.itemRightFooter{
+padding-left: 100px;
+
+}
+.footerLists{
+justify-content: center;
+display: flex;
+}
+.sectionFooter{
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    /* justify-content: center; */
+}
