@@ -1,12 +1,4 @@
- @font-face {
-    font-family: Syne;
-    src: url(https://fonts.googleapis.com/css?family=Syne);
-}
-
-@font-face {
-    font-family: Poppins;
-    src: url(https://fonts.googleapis.com/css?family=Poppins);
-} 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Syne:wght@800&display=swap');
 
 .caixa_slide{
     margin-top: -100px;
@@ -32,10 +24,11 @@
 
 .texto_versa h1{
     text-align: center;
-    font-family: Syne;
+    font-family: 'Syne', sans-serif;
     font-size: 44px;
     font-weight: 800;
-    /* line-height: 141.5%; */
+    line-height: 141.5%;
     /* width: 1268px; */
     font-style: normal;
+    text-transform: uppercase;
 }

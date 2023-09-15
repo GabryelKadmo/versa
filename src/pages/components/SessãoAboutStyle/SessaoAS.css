@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 .container_as{
     
     width: 85%;
@@ -20,7 +22,7 @@
 }
 
 .opcao_estilo p{
-    font-family: Roboto;
+    font-family: 'Roboto', sans-serif;
     font-size: 30px;
     font-style: normal;
     font-weight: 400;

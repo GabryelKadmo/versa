@@ -1,55 +1,62 @@
-.container{
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.container_co{
     /* border: 1px solid red; */
     margin: 0 auto;
     /* display: flex; */
     /* align-items: center; */
-
     width: 85%;
 }
 
-.texto_compre h1 span{
-    font-family: Poppins;
+.span_co{
+    /* border: 1px solid red; */
+    font-family: 'Poppins', sans-serif;
     font-size: 70px;
     font-style: normal;
-    font-weight: 800;
+    font-weight: 700;
     line-height: 141.5%;
 }
 
-.texto_compre h1{
-    font-family: Poppins;
+.h1_co{
+    font-family: 'Poppins', sans-serif;
     font-size: 70px;
     font-style: normal;
-    font-weight: 1;
+    font-weight: 600;
     line-height: 141.5%;
 }
 
 .imagens_compre{
-    
+    /* border: 1px solid red; */
+    width: 100%;
     margin-top: 38px;
     display: flex;
+    flex-wrap: wrap;
 }
 
-/* .imagem_esquerda{
-    
-   border: 1px solid red;
-} */
-
-.imagem_meio{
-    
-    margin-right: 55px;
+ .imagem_co_e{
+    width: 500px;
     /* border: 1px solid red; */
  }
 
- /* .imagem_direita{
-   
-    border: 1px solid red;
- } */
+ .imagem_co{
+    margin: 0 auto;
+    width: 500px;
+    /* border: 1px solid red; */
+ }
+
+ .imagem_co_d{
+    width: 500px;
+    /* border: 1px solid red; */
+ }
 
 .img_s{
     /* border: 1px solid red; */
     transition: transform 0.8s;
     width: 500px;
     height: 629px;
+   
 }
 
 .img_s:hover{
@@ -61,10 +68,10 @@
     width: 100%;
     height: 88px;
     background: white;
-    font-family: Roboto;
+    font-family: 'Roboto', sans-serif;
     font-size: 30px;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 800;
     line-height: 141.5%;
     font-variant: all-small-caps;
     transition: transform 0.8s;
@@ -76,18 +83,18 @@
 }
 
 .imagens_compre h2{
-    font-family: Roboto;
+    font-family: 'Roboto', sans-serif;
     font-size: 32px;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 800;
     line-height: 141.5%;
     font-variant: all-small-caps;
 }
 
 .imagens_compre p{
-    font-family: Roboto;
+    font-family: 'Roboto', sans-serif;
     font-size: 16px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 141.5%;
 }
