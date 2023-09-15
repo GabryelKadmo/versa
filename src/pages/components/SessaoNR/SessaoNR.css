@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 .container_nr{
     /* border: 1px solid red; */
     margin: 0 auto;
@@ -7,7 +11,7 @@
 }
 
 .texto_novas h1 span{
-    font-family: Poppins;
+    font-family: 'Poppins', sans-serif;
     font-size: 70px;
     font-style: normal;
     font-weight: 800;
@@ -15,7 +19,7 @@
 }
 
 .texto_novas h1{
-    font-family: Poppins;
+    font-family: 'Poppins', sans-serif;
     font-size: 70px;
     font-style: normal;
     font-weight: 1;
@@ -50,7 +54,7 @@
     width: 100%;
     height: 88px;
     background: white;
-    font-family: Roboto;
+    font-family: 'Roboto', sans-serif;
     font-size: 30px;
     font-style: normal;
     font-weight: 600;
@@ -65,7 +69,7 @@
 }
 
 .imagens_nova h2{
-    font-family: Roboto;
+    font-family: 'Roboto', sans-serif;
     font-size: 32px;
     font-style: normal;
     font-weight: 600;
@@ -74,7 +78,7 @@
 }
 
 .imagens_nova p{
-    font-family: Roboto;
+    font-family: 'Roboto', sans-serif;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;

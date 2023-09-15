@@ -1,10 +1,8 @@
-import "./SessaoAM.css"
-import Fundo from "../images/SessaoAM/Rectangle 50.png"
+import Fundo from "../images/SessaoAM/Imagem AM.png"
+import { Image } from '@mantine/core';
 
-export function SessaoAM(){
-    return(
-        <div className="container_am">
-            <img className="img_fundo" src={Fundo} alt="Imagem de fundo" /><label className="am">APENAS O MELHOR.</label>
-        </div>
-    )
+export function Demo() {
+  return (
+    <Image height={879} src={Fundo} alt="Random image" />
+  );
 }
