@@ -5,7 +5,7 @@ import {SessaoCO} from "../components/SessãoCompraO/SessaoCO"
 import { SessaoAS } from "../components/SessãoAboutStyle/SessaoAS";
 import { SessaoNR } from "../components/SessaoNR/SessaoNR";
 import { SessaoMarcas } from "../components/SessaoMarcas/SessaoMarcas";
-import { SessaoAM } from "../components/SessaoAM/SessaoAM";
+import { Demo } from "../components/SessaoAM/SessaoAM";
 import { SessaoNP } from "../components/SessaoNP/SessaoNP";
 
 export function LandingPage() {
@@ -16,7 +16,7 @@ export function LandingPage() {
       <SessaoAS />
       <SessaoNR />
       <SessaoMarcas />
-      <SessaoAM />
+      <Demo/>
       <SessaoNP />
     </div>
   );
