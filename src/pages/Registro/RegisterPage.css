@@ -57,7 +57,8 @@ font-size: 18px;
 height: 300px;
 }
 .registerfont{
-    /* overflow: hidden;  */
+    margin-right: 0px;
+    margin-left: 0px;
 }
 @media (max-width: 1491px) {
     .fisrt-inf-index{

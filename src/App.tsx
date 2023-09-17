@@ -10,14 +10,12 @@ import RegisterPage from "./pages/Registro/RegisterPage";
 export default function App() {
   return (
     <div>
-      {/* <RegisterPage /> */}
       <BrowserRouter>
-        <Layout>
-          <Routes>
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/RegisterPage" element={<RegisterPage />} />
-          </Routes>
-        </Layout>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/RegisterPage" element={<RegisterPage />} />
+        </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
   );

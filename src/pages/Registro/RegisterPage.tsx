@@ -3,7 +3,7 @@ import img2 from "../components/images/Register/RegisterImage.png";
 import "./RegisterPage.css";
 export default function RegisterPage() {
   return (
-    <section className="row registerfont">
+    <section className="row registerfont pb-3">
       <div className="col-md-6 fisrt-inf-index">
         <img className="mb-5 " src={img} />
 
@@ -58,9 +58,7 @@ export default function RegisterPage() {
         </div>
       </div>
       <div className="col-md-6 pe-0">
-        <div className="teste">
-          <img className="d-none d-md-block registerImage" src={img2} />
-        </div>
+        <img className="d-none d-md-block registerImage" src={img2} />
       </div>
     </section>
   );
