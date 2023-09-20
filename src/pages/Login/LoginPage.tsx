@@ -28,7 +28,7 @@ export default function LoginPage() {
               placeholder="Digite sua senha"
             />
 
-            <button className="mt-5 w-100 " id="criarButton">
+            <button className="mt-4 w-100 " id="criarButton">
               Entrar
             </button>
           </div>
