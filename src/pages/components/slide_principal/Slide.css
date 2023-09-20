@@ -18,11 +18,12 @@
 
 .texto_versa {
   /* border: 1px solid red; */
-  height: 10rem;
+  height: 6rem;
   width: 100%;
   max-width: 65rem;
   margin-top: 89px;
   margin-bottom: 89px;
+  color: black;
 }
 
 .texto_versa h1 {
