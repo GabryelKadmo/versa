@@ -14,7 +14,11 @@ import RecuperarSenha3 from "./pages/RecuperarSenha3/Recuperar3";
 export default function App() {
   return (
     <div>
-      <BrowserRouter>
+      <Header />
+      <LandingPage />
+      <Footer />
+
+      {/* <BrowserRouter>
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/Register" element={<RegisterPage1 />} />
@@ -25,7 +29,7 @@ export default function App() {
           <Route path="/Redefinir" element={<RecuperarSenha3 />} />
         </Routes>
         <Footer />
-      </BrowserRouter>
+      </BrowserRouter> */}
     </div>
   );
 }

@@ -105,13 +105,16 @@ export default function HeaderMegaMenu() {
     <Box pb={120}>
       <Header height={60} px="md">
         <Group position="apart" sx={{ height: "100%" }}>
-          <img id="versaLsogo" src={img} />
+          <a href="#" id="versaLogo" className={classes.link}>
+            VERSA
+          </a>
+
           <Group
             sx={{ height: "100%" }}
             spacing={0}
             className={classes.hiddenMobile}
           >
-            <a href="#" id="header-home" className={classes.link}>
+            <a href="#" id="header-things" className={classes.link}>
               Home
             </a>
 
@@ -129,8 +132,11 @@ export default function HeaderMegaMenu() {
             </a>
           </Group>
           <div className="divInput">
-            <AiOutlineSearch />
-            <input placeholder={"Search"} className="input-iconeLupa"></input>
+            <AiOutlineSearch className="search-icon" />
+            <input
+              placeholder={"Pesquisar"}
+              className="input-iconeLupa"
+            ></input>
           </div>
           <Group className={classes.hiddenMobile}>
             <Button variant="default" id="LoginButton">
