@@ -1,11 +1,11 @@
-import img from "../components/images/Logo/VERSA.png";
-import img2 from "../components/images/Register/RegisterImage.png";
-import "./RegisterPage.css";
-export default function RegisterPage() {
+import img from "./../components/images/Logo/VERSA.png";
+import img2 from "./../components/images/Register/RegisterImage.png";
+import "./RegisterPage1.css";
+export default function RegisterPage1() {
   return (
     <section className="row registerfont pb-3">
       <div className="col-md-6 fisrt-inf-index">
-        <img className="mb-5 " src={img} />
+        <img className="logoregistro1" src={img} />
 
         <div id="registerInputs">
           <div id="Textos">
@@ -15,7 +15,7 @@ export default function RegisterPage() {
               disponíveis, por favor, crie uma conta gratuita. É simples e
               rápido.
             </h3>
-            <div className="row mt-4">
+            <div className="row mt-5">
               <div className="col-md-6">
                 <h2 className="inputsRegistro">Nome</h2>
                 <input
@@ -49,12 +49,12 @@ export default function RegisterPage() {
             />
 
             <button className="mt-5 w-100 " id="criarButton">
-              Criar
+              Continue
             </button>
           </div>
         </div>
-        <div className="text-center mt-5">
-          Já tem uma conta? <a href="./LoginPage">Faça o login.</a>
+        <div className="text-center mt-4">
+          Já tem uma conta? <a href="./Login">Faça o login.</a>
         </div>
       </div>
       <div className="col-md-6 pe-0">

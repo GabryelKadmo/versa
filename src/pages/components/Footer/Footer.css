@@ -36,7 +36,7 @@ display: flex;
     font-weight: bold;
 }
 Footer{
-    background-color: rgb(0, 0, 0);
+    background-color: #272525;
 }
 Footer button{
     background-color: #272525 !important;
@@ -46,6 +46,6 @@ Footer button{
 }
 @media screen and (max-width: 768px) {
     .navigation-footer{
-padding-left: 10px;
+    padding-left: 10px;
     }
 }

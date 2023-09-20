@@ -9,6 +9,9 @@
     opacity: 50%;
     font-size: 18px;
 }
+.logoregistro1{
+    margin-bottom: 100px;
+}
 
 #loginInputs{
 display: flex;
@@ -21,7 +24,7 @@ margin-bottom: 0px;
 #criarButton{
 
     background-color: #272525;
-    font-family: Poppins;
+    font-family: "Poppins", sans-serif;
     border-radius: 10px;
     color: #fff;
     padding: 24px, 32px, 24px, 32px;
