@@ -1,22 +1,20 @@
 import img from "../components/images/Logo/VERSA.png";
 import img2 from "../components/images/Register/RegisterImage2.png";
-import "./RegisterPage2.css";
+import "./EndereçoEntrega.css";
 export default function RegisterPage2() {
   return (
     <section className="row registerfont pb-3">
-      <div className="col-md-6 fisrt-inf-index">
+      <div className="col-md-6 fisrt-inf-index mb-5">
         <img className="logoregistro2" src={img} />
 
         <div id="registerInputs">
           <div id="Textos">
-            <h1 id="registerText">Crie sua conta</h1>
+            <h1 id="registerText">Endereço de entrega</h1>
             <h3 className="registerText">
-              Para começar a aproveitar todos os benefícios e recursos
-              disponíveis, por favor, crie uma conta gratuita. É simples e
-              rápido.
+              Preencha os campos abaixo com seu endereço.
             </h3>
 
-            <h2 className="inputsRegistro mt-5">Nome de usuário</h2>
+            <h2 className="inputsRegistro mt-5">Nome do destinatário</h2>
             <input
               className="w-100"
               type="text"
@@ -27,14 +25,14 @@ export default function RegisterPage2() {
             <input
               className="w-100"
               type="tel"
-              placeholder="Digite sua senha"
+              placeholder="Digite seu número de telefone"
             />
 
             <h2 className="inputsRegistro">Endereço</h2>
             <input
               className="w-100"
               type="text"
-              placeholder="Insira seu endereço"
+              placeholder="Digite seu endereço"
             />
 
             <h2 className="inputsRegistro">Cidade</h2>

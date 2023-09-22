@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./pages/components/Header/Header";
-import Footer from "./pages/components/Footer/Footer";
 import { LandingPage } from "./pages/LandingPage/LandingPage";
-import RegisterPage2 from "./pages/RegistroParte2/RegisterPage2";
+import Footer from "./pages/components/Footer/Footer";
+import EndereçoEntrega from "./pages/EndereçoEntrega/EndereçoEntrega";
 import Layout from "./pages/components/Layout/Layout";
 import NovidadesPage from "./pages/Novidades/NovidadesPage";
 import RegisterPage1 from "./pages/RegistroParte1/RegisterPage1";
@@ -19,7 +19,7 @@ export default function App() {
           <Route path="/" element={<LandingPage />} />
           <Route path="/Login" element={<LoginPage />} />
           <Route path="/Register" element={<RegisterPage1 />} />
-          <Route path="/RegisterFinish" element={<RegisterPage2 />} />
+          <Route path="/Endereço" element={<EndereçoEntrega />} />
           <Route path="/Recuperar" element={<RecuperarSenha />} />
           <Route path="/Codigo" element={<RecuperarSenha2 />} />
           <Route path="/Redefinir" element={<RecuperarSenha3 />} />
