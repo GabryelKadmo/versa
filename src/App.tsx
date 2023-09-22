@@ -15,7 +15,8 @@ export default function App() {
   return (
     <div>
       <Header />
-      <LandingPage />
+      <NovidadesPage />
+      {/* <LandingPage /> */}
       <Footer />
 
       {/* <BrowserRouter>
