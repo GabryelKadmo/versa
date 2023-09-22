@@ -47,7 +47,7 @@ export default function LoginPage() {
                 required
                 className="w-100"
                 type="text"
-                placeholder="Digite seu email"
+                placeholder="Digite seu nome de usuário"
               />
               <h2 className="inputsRegistro">Senha</h2>
               <input
@@ -63,8 +63,7 @@ export default function LoginPage() {
                 className={` mt-4  w-100 ${load && "disabled"}`}
                 id="criarButton"
               >
-                {" "}
-                {load ? "Carregando..." : "Entrar"}{" "}
+                {load ? "Carregando..." : "Entrar"}
               </button>
             </form>
           </div>
