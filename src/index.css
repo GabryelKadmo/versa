@@ -13,3 +13,8 @@ body{
     background: #fff;
 }
 
+.disabled{
+    background-color: #635f5ff9 !important;
+    cursor: none;
+    pointer-events: none;
+}
