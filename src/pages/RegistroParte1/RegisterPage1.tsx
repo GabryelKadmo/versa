@@ -15,6 +15,7 @@ export default function RegisterPage1() {
               disponíveis, por favor, crie uma conta gratuita. É simples e
               rápido.
             </h3>
+            <form></form>
             <div className="row mt-5">
               <div className="col-md-6">
                 <h2 className="inputsRegistro">Nome</h2>

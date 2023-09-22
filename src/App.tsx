@@ -14,22 +14,18 @@ import RecuperarSenha3 from "./pages/RecuperarSenha3/Recuperar3";
 export default function App() {
   return (
     <div>
-      <Header />
-      <LandingPage />
-      <Footer />
-
-      {/* <BrowserRouter>
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<LandingPage />} />
+          <Route path="/Login" element={<LoginPage />} />
           <Route path="/Register" element={<RegisterPage1 />} />
           <Route path="/RegisterFinish" element={<RegisterPage2 />} />
-          <Route path="/Login" element={<LoginPage />} />
           <Route path="/Recuperar" element={<RecuperarSenha />} />
           <Route path="/Codigo" element={<RecuperarSenha2 />} />
           <Route path="/Redefinir" element={<RecuperarSenha3 />} />
         </Routes>
         <Footer />
-      </BrowserRouter> */}
+      </BrowserRouter>
     </div>
   );
 }
