@@ -23,6 +23,8 @@ import { AiOutlineSearch } from "react-icons/ai";
 import img from "../images/Logo/VERSA.png";
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
+import NovidadesPage from "./../../Novidades/NovidadesPage";
+
 // const [mostrarHeader, setMostrarHeader] = useState(true);
 
 //---------
@@ -114,11 +116,11 @@ export default function HeaderMegaMenu() {
             spacing={0}
             className={classes.hiddenMobile}
           >
-            <a href="#" id="header-things" className={classes.link}>
+            <a href="/" id="header-things" className={classes.link}>
               Home
             </a>
 
-            <a href="#" id="header-things" className={classes.link}>
+            <a href="/Novidades" id="header-things" className={classes.link}>
               Novidades
             </a>
             <a href="#" id="header-things" className={classes.link}>

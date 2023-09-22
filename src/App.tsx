@@ -15,7 +15,6 @@ export default function App() {
   return (
     <div>
       <BrowserRouter>
-        <Header />
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/Novidades" element={<NovidadesPage />} />

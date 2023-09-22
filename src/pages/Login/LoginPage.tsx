@@ -21,10 +21,14 @@ export default function LoginPage() {
 
     if (data.status === "Login bem-sucedido") {
       console.log(data.status);
+      window.location.href = "/";
     } else {
       setError(data.status);
     }
+    localStorage.setItem("token", data.access_token);
+    console.log(data.access_token);
   };
+
   return (
     <section className="row registerfont pb-3">
       <div className="col-md-6 fisrt-inf-index">

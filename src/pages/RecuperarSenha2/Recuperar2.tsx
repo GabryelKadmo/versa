@@ -18,7 +18,7 @@ export default function RecuperarSenha2() {
             <input
               className="w-100"
               type="email"
-              placeholder="Insira seu email cadastrado"
+              placeholder="Insira o código"
             />
 
             <button className="mt-4 w-100 " id="criarButton">

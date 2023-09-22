@@ -19,7 +19,6 @@ export default function RegisterPage1() {
     setLoad(true);
     e.preventDefault();
     const registerForm = {
-      bearerToken,
       nome,
       sobrenome,
       email,
