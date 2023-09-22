@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const API = "https://versa.onrender.com";
 const bearerToken =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY5NTM5MTc1MSwianRpIjoiZGIxZmMzZmUtOWNmNS00ZmJiLWE5MTctOTRkZDQyMWM2NmJjIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjY1MGJhMWZkMjYyMGIxYTM2Mzk2YjM3YSIsIm5iZiI6MTY5NTM5MTc1MSwiZXhwIjoxNjk1MzkyNjUxfQ.WAZo2E2_s4ZiNGsDtiLeMT3MSyDYuA8CTDspp32HgCA";
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY5NTQxMDA2NCwianRpIjoiNTRlYTg5MWEtN2IwMS00NjVkLTlkM2QtN2Q2YjQwZmZmMjg0IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjY1MGJhMWZkMjYyMGIxYTM2Mzk2YjM3YSIsIm5iZiI6MTY5NTQxMDA2NCwiZXhwIjoxNjk1NDEwOTY0fQ.LANhLEps6KBNKUMF3kzOPjzZ6XgetrVez9L-fK3xDZI";
 export const login = async (loginForm: any) => {
   const config = {
     headers: {
@@ -33,3 +33,5 @@ export const register = async (registerForm: any) => {
 
   return data;
 };
+
+export { bearerToken };

@@ -1,8 +1,11 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import { bearerToken } from "./../../../Utils/config";
 import { register } from "./../../../Utils/config";
 import img from "./../components/images/Logo/VERSA.png";
 import img2 from "./../components/images/Register/RegisterImage.png";
 import "./RegisterPage1.css";
+
 export default function RegisterPage1() {
   const [nome, setNome] = useState("");
   const [sobrenome, setSobrenome] = useState("");
@@ -10,15 +13,19 @@ export default function RegisterPage1() {
   const [senha, setSenha] = useState("");
   const [error, setError] = useState("");
   const [load, setLoad] = useState(false);
+  const getUsers = "https://versa.onrender.com/users";
+
   const handleSubmit = async (e: any) => {
     setLoad(true);
     e.preventDefault();
     const registerForm = {
+      bearerToken,
       nome,
       sobrenome,
       email,
       senha,
     };
+
     const data = await register(registerForm);
     setLoad(false);
 
@@ -43,6 +50,9 @@ export default function RegisterPage1() {
               rápido.
             </h3>
             <form onSubmit={handleSubmit}>
+              <h5 className={`text-danger text-center`}>
+                {error ? error : ""}
+              </h5>
               <div className="row mt-5">
                 <div className="col-md-6">
                   <h2 className="inputsRegistro">Nome</h2>
@@ -87,7 +97,6 @@ export default function RegisterPage1() {
                 type="password"
                 placeholder="Digite sua senha"
               />
-
               <button
                 type="submit"
                 className={`mt-5 w-100 ${load && "disabled"} `}
