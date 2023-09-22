@@ -15,9 +15,10 @@ export default function App() {
   return (
     <div>
       <BrowserRouter>
+        <Header />
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/Home" element={<LandingPage />} />
+          <Route path="/Novidades" element={<NovidadesPage />} />
           <Route path="/Login" element={<LoginPage />} />
           <Route path="/Register" element={<RegisterPage1 />} />
           <Route path="/Endereço" element={<EndereçoEntrega />} />
