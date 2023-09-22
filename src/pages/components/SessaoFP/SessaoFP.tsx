@@ -1,20 +1,127 @@
 import "./SessaoFP.css"
-import { Flex, SimpleGrid, Accordion, Checkbox } from '@mantine/core';
+import { Flex, SimpleGrid, Accordion, Checkbox, Space, Anchor, Radio, Group, Rating, Slider } from '@mantine/core';
 
 export function MeioFiltroProduto(){
 
     const itemCategoria = [
         <Checkbox
-            label="asdasdasd"
+            fz={13}
+            label="Esportivo (18)"
+        />,
+        <Space 
+            h="sm" 
         />,
         <Checkbox
-            label="I agree to sell my privacy"
+            fz={13}
+            label="Formal (12)"
+        />,
+        <Space 
+            h="sm" 
         />,
         <Checkbox
-            label="I agree to sell my privacy"
+            fz={13}
+            label="Casual (23)"
         />,
-            <Checkbox
-            label="I agree to sell my privacy"
+        <Space 
+            h="sm" 
+        />,
+        <Checkbox
+            fz={13}
+            label="Minimalista (67)"
+        />,
+        <Space 
+            h="sm" 
+        />,
+        <Checkbox
+            fz={13}
+            label="StreetWear (34)"
+        />,
+        <Space 
+            h="sm" 
+        />,
+        <Checkbox
+            fz={13}
+            label="Floral (12)"
+        />,
+        <Space 
+            h="sm" 
+        />,
+        <Anchor 
+            fz={13} 
+            target="_blank" 
+            underline="always"
+        >
+                Mostrar mais
+        </Anchor>
+    ]
+
+    const itemAvaliação = [
+        <Radio.Group
+        name="Rating"
+        >
+            <Group className="group" fz={13}>
+                <Radio value='5.0' label={<Rating defaultValue={5} readOnly/>}/>5.0
+                <Radio value='4.5' label={<Rating defaultValue={4.5} fractions={2} readOnly/>}/>4.5
+                <Radio value='4.0' label={<Rating defaultValue={4} readOnly/>}/>4.0
+                <Radio value='3.5' label={<Rating defaultValue={3.5} fractions={2} readOnly/>}/>3.5
+            </Group>
+        </Radio.Group>
+    ]
+
+    const itemMarca =[
+        <Checkbox
+            fz={13}
+            label="Adidas (18)"
+        />,
+        <Space 
+            h="sm" 
+        />,
+        <Checkbox
+            fz={13}
+            label="Gymshark (12)"
+        />,
+        <Space 
+            h="sm" 
+        />,
+        <Checkbox
+            fz={13}
+            label="Nike (23)"
+        />,
+        <Space 
+            h="sm" 
+        />,
+        <Checkbox
+            fz={13}
+            label="Kenneth Cole (67)"
+        />,
+        <Space 
+            h="sm" 
+        />,
+        <Checkbox
+            fz={13}
+            label="Puma (34)"
+        />,
+        <Space 
+            h="sm" 
+        />,
+        <Checkbox
+            fz={13}
+            label="Floral (12)"
+        />,
+        <Space 
+            h="sm" 
+        />,
+        <Anchor 
+            fz={13} 
+            target="_blank" 
+        >
+                Mostrar mais
+        </Anchor>
+    ]
+
+    const itemPreco = [
+        <Slider 
+        defaultValue={60}
         />
     ]
 
@@ -22,23 +129,22 @@ export function MeioFiltroProduto(){
         {
           value: 'Categoria',
           description:        
-          itemCategoria,            
+            itemCategoria,            
         },
         {
           value: 'Avaliações',
           description:
-            'Naturally sweet and potassium-rich fruit. Bananas are a popular choice for their energy-boosting properties and can be enjoyed as a quick snack, added to smoothies, or used in baking.',
+            itemAvaliação,
         },
         {
           value: 'Marcas',
           description:
-            'Nutrient-packed green vegetable. Broccoli is packed with vitamins, minerals, and fiber. It has a distinct flavor and can be enjoyed steamed, roasted, or added to stir-fries.',
+            itemMarca,
         },
         {
             value: 'Preço',
             description:
-                'asdfadf'
-              ,
+                itemPreco,
           },
       ];
 
@@ -52,6 +158,7 @@ export function MeioFiltroProduto(){
     return(
         <div className="caixa_centro">
             <Flex
+            gap={1000}
             direction={'column'}
             >
                 

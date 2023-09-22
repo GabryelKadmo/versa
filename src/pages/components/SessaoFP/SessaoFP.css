@@ -4,3 +4,6 @@
     width: 93%;
     margin: 10px auto;
 }
+.group{
+    flex-direction: column;
+}
