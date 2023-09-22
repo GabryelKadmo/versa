@@ -3,8 +3,8 @@ import Header from "./pages/components/Header/Header";
 import Footer from "./pages/components/Footer/Footer";
 import { LandingPage } from "./pages/LandingPage/LandingPage";
 import RegisterPage2 from "./pages/RegistroParte2/RegisterPage2";
-import Layout from "./pages/components/Layout/Layout";
-import NovidadesPage from "./pages/Novidades/NovidadesPage";
+// import Layout from "./pages/components/Layout/Layout";
+// import NovidadesPage from "./pages/Novidades/NovidadesPage";
 import RegisterPage1 from "./pages/RegistroParte1/RegisterPage1";
 import LoginPage from "./pages/Login/LoginPage";
 import RecuperarSenha from "./pages/RecuperarSenha/Recuperar";
@@ -18,7 +18,7 @@ export default function App() {
       <LandingPage />
       <Footer />
 
-      {/* <BrowserRouter>
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/Register" element={<RegisterPage1 />} />
@@ -29,7 +29,7 @@ export default function App() {
           <Route path="/Redefinir" element={<RecuperarSenha3 />} />
         </Routes>
         <Footer />
-      </BrowserRouter> */}
+      </BrowserRouter>
     </div>
   );
 }
