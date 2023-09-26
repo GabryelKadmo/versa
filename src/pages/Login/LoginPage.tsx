@@ -4,7 +4,7 @@ import img2 from "./../components/images/Login/LoginImage.png";
 import { login } from "./../../../Utils/config";
 import "./LoginPage.css";
 export default function LoginPage() {
-  const [usuario, setUsuario] = useState("");
+  const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
   const [error, setError] = useState("");
   const [load, setLoad] = useState(false);
@@ -13,7 +13,7 @@ export default function LoginPage() {
     setLoad(true);
     e.preventDefault();
     const loginForm = {
-      usuario,
+      email,
       senha,
     };
     const data = await login(loginForm);
@@ -21,10 +21,14 @@ export default function LoginPage() {
 
     if (data.status === "Login bem-sucedido") {
       console.log(data.status);
+      window.location.href = "/";
     } else {
       setError(data.status);
     }
+    localStorage.setItem("token", data.access_token);
+    console.log(data.access_token);
   };
+
   return (
     <section className="row registerfont pb-3">
       <div className="col-md-6 fisrt-inf-index">
@@ -40,10 +44,10 @@ export default function LoginPage() {
               <h5 className={`text-danger text-center`}>
                 {error ? error : ""}
               </h5>
-              <h2 className="inputsRegistro">Usuário</h2>
+              <h2 className="inputsRegistro">Email</h2>
               <input
-                onChange={(e) => setUsuario(e.target.value)}
-                value={usuario}
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
                 required
                 className="w-100"
                 type="text"
@@ -67,9 +71,6 @@ export default function LoginPage() {
               </button>
             </form>
           </div>
-        </div>
-        <div className="text-center mt-4">
-          <a href="./Recuperar">Esqueci a senha.</a>
         </div>
       </div>
       <div className="col-md-6 pe-0">

@@ -1,10 +1,9 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Header from "./pages/components/Header/Header";
+// import Header from "./pages/components/Header/Header";
 import { LandingPage } from "./pages/LandingPage/LandingPage";
 import Footer from "./pages/components/Footer/Footer";
 import EndereçoEntrega from "./pages/EndereçoEntrega/EndereçoEntrega";
-import RegisterPage2 from "./pages/RegistroParte2/RegisterPage2";
-import Layout from "./pages/components/Layout/Layout";
+// import Layout from "./pages/components/Layout/Layout";
 import NovidadesPage from "./pages/Novidades/NovidadesPage";
 import RegisterPage1 from "./pages/RegistroParte1/RegisterPage1";
 import LoginPage from "./pages/Login/LoginPage";
@@ -18,6 +17,7 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LandingPage />} />
+          <Route path="/Novidades" element={<NovidadesPage />} />
           <Route path="/Login" element={<LoginPage />} />
           <Route path="/Register" element={<RegisterPage1 />} />
           <Route path="/Endereço" element={<EndereçoEntrega />} />

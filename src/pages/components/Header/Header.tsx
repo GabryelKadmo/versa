@@ -14,7 +14,9 @@ import {
   Collapse,
   ScrollArea,
   rem,
+  Input,
 } from "@mantine/core";
+import { IconSearch } from '@tabler/icons-react';
 import { useDisclosure } from "@mantine/hooks";
 
 //---------
@@ -23,6 +25,9 @@ import { AiOutlineSearch } from "react-icons/ai";
 import img from "../images/Logo/VERSA.png";
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
+import NovidadesPage from "./../../Novidades/NovidadesPage";
+import LoginPage from "../../Login/LoginPage";
+
 // const [mostrarHeader, setMostrarHeader] = useState(true);
 
 //---------
@@ -114,11 +119,11 @@ export default function HeaderMegaMenu() {
             spacing={0}
             className={classes.hiddenMobile}
           >
-            <a href="#" id="header-things" className={classes.link}>
+            <a href="/" id="header-things" className={classes.link}>
               Home
             </a>
 
-            <a href="#" id="header-things" className={classes.link}>
+            <a href="/Novidades" id="header-things" className={classes.link}>
               Novidades
             </a>
             <a href="#" id="header-things" className={classes.link}>
@@ -131,13 +136,13 @@ export default function HeaderMegaMenu() {
               Pacotes
             </a>
           </Group>
-          <div className="divInput">
-            <AiOutlineSearch className="search-icon" />
-            <input
+          
+            <Input              
               placeholder={"Pesquisar"}
-              className="input-iconeLupa"
-            ></input>
-          </div>
+              // className="input-iconeLupa"
+              icon={<IconSearch size={16}/>}
+            ></Input>
+          
           <Group className={classes.hiddenMobile}>
             <Button variant="default" id="LoginButton">
               Entrar
@@ -192,7 +197,12 @@ export default function HeaderMegaMenu() {
           />
 
           <Group position="center" grow pb="xl" px="md">
-            <Button variant="default">Entrar</Button>
+            <Button
+              onClick={() => (window.location.href = "/Login")}
+              variant="default"
+            >
+              Entrar
+            </Button>
           </Group>
         </ScrollArea>
       </Drawer>
