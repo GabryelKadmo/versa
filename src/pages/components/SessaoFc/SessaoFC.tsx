@@ -1,6 +1,6 @@
 import "./SessaoFC.css"
 import { Text, Button, Input, Flex, NativeSelect } from '@mantine/core';
-// import { IconAt } from '@tabler/icons-react';
+import { IconSearch } from '@tabler/icons-react';
 
 export function FiltroCima(){
     return(
@@ -35,9 +35,7 @@ export function FiltroCima(){
                 >
                     Mostrando 12 resultados de 230
                 </Text>
-                <Input 
-                placeholder="Search" 
-                /> 
+                <Input placeholder="Your email" icon={<IconSearch size={16} />} />
             </Flex>
             <Flex
             pl={42}
@@ -46,6 +44,8 @@ export function FiltroCima(){
             >
                 <NativeSelect size="sm" radius="xl" data={['Popularidade', 'Promoção', 'Preço decrescente', 'Preço crescente']} />
             </Flex>
+            
         </div>
+
     )
 }

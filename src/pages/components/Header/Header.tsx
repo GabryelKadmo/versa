@@ -14,7 +14,9 @@ import {
   Collapse,
   ScrollArea,
   rem,
+  Input,
 } from "@mantine/core";
+import { IconSearch } from '@tabler/icons-react';
 import { useDisclosure } from "@mantine/hooks";
 
 //---------
@@ -134,13 +136,13 @@ export default function HeaderMegaMenu() {
               Pacotes
             </a>
           </Group>
-          <div className="divInput">
-            <AiOutlineSearch className="search-icon" />
-            <input
+          
+            <Input              
               placeholder={"Pesquisar"}
-              className="input-iconeLupa"
-            ></input>
-          </div>
+              // className="input-iconeLupa"
+              icon={<IconSearch size={16}/>}
+            ></Input>
+          
           <Group className={classes.hiddenMobile}>
             <Button variant="default" id="LoginButton">
               Entrar

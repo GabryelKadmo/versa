@@ -1,5 +1,6 @@
 import "./SessaoFP.css"
 import { Flex, SimpleGrid, Accordion, Checkbox, Space, Anchor, Radio, Group, Rating, Slider } from '@mantine/core';
+// import { IconAt } from '@tabler/icons-react';
 
 export function MeioFiltroProduto(){
 
@@ -49,7 +50,6 @@ export function MeioFiltroProduto(){
         <Anchor 
             fz={13} 
             target="_blank" 
-            underline="always"
         >
                 Mostrar mais
         </Anchor>
@@ -122,6 +122,8 @@ export function MeioFiltroProduto(){
     const itemPreco = [
         <Slider 
         defaultValue={60}
+        label={null}
+        color="dark"
         />
     ]
 
