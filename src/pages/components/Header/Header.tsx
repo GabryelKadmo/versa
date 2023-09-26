@@ -24,6 +24,7 @@ import img from "../images/Logo/VERSA.png";
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import NovidadesPage from "./../../Novidades/NovidadesPage";
+import LoginPage from "../../Login/LoginPage";
 
 // const [mostrarHeader, setMostrarHeader] = useState(true);
 
@@ -194,7 +195,12 @@ export default function HeaderMegaMenu() {
           />
 
           <Group position="center" grow pb="xl" px="md">
-            <Button variant="default">Entrar</Button>
+            <Button
+              onClick={() => (window.location.href = "/Login")}
+              variant="default"
+            >
+              Entrar
+            </Button>
           </Group>
         </ScrollArea>
       </Drawer>
