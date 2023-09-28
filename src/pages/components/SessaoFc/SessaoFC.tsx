@@ -35,7 +35,7 @@ export function FiltroCima(){
                 >
                     Mostrando 12 resultados de 230
                 </Text>
-                <Input placeholder="Your email" icon={<IconSearch size={16} />} />
+                <Input placeholder="Pesquisar" icon={<IconSearch size={16} />} />
             </Flex>
             <Flex
             pl={42}
