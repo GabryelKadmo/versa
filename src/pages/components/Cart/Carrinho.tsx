@@ -1,8 +1,8 @@
 import { IconShoppingCart } from "@tabler/icons-react";
 import { useDisclosure } from "@mantine/hooks";
 import { Drawer, Button } from "@mantine/core";
-import { bearerToken } from "./../../../../Utils/config";
-import React, { useState, useEffect } from "react";
+// import { bearerToken } from "./../../../../Utils/config";
+// import React, { useState, useEffect } from "react";
 import CardProdutosCart from "./CardProdutosCart";
 import img from "./../../components/images/Cart/Camisa florida.jpeg";
 import img2 from "./../../components/images/Cart/CamisaJeans.jpg";
@@ -35,7 +35,7 @@ export default function Carrinho() {
       <CartBotton />
     </div>
   );
-  const [value, setValue] = useState<number | "">(0);
+  // const [value, setValue] = useState<number | "">(0);
 
   return (
     <>

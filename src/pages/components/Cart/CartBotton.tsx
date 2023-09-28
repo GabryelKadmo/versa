@@ -1,9 +1,6 @@
 import React from "react";
-import iconCupom from "./../../components/images/Cart/desconto.png";
 
-type Props = {};
-
-const CartBotton = (props: Props) => {
+const CartBotton = () => {
   return (
     <div className="cartFixed">
       <hr />
