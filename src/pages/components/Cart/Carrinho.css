@@ -1,0 +1,99 @@
+.cardProdutosCart{
+    display: flex;
+}
+.infoProdutosRight{
+    max-width: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.precoProduto{
+margin-bottom: 0px;
+}
+.infoProdutosRight p{
+    font-size: 12px;
+    font-family: "Poppins", sans-serif;
+    color: #323334;
+
+}
+
+.titleCart-h1{
+    font-family: "Poppins", sans-serif;
+    font-size: 30px;
+    color: #1B1819;
+    font-weight: 600;
+}
+.imgProduto{
+    height: 150px;
+    margin-right: 20px;
+    height: 150px;
+    width: 155.19px;
+}
+.removeItem{
+    align-items: right;
+    margin-left: 90px;
+}
+.actionIconX{
+    border: 1px solid black;
+}
+.inputQuantity{
+    width: 60px;;
+}
+.inputCupom{
+    background-color: #E4E4E4 ;
+    width: 100%;
+    height: 42px;
+    border: none;
+    padding-left: 30px;
+    padding-bottom: 4px;
+    background-image: url('./../images/Cart/desconto.png');
+    background-repeat: no-repeat;
+    background-position: 0%;
+    background-position-x: 10px;
+    background-size: 13px;
+}
+.inputCupom:focus{
+    outline: none;
+}
+
+.inputCupom::placeholder{
+    font-family: poppins;
+    font-size: 12px;
+}
+.infoValores{
+  display: flex;
+  justify-content: space-between; 
+  margin-top: 15px;
+  font-size: 18px;
+  gap: 50px;
+
+}
+.infoValores div {
+    flex: 1;
+}
+
+  .infoValores2{
+    display: flex;
+    justify-content: space-between; 
+    margin-top: 15px;
+    font-size: 18px;
+    gap: 50px;
+
+  }
+  .infoValores2 div {
+      flex: 1;
+  }
+  .pagamentoButton{
+    background-color: #1D242D;
+    font-family: "Poppins", sans-serif;
+    border-radius: 100px;
+    color: #fff;
+    gap: 16px;
+    width: 100%;
+    font-size: 15px;
+    height: 35px;
+}
+.cartFixed{
+    margin-top: 70px;
+    padding-bottom: 0px;
+}

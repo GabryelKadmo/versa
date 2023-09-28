@@ -16,17 +16,12 @@ import {
   rem,
   Input,
 } from "@mantine/core";
-import { IconSearch } from '@tabler/icons-react';
+import { IconSearch } from "@tabler/icons-react";
 import { useDisclosure } from "@mantine/hooks";
-
 //---------
 import "./Header.css";
-import { AiOutlineSearch } from "react-icons/ai";
-import img from "../images/Logo/VERSA.png";
+import Carrinho from "../Cart/Carrinho";
 import { Link } from "react-router-dom";
-import React, { useState } from "react";
-import NovidadesPage from "./../../Novidades/NovidadesPage";
-import LoginPage from "../../Login/LoginPage";
 
 // const [mostrarHeader, setMostrarHeader] = useState(true);
 
@@ -136,17 +131,19 @@ export default function HeaderMegaMenu() {
               Pacotes
             </a>
           </Group>
-          
-            <Input              
-              placeholder={"Pesquisar"}
-              // className="input-iconeLupa"
-              icon={<IconSearch size={16}/>}
-            ></Input>
-          
+
+          <Input
+            placeholder={"Pesquisar"}
+            // className="input-iconeLupa"
+            icon={<IconSearch size={16} />}
+          ></Input>
+
+          <Carrinho />
+
           <Group className={classes.hiddenMobile}>
-            <Button variant="default" id="LoginButton">
+            <Link to="/Login" id="LoginButton">
               Entrar
-            </Button>
+            </Link>
           </Group>
 
           <Burger

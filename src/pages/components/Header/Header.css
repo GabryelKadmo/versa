@@ -19,12 +19,17 @@
   font-family: Poppins;
   border-radius: 100px;
   color: #fff;
-  width: 8rem;
-  min-width: 100%;
+  width: 8rem; /* Largura fixa de 8rem */
+  max-width: 100%; /* Largura máxima de 100% do elemento pai */
   height: 2.5rem;
-  flex-shrink: 0;
-  gap: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
 }
+
+
+
 
 /* .input-iconeLupa {
   border: none;
