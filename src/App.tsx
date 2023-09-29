@@ -10,6 +10,7 @@ import LoginPage from "./pages/Login/LoginPage";
 import RecuperarSenha from "./pages/RecuperarSenha/Recuperar";
 import RecuperarSenha2 from "./pages/RecuperarSenha2/Recuperar2";
 import RecuperarSenha3 from "./pages/RecuperarSenha3/Recuperar3";
+import Carrinho from "./pages/components/Cart/Carrinho";
 
 export default function App() {
   return (
@@ -24,6 +25,7 @@ export default function App() {
           <Route path="/Recuperar" element={<RecuperarSenha />} />
           <Route path="/Codigo" element={<RecuperarSenha2 />} />
           <Route path="/Redefinir" element={<RecuperarSenha3 />} />
+          <Route path="/Carrinho" element={<Carrinho />} />
         </Routes>
         <Footer />
       </BrowserRouter>

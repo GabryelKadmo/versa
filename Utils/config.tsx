@@ -34,4 +34,19 @@ export const register = async (registerForm: any) => {
   return data;
 };
 
+export const getProductById = async (id: any) => {
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${bearerToken}`,
+    },
+    method: "GET",
+  };
+
+  const response = await fetch(`${API}/products/${id}`, config);
+  const data = await response.json();
+
+  return data;
+};
+
 export { bearerToken };
