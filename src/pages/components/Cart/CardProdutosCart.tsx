@@ -1,4 +1,3 @@
-import React from "react";
 import "./Carrinho.css";
 import { IconX } from "@tabler/icons-react";
 import { ActionIcon } from "@mantine/core";
