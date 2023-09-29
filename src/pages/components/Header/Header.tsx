@@ -138,8 +138,9 @@ export default function HeaderMegaMenu() {
             icon={<IconSearch size={16} />}
           ></Input>
 
-          <Group className={classes.hiddenMobile}>
           <Carrinho />
+
+          <Group className={classes.hiddenMobile}>
             <Link to="/Login" id="LoginButton">
               Entrar
             </Link>

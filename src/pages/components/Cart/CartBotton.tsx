@@ -1,7 +1,6 @@
 const CartBotton = () => {
   return (
     <>
-      <div className="spacer"></div>
       <div className=" cartFixed">
         <hr />
         <input
