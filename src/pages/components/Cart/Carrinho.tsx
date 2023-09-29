@@ -17,7 +17,7 @@ export default function Carrinho() {
     <div>
       <h1 className="titleCart-h1 text-center pb-4">SEU CARRINHO</h1>
       <hr />
-      <div style={{ maxHeight: "400px", overflowY: "auto" }}>
+      <div style={{ maxHeight: "500px", overflow: "auto" }}>
         <CardProdutosCart
           title="Camisa Florida"
           preco={100}

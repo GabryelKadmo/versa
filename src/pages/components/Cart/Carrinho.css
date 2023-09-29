@@ -90,7 +90,7 @@ margin-bottom: 0px;
     border-radius: 100px;
     color: #fff;
     gap: 16px;
-    width: 100%;
+    width: 97%;
     font-size: 15px;
     height: 35px;
 }
@@ -102,4 +102,7 @@ margin-bottom: 0px;
 }
 .spacer {
     height: 40px; /* Ajuste a altura conforme necessário para criar espaço acima da div fixa */
+  }
+  ::-webkit-scrollbar {
+    width: 0px;
   }
