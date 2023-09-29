@@ -28,6 +28,7 @@ margin-bottom: 0px;
     margin-right: 20px;
     height: 150px;
     width: 155.19px;
+    object-fit: scale-down;
 }
 .removeItem{
     align-items: right;
@@ -94,6 +95,11 @@ margin-bottom: 0px;
     height: 35px;
 }
 .cartFixed{
-    margin-top: 70px;
-    padding-bottom: 0px;
+    position: fixed; /* Torna a div fixa na tela */
+    width: 96%; /* Ajusta a largura conforme necessário */
+    background-color: #fff; /* Estilo de fundo, ajuste conforme necessário */
+    bottom: 10px;
 }
+.spacer {
+    height: 40px; /* Ajuste a altura conforme necessário para criar espaço acima da div fixa */
+  }

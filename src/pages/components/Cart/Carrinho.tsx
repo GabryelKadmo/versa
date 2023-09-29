@@ -5,7 +5,8 @@ import { Drawer, Button } from "@mantine/core";
 // import React, { useState, useEffect } from "react";
 import CardProdutosCart from "./CardProdutosCart";
 import img from "./../../components/images/Cart/Camisa florida.jpeg";
-import img2 from "./../../components/images/Cart/CamisaJeans.jpg";
+import img2 from "./../../components/images/Cart/CamisaJeans.jpeg";
+import img3 from "./../../components/images/Cart/CamisaSocialBranca.jpeg";
 import CartBotton from "./CartBotton";
 import "./Carrinho.css";
 
@@ -16,22 +17,34 @@ export default function Carrinho() {
     <div>
       <h1 className="titleCart-h1 text-center pb-4">SEU CARRINHO</h1>
       <hr />
-      <CardProdutosCart
-        title="Camisa Florida"
-        preco={100}
-        cor="Preto"
-        tamanho="M"
-        img={img}
-      />
-      <br />
-      <br />
-      <CardProdutosCart
-        title="Camisa Jeans"
-        preco={300}
-        cor="Azul"
-        tamanho="G"
-        img={img2}
-      />
+      <div style={{ maxHeight: "400px", overflowY: "auto" }}>
+        <CardProdutosCart
+          title="Camisa Florida"
+          preco={100}
+          cor="Preto"
+          tamanho="M"
+          img={img}
+        />
+        <br />
+        <br />
+        <CardProdutosCart
+          title="Camisa Jeans"
+          preco={300}
+          cor="Preto"
+          tamanho="G"
+          img={img2}
+        />
+        <br />
+        <br />
+        <CardProdutosCart
+          title="Camisa Social"
+          preco={59.92}
+          cor="Branco"
+          tamanho="P"
+          img={img3}
+        />
+      </div>
+
       <CartBotton />
     </div>
   );
