@@ -1,14 +1,18 @@
 import "./SessaoFP.css"
-import { Flex, SimpleGrid, Accordion, Checkbox, Space, Anchor, Radio, Group, Rating, Slider } from '@mantine/core';
+import { Flex, SimpleGrid, Accordion, Checkbox, Space, Anchor, Radio, Group, Rating, Slider, Pagination, Text} from '@mantine/core';
+import {CardNovidades} from "../CardNovidades/CardNovidades"
 // import { IconAt } from '@tabler/icons-react';
 
 export function MeioFiltroProduto(){
 
     const itemCategoria = [
-        <Checkbox
-            fz={13}
-            label="Esportivo (18)"
-        />,
+        <Flex className="borda" ta={"right"}>
+            <Checkbox
+                fz={13}
+                label="Esportivo"
+            />
+            <Text ta={"right"}>18</Text>
+        </Flex>,
         <Space 
             h="sm" 
         />,
@@ -60,10 +64,26 @@ export function MeioFiltroProduto(){
         name="Rating"
         >
             <Group className="group" fz={13}>
-                <Radio value='5.0' label={<Rating defaultValue={5} readOnly/>}/>5.0
-                <Radio value='4.5' label={<Rating defaultValue={4.5} fractions={2} readOnly/>}/>4.5
-                <Radio value='4.0' label={<Rating defaultValue={4} readOnly/>}/>4.0
-                <Radio value='3.5' label={<Rating defaultValue={3.5} fractions={2} readOnly/>}/>3.5
+                <Flex gap={12}>
+                <Radio value='5.0' label={<Rating defaultValue={5} readOnly/>}/>
+                <Text>5.0</Text>
+                <Text color="dimmed">(1991)</Text>
+                </Flex>
+                <Flex gap={12}>
+                <Radio value='5.0' label={<Rating defaultValue={4.5} fractions={2} readOnly/>}/>
+                <Text>4.5</Text>
+                <Text color="dimmed">(200)</Text>
+                </Flex>
+                <Flex gap={12}>
+                <Radio value='5.0' label={<Rating defaultValue={4} readOnly/>}/>
+                <Text>4.0</Text>
+                <Text color="dimmed">(300)</Text>
+                </Flex>
+                <Flex gap={12}>
+                <Radio value='5.0' label={<Rating defaultValue={3.5} fractions={2} readOnly/>}/>
+                <Text>3.5</Text>
+                <Text color="dimmed">(500)</Text>
+                </Flex>
             </Group>
         </Radio.Group>
     ]
@@ -158,21 +178,59 @@ export function MeioFiltroProduto(){
       ));
 
     return(
-        <div className="caixa_centro">
-            <Flex
-            gap={1000}
-            direction={'column'}
-            >
+        <div> 
+            <Flex className="borda" maw={1730} pt={40}>
+                <Flex
+                gap={1000}
+                direction={'column'}
+                // className="borda"
+                w={300}
+                // maw={200}
+                >
+                    
+                    <Accordion>
+                        {items}
+                    </Accordion>
+                    
+                </Flex>
+                <SimpleGrid
                 
-                <Accordion >
-                    {items}
-                </Accordion>
-                
-            </Flex>
-            <SimpleGrid>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, doloremque.</p>
-            </SimpleGrid>
+                className="borda"
+                cols={4}
+                w={1300}
+                spacing="lg"
+                breakpoints={[
+                    { maxWidth: 'xl', cols: 4, spacing: 'lg' },
+                    { maxWidth: 'lg', cols: 3, spacing: 'md' },
+                    { maxWidth: 'md', cols: 2, spacing: 'sm' },
+                    { maxWidth: 'sm', cols: 1, spacing: 'sm' },
+                ]}
+                >
+                    <CardNovidades />
+                    <CardNovidades />
+                    <CardNovidades />
+                    <CardNovidades />
+                    <CardNovidades />
+                    <CardNovidades />
+                    <CardNovidades />
+                    <CardNovidades />
+                    <CardNovidades />
+                    <CardNovidades />
+                    <CardNovidades />
+                    <CardNovidades />
+                    
+                </SimpleGrid>
 
+                </Flex>
+
+                <Flex justify={"center"}>
+                    <Pagination 
+                        color={"dark"}
+                        total={7} 
+                        mt={130}
+                        mb={130}
+                    />
+                </Flex>
         </div>
     );
 }
