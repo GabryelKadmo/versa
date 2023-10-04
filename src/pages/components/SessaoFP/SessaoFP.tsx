@@ -206,18 +206,7 @@ export function MeioFiltroProduto(){
                     { maxWidth: 'sm', cols: 1, spacing: 'sm' },
                 ]}
                 >
-                    <CardNovidades />
-                    <CardNovidades />
-                    <CardNovidades />
-                    <CardNovidades />
-                    <CardNovidades />
-                    <CardNovidades />
-                    <CardNovidades />
-                    <CardNovidades />
-                    <CardNovidades />
-                    <CardNovidades />
-                    <CardNovidades />
-                    <CardNovidades />
+                    <CardNovidades img="..." title="Camisa véa" preco={50} rating={3} avaliacoes={50} />
                     
                 </SimpleGrid>
 
