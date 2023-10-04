@@ -50,7 +50,7 @@ export default function LoginPage() {
                 value={email}
                 required
                 className="w-100"
-                type="text"
+                type="email"
                 placeholder="Digite seu nome de usuário"
               />
               <h2 className="inputsRegistro">Senha</h2>
