@@ -1,9 +1,34 @@
 import "./SessaoFP.css"
 import { Flex, SimpleGrid, Accordion, Checkbox, Space, Anchor, Radio, Group, Rating, Slider, Pagination, Text} from '@mantine/core';
 import {CardNovidades} from "../CardNovidades/CardNovidades"
+import { useEffect, useState } from "react";
 // import { IconAt } from '@tabler/icons-react';
 
 export function MeioFiltroProduto(){
+
+    type product = {
+        id: string,
+        titulo: string,
+        preco: number,
+        descricao: string,
+        marca: string,
+        categoria: string,
+        rating: number,
+        avaliacao: number,
+        imgurl: string
+    }
+
+    const url = "https://versa.onrender.com/products"
+    const [products, setProducts] = useState<product[]>([])
+
+    useEffect(() => {
+        async function fetchData(){
+            const res = await fetch(url);
+            const data = await res.json();
+            setProducts(data);
+        }
+        fetchData()
+    },[]);
 
     const itemCategoria = [
         <Flex className="borda" ta={"right"}>
@@ -206,7 +231,12 @@ export function MeioFiltroProduto(){
                     { maxWidth: 'sm', cols: 1, spacing: 'sm' },
                 ]}
                 >
-                    <CardNovidades img="..." title="Camisa véa" preco={50} rating={3} avaliacoes={50} />
+                    <>
+                        {products.map((products) => (
+                           <CardNovidades key={products.id} img={products.imgurl} descricao={products.descricao} title={products.titulo} preco={products.preco} rating={products.avaliacao} avaliacoes={50} /> 
+                        ))}
+                    </>
+                    
                     
                 </SimpleGrid>
 
