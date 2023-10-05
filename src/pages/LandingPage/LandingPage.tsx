@@ -1,7 +1,7 @@
 import "./LandingPage.css";
 import "./../components/Header/Header";
 import { Slide } from "../components/slide_principal/Slide";
-import { SessaoCO } from "../components/SessãoCompraO/SessaoCO";
+import { SessaoCO } from "../components/SessaoCompraO/SessaoCO";
 import { SessaoAS } from "../components/SessãoAboutStyle/SessaoAS";
 import { SessaoNR } from "../components/SessaoNR/SessaoNR";
 import { SessaoMarcas } from "../components/SessaoMarcas/SessaoMarcas";

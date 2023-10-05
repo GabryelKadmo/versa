@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 const API = "https://versa.onrender.com";
 const bearerToken = localStorage.getItem("token");
 

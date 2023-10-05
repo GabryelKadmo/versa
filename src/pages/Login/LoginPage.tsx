@@ -32,11 +32,15 @@ export default function LoginPage() {
   return (
     <section className="row registerfont pb-3">
       <div className="col-md-6 fisrt-inf-index">
-        <img className="logologin" src={img} />
+        <a className="registerTagA" href="http://localhost:5173/">
+          <img className="logologin" src={img} />
+        </a>
 
         <div id="registerInputs">
           <div id="Textos">
-            <h1 id="registerText">Bem vindo de volta!</h1>
+            <h1 className="mt-5" id="registerText">
+              Bem vindo de volta!
+            </h1>
             <h3 className="registerText mt-3 mb-5">
               Insira suas credenciais para acessar sua conta.
             </h3>
