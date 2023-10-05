@@ -1,27 +1,24 @@
 import {
-  createStyles,
-  Header,
-  Group,
-  Button,
-  UnstyledButton,
-  Text,
-  ThemeIcon,
-  Divider,
-  Center,
   Box,
   Burger,
+  Button,
+  Center,
+  Divider,
   Drawer,
-  Collapse,
-  ScrollArea,
-  rem,
+  Group,
+  Header,
   Input,
+  ScrollArea,
+  UnstyledButton,
+  createStyles,
+  rem,
 } from "@mantine/core";
-import { IconSearch } from "@tabler/icons-react";
 import { useDisclosure } from "@mantine/hooks";
+import { IconSearch } from "@tabler/icons-react";
 //---------
-import "./Header.css";
-import Carrinho from "../Cart/Carrinho";
 import { Link } from "react-router-dom";
+import Carrinho from "../Cart/Carrinho";
+import "./Header.css";
 
 // const [mostrarHeader, setMostrarHeader] = useState(true);
 
@@ -105,7 +102,11 @@ export default function HeaderMegaMenu() {
     <Box pb={120}>
       <Header height={60} px="md">
         <Group position="apart" sx={{ height: "100%" }}>
-          <a href="#" id="versaLogo" className={classes.link}>
+          <a
+            href="http://localhost:5173/"
+            id="versaLogo"
+            className={classes.link}
+          >
             VERSA
           </a>
 

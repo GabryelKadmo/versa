@@ -1,5 +1,10 @@
 import Header from "./../Header/Header";
-const Layout = ({ children }) => (
+
+interface LayoutProps {
+  children: React.ReactNode;
+}
+
+const Layout = ({ children }: LayoutProps) => (
   <div>
     <Header />
     <div className="content">{children}</div>

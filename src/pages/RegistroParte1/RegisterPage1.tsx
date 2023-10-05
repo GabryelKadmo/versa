@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { bearerToken } from "./../../../Utils/config";
+// import { Link } from "react-router-dom";
+// import { bearerToken } from "./../../../Utils/config";
 import { register } from "./../../../Utils/config";
 import img from "./../components/images/Logo/VERSA.png";
 import img2 from "./../components/images/Register/RegisterImage.png";
@@ -39,11 +39,15 @@ export default function RegisterPage1() {
   return (
     <section className="row registerfont pb-3">
       <div className="col-md-6 fisrt-inf-index">
-        <img className="logoregistro1" src={img} />
+        <a className="registerTagA" href="http://localhost:5173/">
+          <img className="logoregistro1" src={img} />
+        </a>
 
         <div id="registerInputs">
           <div id="Textos">
-            <h1 id="registerText">Crie sua conta</h1>
+            <h1 className="mt-5" id="registerText">
+              Crie sua conta
+            </h1>
             <h3 className="registerText">
               Para começar a aproveitar todos os benefícios e recursos
               disponíveis, por favor, crie uma conta gratuita. É simples e

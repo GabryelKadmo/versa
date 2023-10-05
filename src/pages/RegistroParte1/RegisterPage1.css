@@ -10,7 +10,10 @@
     font-size: 18px;
 }
 .logoregistro1{
-    margin-bottom: 100px;
+    margin-bottom: 0px;
+}
+.registerTagA{
+    height: 30px;
 }
 
 #loginInputs{
