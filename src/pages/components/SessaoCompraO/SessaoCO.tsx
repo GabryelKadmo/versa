@@ -1,7 +1,7 @@
 import "./SessaoCO.css";
 import ImagemEsquerda from "../images/SessaoCO/Esquerda.png";
 import ImagemMeio from "../images/SessaoCO/Meio.png";
-// import ImagemDireita from "../images/SessaoCO/direita.png";
+import ImagemDireita from "../images/SessaoCO/Direita.png";
 
 export function SessaoCO() {
   return (
@@ -31,7 +31,7 @@ export function SessaoCO() {
           </p>
         </div>
         <div className="imagem_co_d">
-          {/* <img className="img_s" src={ImagemDireita} alt="Imagem direita" /> */}
+          <img className="img_s" src={ImagemDireita} alt="Imagem direita" />
           <h2>FLORAL</h2>
           <p>
             Estampa de flores em roupas, muitas vezes usada para criar um visual
