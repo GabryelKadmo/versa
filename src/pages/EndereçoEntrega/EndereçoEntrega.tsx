@@ -10,7 +10,7 @@ export default function RegisterPage2() {
   return (
     <section className="row registerfont">
       <div className="fisrt-inf-index">
-        <a href="http://localhost:5173/">
+        <a href="https://versa-blond.vercel.app/">
           <img className="logoregistro2" src={img} />
         </a>
 
