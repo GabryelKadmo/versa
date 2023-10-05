@@ -95,7 +95,7 @@ const useStyles = createStyles((theme) => ({
 export default function HeaderMegaMenu() {
   const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] =
     useDisclosure(false);
-  const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false);
+  const [, { toggle: toggleLinks }] = useDisclosure(false);
   const { classes, theme } = useStyles();
 
   return (

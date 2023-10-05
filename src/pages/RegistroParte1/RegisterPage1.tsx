@@ -13,7 +13,7 @@ export default function RegisterPage1() {
   const [senha, setSenha] = useState("");
   const [error, setError] = useState("");
   const [load, setLoad] = useState(false);
-  const getUsers = "https://versa.onrender.com/users";
+  // const getUsers = "https://versa.onrender.com/users";
 
   const handleSubmit = async (e: any) => {
     setLoad(true);

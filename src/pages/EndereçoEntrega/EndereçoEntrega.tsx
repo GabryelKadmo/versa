@@ -1,8 +1,8 @@
 import img from "../components/images/Logo/VERSA.png";
-import img2 from "../components/images/Register/RegisterImage2.png";
+// import img2 from "../components/images/Register/RegisterImage2.png";
 import "./EndereçoEntrega.css";
 import { Select } from "@mantine/core";
-import { Checkbox, Anchor } from "@mantine/core";
+import { Checkbox } from "@mantine/core";
 export default function RegisterPage2() {
   const customStyles = {
     fontFamily: "Poppins, sans-serif", // Define a fonte Poppins
