@@ -1,0 +1,10 @@
+.borda_botao{
+    border: none;
+}
+
+.botao_estilo{
+    background-color: #F3F3F3;
+    border-radius: 20px;
+    /* border: 1px solid red; */
+}
+
