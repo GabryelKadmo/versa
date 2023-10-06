@@ -121,7 +121,7 @@ export default function HeaderMegaMenu() {
               Home
             </a>
 
-            <a href="/Novidades" id="header-things" className={classes.link}>
+            <a href="/produtos" id="header-things" className={classes.link}>
               Produtos
             </a>
             <a href="#" id="header-things" className={classes.link}>
