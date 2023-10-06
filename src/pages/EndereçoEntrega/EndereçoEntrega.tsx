@@ -8,9 +8,9 @@ export default function RegisterPage2() {
     fontFamily: "Poppins, sans-serif", // Define a fonte Poppins
   };
 
-  function redirectToWhatsapp() {
-    window.location.href = "https://wa.link/k5lh1v";
-  }
+  // function redirectToWhatsapp() {
+  //   window.location.href = "https://wa.link/k5lh1v";
+  // }
 
   return (
     <section className="row registerfont">
@@ -88,11 +88,14 @@ export default function RegisterPage2() {
                 style={customStyles} // Aplica os estilos personalizados
               />
               <button
-                onClick={redirectToWhatsapp}
+                // onClick={redirectToWhatsapp}
                 className="mt-3 mb-3 w-100 "
                 id="criarButton"
               >
-                Continuar no whatsapp
+                <a id="criarButtonA" href="https://wa.link/k5lh1v">
+                  {" "}
+                  Continuar no whatsapp
+                </a>
               </button>
             </div>
           </div>
