@@ -1,4 +1,5 @@
 import {
+  Flex,
   Box,
   Burger,
   Button,
@@ -114,6 +115,7 @@ export default function HeaderMegaMenu() {
             sx={{ height: "100%" }}
             spacing={0}
             className={classes.hiddenMobile}
+            ml={300}
           >
             <a href="/" id="header-things" className={classes.link}>
               Home
@@ -133,11 +135,15 @@ export default function HeaderMegaMenu() {
             </a>
           </Group>
 
-          <Input
-            placeholder={"Pesquisar"}
-            // className="input-iconeLupa"
-            icon={<IconSearch size={16} />}
-          ></Input>
+          <Flex className="teste_borda" ml={100} w={600} justify={"end"}>
+            <Input
+              w={332}
+              placeholder={"Pesquisar"}
+              // className="input-iconeLupa"
+              icon={<IconSearch size={16} />}
+              className={classes.hiddenMobile}
+            ></Input>
+          </Flex>
 
           <Group className={classes.hiddenMobile}>
             <Carrinho />

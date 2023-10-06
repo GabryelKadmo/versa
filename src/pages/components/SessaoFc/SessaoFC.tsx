@@ -33,7 +33,7 @@ export function FiltroCima(){
                 size="xs" 
                 c="blue"
                 >
-                    Mostrando 12 resultados de 230
+                    Mostrando 12 resultados de 12
                 </Text>
                 <Input placeholder="Pesquisar" icon={<IconSearch size={16} />} />
             </Flex>
