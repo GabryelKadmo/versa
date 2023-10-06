@@ -19,15 +19,15 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/Novidades" element={<NovidadesPage />} />
-          <Route path="/Produto" element={<InfoProduto />} />
-          <Route path="/Login" element={<LoginPage />} />
-          <Route path="/Register" element={<RegisterPage1 />} />
-          <Route path="/Endereço" element={<EndereçoEntrega />} />
-          <Route path="/Recuperar" element={<RecuperarSenha />} />
-          <Route path="/Codigo" element={<RecuperarSenha2 />} />
-          <Route path="/Redefinir" element={<RecuperarSenha3 />} />
-          <Route path="/Carrinho" element={<Carrinho />} />
+          <Route path="/novidades" element={<NovidadesPage />} />
+          <Route path="/produto" element={<InfoProduto />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage1 />} />
+          <Route path="/endereço" element={<EndereçoEntrega />} />
+          <Route path="/recuperar" element={<RecuperarSenha />} />
+          <Route path="/codigo" element={<RecuperarSenha2 />} />
+          <Route path="/redefinir" element={<RecuperarSenha3 />} />
+          <Route path="/carrinho" element={<Carrinho />} />
         </Routes>
         <Footer />
       </BrowserRouter>

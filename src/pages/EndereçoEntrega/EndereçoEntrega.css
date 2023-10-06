@@ -2,6 +2,7 @@
 .registerImage2{
     width: 100%;
     max-height: 900px;
+    align-items:start;
 }
 
 .registerText{
@@ -10,7 +11,7 @@
     font-size: 18px;
 }
 .logoregistro2{
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 #loginInputs{
 display: flex;
@@ -20,6 +21,11 @@ font-size: 21px;
 font-weight: bold;
 margin-bottom: 0px;
 }
+
+.custom-checkbox input:checked{
+    background-color: #272525;
+    border-color: #272525;
+  }
 #criarButton{
 
     background-color: #272525;
@@ -35,15 +41,18 @@ margin-bottom: 0px;
 #registerInputs input{
 height: 50px;
 border-radius: 10px;
-border: 1px solid #D9D9D9;
+/* border: 1px solid #D9D9D9; */
 padding: 12px;
 margin-bottom: 15px;
 margin-top: 5px;
+justify-content: center;
 }
 
 .fisrt-inf-index{
-    padding: 60px;
-
+    padding-top: 30px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 #criarButton{
 height: 50px;
@@ -62,6 +71,18 @@ height: 300px;
     margin-right: 0px;
     margin-left: 0px;
 }
+.formaPagamento{
+    width: 54%;
+}
+.formaPagamento select {
+    /* font-family: 'Poppins', sans-serif; */
+  }
+  
+  .formaPagamento select:checked {
+    background-color: #272525;
+    color: red; /* Define a cor do texto dentro da opção selecionada */
+  }
+
 @media (max-width: 1491px) {
     .fisrt-inf-index{
         padding: 10px;

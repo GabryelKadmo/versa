@@ -7,6 +7,7 @@ type Props = {
     img: string;
     rating: number;
     avaliacoes: number;
+    descricao: string;
   }
 
 export function CardNovidades(props: Props){
