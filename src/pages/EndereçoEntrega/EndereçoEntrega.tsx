@@ -7,6 +7,11 @@ export default function RegisterPage2() {
   const customStyles = {
     fontFamily: "Poppins, sans-serif", // Define a fonte Poppins
   };
+
+  function redirectToWhatsapp() {
+    window.location.href = "https://wa.link/k5lh1v";
+  }
+
   return (
     <section className="row registerfont">
       <div className="fisrt-inf-index">
@@ -82,7 +87,11 @@ export default function RegisterPage2() {
                 ]}
                 style={customStyles} // Aplica os estilos personalizados
               />
-              <button className="mt-3 mb-3 w-100 " id="criarButton">
+              <button
+                onClick={redirectToWhatsapp}
+                className="mt-3 mb-3 w-100 "
+                id="criarButton"
+              >
                 Continuar no whatsapp
               </button>
             </div>
