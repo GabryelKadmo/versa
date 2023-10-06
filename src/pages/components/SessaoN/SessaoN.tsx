@@ -12,7 +12,7 @@ export function Novidade(){
                 fw={600}
                 ff={"Poppins"}
             >
-                novidades
+                produtos
             </Title>
         </div>
     )
