@@ -120,7 +120,7 @@ export default function HeaderMegaMenu() {
             </a>
 
             <a href="/Novidades" id="header-things" className={classes.link}>
-              Novidades
+              Produtos
             </a>
             <a href="#" id="header-things" className={classes.link}>
               Camisas
@@ -175,7 +175,7 @@ export default function HeaderMegaMenu() {
           <UnstyledButton className={classes.link} onClick={toggleLinks}>
             <Center inline>
               <Box component="span" mr={5}>
-                Novidades
+                Produtos
               </Box>
             </Center>
           </UnstyledButton>
