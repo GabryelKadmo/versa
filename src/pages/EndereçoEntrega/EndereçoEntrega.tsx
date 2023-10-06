@@ -31,7 +31,7 @@ export default function RegisterPage2() {
               <input
                 className="w-100"
                 type="text"
-                placeholder="Digite seu email"
+                placeholder="Digite seu nome"
               />
 
               <h2 className="inputsRegistro">Celular</h2>
@@ -92,7 +92,11 @@ export default function RegisterPage2() {
                 className="mt-3 mb-3 w-100 "
                 id="criarButton"
               >
-                <a id="criarButtonA" href="https://wa.link/k5lh1v">
+                <a
+                  id="criarButtonA"
+                  href="https://wa.link/k5lh1v"
+                  target="_blank"
+                >
                   {" "}
                   Continuar no whatsapp
                 </a>
