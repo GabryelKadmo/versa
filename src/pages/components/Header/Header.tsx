@@ -103,11 +103,7 @@ export default function HeaderMegaMenu() {
     <Box pb={120}>
       <Header height={60} px="md">
         <Group position="apart" sx={{ height: "100%" }}>
-          <a
-            href="https://versa-blond.vercel.app/"
-            id="versaLogo"
-            className={classes.link}
-          >
+          <a href="/" id="versaLogo" className={classes.link}>
             VERSA
           </a>
 
