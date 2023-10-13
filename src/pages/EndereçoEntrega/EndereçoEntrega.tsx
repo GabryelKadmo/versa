@@ -1,21 +1,61 @@
 import img from "../components/images/Logo/VERSA.png";
+import { Button } from "@mantine/core";
+import { TextInput } from "@mantine/core";
 // import img2 from "../components/images/Register/RegisterImage2.png";
 import "./EndereçoEntrega.css";
 import { Select } from "@mantine/core";
 import { Checkbox } from "@mantine/core";
+import { useForm } from "@mantine/form";
+import { useEffect, useState } from "react";
 export default function RegisterPage2() {
-  const customStyles = {
-    fontFamily: "Poppins, sans-serif", // Define a fonte Poppins
-  };
+  const [searchCep, setSearchCep] = useState("");
 
-  // function redirectToWhatsapp() {
-  //   window.location.href = "https://wa.link/k5lh1v";
-  // }
+  const form = useForm({
+    initialValues: {
+      nome: "",
+      celular: "",
+      CEP: "",
+      numero: "",
+      endereco: "",
+      cidade: "",
+      estado: "",
+      bairro: "",
+      complemento: "",
+      logradouro: "",
+      pontoReferencia: "",
+    },
+    validate: {},
+  });
+
+  useEffect(() => {
+    if (searchCep.length === 8) {
+      fetch(`https://viacep.com.br/ws/${searchCep}/json/`)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Erro na requisição do CEP");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          if (data.erro) {
+            throw new Error("CEP não encontrado");
+          }
+          form.setFieldValue("logradouro", data.logradouro);
+          form.setFieldValue("bairro", data.bairro);
+          form.setFieldValue("cidade", data.localidade);
+          form.setFieldValue("estado", data.uf);
+          form.setFieldValue("complemento", data.complemento);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }
+  }, [searchCep, form]);
 
   return (
     <section className="row registerfont">
       <div className="fisrt-inf-index">
-        <a href="https://versa-blond.vercel.app/">
+        <a href="/">
           <img className="logoregistro2" src={img} />
         </a>
 
@@ -28,52 +68,91 @@ export default function RegisterPage2() {
               </h3>
 
               <h2 className="inputsRegistro mt-5">Nome do destinatário</h2>
-              <input
+              <TextInput
                 className="w-100"
                 type="text"
                 placeholder="Digite seu nome"
+                {...form.getInputProps("nome")}
               />
 
-              <h2 className="inputsRegistro">Celular</h2>
-              <input
+              {/* <h2 className="inputsRegistro">Celular</h2> */}
+              <TextInput
                 className="w-100"
                 type="tel"
                 placeholder="Digite seu número de telefone"
+                {...form.getInputProps("celular")}
               />
-
-              <h2 className="inputsRegistro">Endereço</h2>
-              <input
-                className="w-100"
-                type="text"
-                placeholder="Digite seu endereço"
-              />
-
-              <h2 className="inputsRegistro">Cidade</h2>
-              <input
-                className="w-100"
-                type="text"
-                placeholder="Digite sua cidade"
-              />
-
               <div className="row mt-2">
                 <div className="col-md-6">
                   <h2 className="inputsRegistro">CEP</h2>
-                  <input
+                  <TextInput
                     className="w-100"
                     type="text"
                     placeholder="00000-000"
+                    value={searchCep}
+                    onChange={(event) => setSearchCep(event.target.value)}
                   />
                 </div>
                 <div className="col-md-6">
                   <h2 className="inputsRegistro">Número</h2>
-                  <input className="w-100" type="text" placeholder="123" />
+                  <TextInput
+                    className="w-100"
+                    type="text"
+                    placeholder="123"
+                    {...form.getInputProps("numero")}
+                  />
                 </div>
               </div>
+              <h2 className="inputsRegistro">Endereço</h2>
+              <TextInput
+                className="w-100"
+                type="text"
+                placeholder="Digite seu endereço"
+                {...form.getInputProps("endereco")}
+              />
+
+              <h2 className="inputsRegistro">Cidade</h2>
+              <TextInput
+                className="w-100"
+                type="text"
+                placeholder="Digite sua cidade"
+                {...form.getInputProps("cidade")}
+              />
+              <h2 className="inputsRegistro">UF</h2>
+              <TextInput
+                className="w-100"
+                type="text"
+                placeholder="Digite seu estado"
+                {...form.getInputProps("estado")}
+              />
+              <h2 className="inputsRegistro">Bairro</h2>
+              <TextInput
+                className="w-100"
+                type="text"
+                placeholder="Digite o bairro"
+                {...form.getInputProps("bairro")}
+              />
+              <h2 className="inputsRegistro">Logradouro</h2>
+              <TextInput
+                className="w-100"
+                type="text"
+                placeholder="Digite o logradouro"
+                {...form.getInputProps("logradouro")}
+              />
+              <h2 className="inputsRegistro">Complemento</h2>
+              <TextInput
+                className="w-100"
+                type="text"
+                placeholder="Digite o complemento"
+                {...form.getInputProps("complemento")}
+              />
+
               <h2 className="inputsRegistro">Ponto de referência</h2>
-              <input
+              <TextInput
                 className="w-100"
                 type="text"
                 placeholder="Digite o ponto de referência"
+                {...form.getInputProps("pontoReferencia")}
               />
               <h2 className="mt-3 inputsRegistro">Forma de pagamento</h2>
               <Select
@@ -85,22 +164,37 @@ export default function RegisterPage2() {
                   "Cartão de débito",
                   "Xerecard",
                 ]}
-                style={customStyles} // Aplica os estilos personalizados
+                styles={(theme) => ({
+                  input: {
+                    "&:focus-within": {
+                      borderColor: theme.colors.green[7],
+                    },
+                  },
+                  item: {
+                    "&[data-selected]": {
+                      "&, &:hover": {
+                        backgroundColor:
+                          theme.colorScheme === "dark"
+                            ? theme.colors.dark[6]
+                            : theme.colors.dark[6],
+                        color:
+                          theme.colorScheme === "dark"
+                            ? theme.white
+                            : theme.colors.gray[0],
+                      },
+                    },
+                    "&[data-hovered]": {},
+                  },
+                })}
               />
-              <button
-                // onClick={redirectToWhatsapp}
+              <Button
+                onClick={() => window.open("https://wa.link/k5lh1v")}
+                type="submit"
                 className="mt-3 mb-3 w-100 "
                 id="criarButton"
               >
-                <a
-                  id="criarButtonA"
-                  href="https://wa.link/k5lh1v"
-                  target="_blank"
-                >
-                  {" "}
-                  Continuar no whatsapp
-                </a>
-              </button>
+                Continuar no whatsapp
+              </Button>
             </div>
           </div>
           <Checkbox

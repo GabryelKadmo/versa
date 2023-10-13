@@ -32,7 +32,7 @@ export default function LoginPage() {
   return (
     <section className="row registerfont pb-3">
       <div className="col-md-6 fisrt-inf-indexLogin">
-        <a className="registerTagA" href="https://versa-blond.vercel.app/">
+        <a className="registerTagA" href="/">
           <img className="logologin" src={img} />
         </a>
 
