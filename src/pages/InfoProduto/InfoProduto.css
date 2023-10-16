@@ -1,0 +1,10 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.layoutP{
+    /* border: 1px solid red; */
+    max-width: 93%;
+    margin: auto;
+}

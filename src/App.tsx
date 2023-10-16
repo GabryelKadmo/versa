@@ -11,6 +11,7 @@ import RecuperarSenha from "./pages/RecuperarSenha/Recuperar";
 import RecuperarSenha2 from "./pages/RecuperarSenha2/Recuperar2";
 import RecuperarSenha3 from "./pages/RecuperarSenha3/Recuperar3";
 import Carrinho from "./pages/components/Cart/Carrinho";
+import InfoProduto from "./pages/InfoProduto/InfoProduto";
 
 export default function App() {
   return (
@@ -18,7 +19,8 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/novidades" element={<NovidadesPage />} />
+          <Route path="/produtos" element={<NovidadesPage />} />
+          <Route path="/produto" element={<InfoProduto />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage1 />} />
           <Route path="/endereço" element={<EndereçoEntrega />} />

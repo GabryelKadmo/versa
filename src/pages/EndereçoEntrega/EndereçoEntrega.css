@@ -36,7 +36,12 @@ margin-bottom: 0px;
     gap: 16px;
     width: 388px;
     height: 35px;
+    text-decoration: none;
 
+}
+#criarButtonA{
+    color: white;
+    text-decoration: none;
 }
 #registerInputs input{
 height: 50px;

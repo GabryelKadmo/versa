@@ -1,4 +1,5 @@
 import {
+  Flex,
   Box,
   Burger,
   Button,
@@ -102,11 +103,7 @@ export default function HeaderMegaMenu() {
     <Box pb={120}>
       <Header height={60} px="md">
         <Group position="apart" sx={{ height: "100%" }}>
-          <a
-            href="https://versa-blond.vercel.app/"
-            id="versaLogo"
-            className={classes.link}
-          >
+          <a href="/" id="versaLogo" className={classes.link}>
             VERSA
           </a>
 
@@ -114,13 +111,14 @@ export default function HeaderMegaMenu() {
             sx={{ height: "100%" }}
             spacing={0}
             className={classes.hiddenMobile}
+            ml={300}
           >
             <a href="/" id="header-things" className={classes.link}>
               Home
             </a>
 
-            <a href="/Novidades" id="header-things" className={classes.link}>
-              Novidades
+            <a href="/produtos" id="header-things" className={classes.link}>
+              Produtos
             </a>
             <a href="#" id="header-things" className={classes.link}>
               Camisas
@@ -133,11 +131,15 @@ export default function HeaderMegaMenu() {
             </a>
           </Group>
 
-          <Input
-            placeholder={"Pesquisar"}
-            // className="input-iconeLupa"
-            icon={<IconSearch size={16} />}
-          ></Input>
+          <Flex className="teste_borda" ml={100} w={600} justify={"end"}>
+            <Input
+              w={332}
+              placeholder={"Pesquisar"}
+              // className="input-iconeLupa"
+              icon={<IconSearch size={16} />}
+              className={classes.hiddenMobile}
+            ></Input>
+          </Flex>
 
           <Group className={classes.hiddenMobile}>
             <Carrinho />
@@ -175,7 +177,7 @@ export default function HeaderMegaMenu() {
           <UnstyledButton className={classes.link} onClick={toggleLinks}>
             <Center inline>
               <Box component="span" mr={5}>
-                Novidades
+                Produtos
               </Box>
             </Center>
           </UnstyledButton>

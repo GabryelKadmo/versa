@@ -1,4 +1,8 @@
 const CartBotton = () => {
+  function redirectToEndereço() {
+    window.location.href = "/endereço";
+  }
+
   return (
     <>
       <div className=" cartFixed">
@@ -14,7 +18,7 @@ const CartBotton = () => {
             <label>Subtotal</label>
           </div>
           <div>
-            <h5>R$ 400,00</h5>
+            <h5>R$ 212,57</h5>
           </div>
         </div>
         <div className="infoValores">
@@ -23,7 +27,7 @@ const CartBotton = () => {
             <label>Frete</label>
           </div>
           <div>
-            <h5>R$ 0,00</h5>
+            <h5>R$ 14,00</h5>
           </div>
         </div>
         <div className="infoValores2">
@@ -32,7 +36,7 @@ const CartBotton = () => {
             <label>Desconto</label>
           </div>
           <div>
-            <h5>-R$ 2,00</h5>
+            <h5>-R$ 0,00</h5>
           </div>
         </div>
         <hr />
@@ -42,11 +46,15 @@ const CartBotton = () => {
             <label>Total</label>
           </div>
           <div>
-            <h5>R$ 398,00</h5>
+            <h5>R$ 226,57</h5>
           </div>
         </div>
         <br />
-        <button type="submit" className="pagamentoButton">
+        <button
+          onClick={redirectToEndereço}
+          type="submit"
+          className="pagamentoButton"
+        >
           Prosseguir para o pagamento
         </button>
       </div>

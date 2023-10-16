@@ -5,8 +5,8 @@ import { Drawer, Button } from "@mantine/core";
 // import React, { useState, useEffect } from "react";
 import CardProdutosCart from "./CardProdutosCart";
 import img from "./../../components/images/Cart/Camisa florida.jpeg";
-import img2 from "./../../components/images/Cart/CamisaJeans.jpeg";
-import img3 from "./../../components/images/Cart/CamisaSocialBranca.jpeg";
+import img2 from "./../../components/images/Cart/CamisetaBerserk.gif";
+import img3 from "./../../components/images/Cart/MoletomRetro.jfif";
 import CartBotton from "./CartBotton";
 import "./Carrinho.css";
 
@@ -19,28 +19,28 @@ export default function Carrinho() {
       <hr />
       <div style={{ maxHeight: "400px", overflowY: "auto" }}>
         <CardProdutosCart
-          title="Camisa Florida"
-          preco={100}
-          cor="Preto"
-          tamanho="M"
+          title="Camisa floral vintage"
+          preco={79.99}
+          cor="Branco"
+          tamanho="G"
           img={img}
         />
         <br />
         <br />
         <CardProdutosCart
-          title="Camisa Jeans"
-          preco={300}
+          title="Camiseta Berserk minimalista"
+          preco={39.99}
           cor="Preto"
-          tamanho="G"
+          tamanho="GG"
           img={img2}
         />
         <br />
         <br />
         <CardProdutosCart
-          title="Camisa Social"
-          preco={59.92}
+          title="Moletom Estampa Retrô"
+          preco={92.59}
           cor="Branco"
-          tamanho="P"
+          tamanho="G"
           img={img3}
         />
       </div>

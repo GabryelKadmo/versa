@@ -1,0 +1,10 @@
+/* .configImagemP{
+    border: 1px solid red;
+} */
+
+.imagem_teste button {
+        background-image: url('../images/InfoProduto/SliderCrop1.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+}
