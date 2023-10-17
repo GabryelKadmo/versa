@@ -4,7 +4,7 @@ import { Drawer, Button } from "@mantine/core";
 import CardProdutosCart from "./CardProdutosCart";
 import CartBotton from "./CartBotton";
 import "./Carrinho.css";
-import { Key, useContext } from "react";
+import { useContext } from "react";
 import AppContext from "../Context/AppContext";
 
 export default function Carrinho() {
@@ -25,23 +25,21 @@ export default function Carrinho() {
       <hr />
       <div style={{ maxHeight: "400px", overflowY: "auto" }}>
       <div className="cart-items">
-          {cartItem.map((item: { id: Key | null | undefined; titulo: string; preco: number; imgurl: string; descricao: string; marca: string; }) => (
-            <CardProdutosCart 
-              key={item.id} 
-              title={item.titulo} 
-              preco={item.preco} 
-              img={item.imgurl} 
-              cor={item.descricao} 
-              tamanho={item.marca}
-             />
-          ))}
+          {cartItem.map((item, index: number) => (
+            <><CardProdutosCart
+              key={index}
+              _id={item._id}
+              title={item.titulo}
+              preco={item.preco}
+              img={item.imgurl}
+              cor={item.descricao}
+              tamanho={item.marca} /><hr /></>))}
       </div>
       </div>
 
       <CartBotton />
     </div>
   );
-  // const [value, setValue] = useState<number | "">(0);
 
   return (
     <>

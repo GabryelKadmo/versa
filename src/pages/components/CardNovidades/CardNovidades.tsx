@@ -4,7 +4,7 @@ import AppContext from '../Context/AppContext';
 import { useContext } from 'react';
 
 type Props = {
-    id: string;
+    _id: string;
     titulo: string;
     preco: number;
     descricao: string;

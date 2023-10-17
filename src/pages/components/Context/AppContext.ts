@@ -2,7 +2,7 @@ import { createContext } from "react";
 
 interface AppContextType {
   produtos: {
-    id: string;
+    _id: string;
     titulo: string;
     preco: number;
     descricao: string;
@@ -13,7 +13,7 @@ interface AppContextType {
     imgurl: string;
   }[];
   cartItem: {
-    id: string;
+    _id: string;
     titulo: string;
     preco: number;
     descricao: string;
@@ -26,7 +26,7 @@ interface AppContextType {
   loading: boolean;
   setLoading: React.Dispatch<React.SetStateAction<boolean>>;
   setProdutos: React.Dispatch<React.SetStateAction<{
-    id: string;
+    _id: string;
     titulo: string;
     preco: number;
     descricao: string;
@@ -37,7 +37,7 @@ interface AppContextType {
     imgurl: string;
   }[]>>;
   setCartItem: React.Dispatch<React.SetStateAction<{
-    id: string;
+    _id: string;
     titulo: string;
     preco: number;
     descricao: string;

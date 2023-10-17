@@ -2,7 +2,7 @@ import { ReactNode, useState } from "react";
 import AppContext from "./AppContext";
 
 interface Product {
-  id: string;
+  _id: string;
   titulo: string;
   preco: number;
   descricao: string;

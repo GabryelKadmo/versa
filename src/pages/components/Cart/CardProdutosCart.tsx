@@ -2,8 +2,11 @@ import "./Carrinho.css";
 import { IconX } from "@tabler/icons-react";
 import { ActionIcon } from "@mantine/core";
 import { NumberInput } from "@mantine/core";
+import AppContext from "../Context/AppContext";
+import { useContext } from "react";
 
 type Props = {
+  _id: string;
   title: string;
   preco: number;
   cor: string;
@@ -12,6 +15,20 @@ type Props = {
 };
 
 const CardProdutosCart = (props: Props) => {
+
+  const context = useContext(AppContext);
+
+  if (context === undefined) {
+    // Trate o contexto indefinido aqui, se necessário
+    return <div>Erro: Contexto não definido.</div>;
+  }
+
+  const { cartItem, setCartItem } = context;
+
+  const handleRemoveItem = () => {
+    const updatedItems = cartItem.filter((item) => item._id !== props._id);
+    setCartItem(updatedItems); // Verifique o novo estado aqui
+  }
 
   return (
     <div className="cardProdutosCart">
@@ -33,7 +50,9 @@ const CardProdutosCart = (props: Props) => {
       </div>
 
       <div className="removeItem">
-        <ActionIcon className=" action-iconX">
+        <ActionIcon 
+          onClick={ handleRemoveItem } 
+          className=" action-iconX">
           <IconX />
         </ActionIcon>
         {/* <a className="tag_X" href="#">
