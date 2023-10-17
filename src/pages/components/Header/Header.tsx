@@ -15,7 +15,6 @@ import {
   rem,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { IconSearch } from "@tabler/icons-react";
 //---------
 import { Link } from "react-router-dom";
 import Carrinho from "../Cart/Carrinho";
