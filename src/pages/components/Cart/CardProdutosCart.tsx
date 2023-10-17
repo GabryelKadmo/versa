@@ -12,6 +12,7 @@ type Props = {
 };
 
 const CardProdutosCart = (props: Props) => {
+
   return (
     <div className="cardProdutosCart">
       <div className="imageLeft">
