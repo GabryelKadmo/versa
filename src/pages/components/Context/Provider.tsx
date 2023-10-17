@@ -1,39 +1,37 @@
-import React, { ReactNode, useState } from 'react'
-import AppContext from './AppContext'
+import { ReactNode, useState } from "react";
+import AppContext from "./AppContext";
+
+interface Product {
+  id: string;
+  titulo: string;
+  preco: number;
+  descricao: string;
+  marca: string;
+  categoria: string;
+  rating: number;
+  avaliacao: number;
+  imgurl: string;
+}
 
 function Provider({ children }: { children: ReactNode }) {
+  const [produtos, setProdutos] = useState<Product[]>([]);
+  const [cartItem, setCartItem] = useState<Product[]>([]);
+  const [loading, setLoading] = useState(true);
 
-    type product = {
-        id: string;
-        titulo: string;
-        preco: number;
-        descricao: string;
-        marca: string;
-        categoria: string;
-        rating: number;
-        avaliacao: number;
-        imgurl: string;
-      };
-
-    const [produtos, setProdutos] = useState<product[]>([]);
-    const [cartItem, setCartItem] = useState<product[]>([]);
-    const [loading, setLoading] = useState(true);
-
-
-    const value = {
+  return (
+    <AppContext.Provider
+      value={{
         produtos,
         setProdutos,
-        loading, 
+        cartItem,
+        setCartItem,
+        loading,
         setLoading,
-        cartItem, 
-        setCartItem
-    };
-
-    return (
-        <AppContext.Provider value={value}>
-            {children}
-        </AppContext.Provider>
-    )
+      }}
+    >
+      {children}
+    </AppContext.Provider>
+  );
 }
 
 export default Provider;

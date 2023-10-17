@@ -1,31 +1,23 @@
 import { IconShoppingCart } from "@tabler/icons-react";
 import { useDisclosure } from "@mantine/hooks";
 import { Drawer, Button } from "@mantine/core";
-// import { bearerToken } from "./../../../../Utils/config";
-// import React, { useState, useEffect } from "react";
 import CardProdutosCart from "./CardProdutosCart";
 import CartBotton from "./CartBotton";
 import "./Carrinho.css";
-import { useContext } from "react";
+import { Key, useContext } from "react";
 import AppContext from "../Context/AppContext";
 
 export default function Carrinho() {
-
-  type cartItem = {
-    id: string;
-    titulo: string;
-    preco: number;
-    descricao: string;
-    marca: string;
-    categoria: string;
-    rating: number;
-    avaliacao: number;
-    imgurl: string;
-  };
-
-
+  
   const [opened, { open, close }] = useDisclosure(false);
-  const { cartItem } = useContext(AppContext);
+  const context = useContext(AppContext);
+
+  if (context === undefined) {
+    // Trate o contexto indefinido aqui, se necessário
+    return <div>Erro: Contexto não definido.</div>;
+  }
+
+  const { cartItem } = context;
 
   const conteudo = (
     <div>
@@ -33,7 +25,7 @@ export default function Carrinho() {
       <hr />
       <div style={{ maxHeight: "400px", overflowY: "auto" }}>
       <div className="cart-items">
-          {cartItem.map((item: cartItem) => (
+          {cartItem.map((item: { id: Key | null | undefined; titulo: string; preco: number; imgurl: string; descricao: string; marca: string; }) => (
             <CardProdutosCart 
               key={item.id} 
               title={item.titulo} 
