@@ -1,18 +1,9 @@
-
-.registerImage2{
-    width: 100%;
-    max-height: 900px;
-    align-items:start;
-}
-
 .registerText{
     color: #525252;
     opacity: 50%;
     font-size: 18px;
 }
-.logoregistro2{
-    margin-bottom: 50px;
-}
+
 #loginInputs{
 display: flex;
 }
@@ -53,11 +44,15 @@ margin-top: 5px;
 justify-content: center;
 }
 
-.fisrt-inf-index{
-    padding-top: 30px !important;
-    display: flex;
+.fisrt-inf-index {
+    padding-top: 0px !important;
     flex-direction: column;
     align-items: center;
+}
+
+.fisrt-inf-index > * {
+    max-width: 50%; /* Defina a largura máxima desejada */
+    margin: 0 auto; /* Centralize horizontalmente */
 }
 #criarButton{
 height: 50px;
