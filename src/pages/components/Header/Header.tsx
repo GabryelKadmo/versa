@@ -1,5 +1,4 @@
 import {
-  Flex,
   Box,
   Burger,
   Button,
@@ -8,7 +7,6 @@ import {
   Drawer,
   Group,
   Header,
-  Input,
   ScrollArea,
   UnstyledButton,
   createStyles,
@@ -19,6 +17,7 @@ import { useDisclosure } from "@mantine/hooks";
 import { Link } from "react-router-dom";
 import Carrinho from "../Cart/Carrinho";
 import "./Header.css";
+import SearchBar from "../SearchBar/SearchBar";
 
 // const [mostrarHeader, setMostrarHeader] = useState(true);
 
@@ -130,15 +129,7 @@ export default function HeaderMegaMenu() {
             </a>
           </Group>
 
-          <Flex className="teste_borda" ml={100} w={600} justify={"end"}>
-            <Input
-              w={332}
-              placeholder={"Pesquisar"}
-              // className="input-iconeLupa"
-              icon={<IconSearch size={16} />}
-              className={classes.hiddenMobile}
-            ></Input>
-          </Flex>
+          <SearchBar />
 
           <Group className={classes.hiddenMobile}>
             <Carrinho />

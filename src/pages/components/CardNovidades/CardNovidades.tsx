@@ -1,5 +1,7 @@
 import { Card, Image, Text, Button, Group, Rating, Flex } from '@mantine/core';
 import "./CardNovidades.css"
+import AppContext from '../Context/AppContext';
+import { useContext } from 'react';
 
 type Props = {
     title: string;
@@ -11,6 +13,13 @@ type Props = {
   }
 
 export function CardNovidades(props: Props){
+
+    const { cartItem, setCartItem } = useContext(AppContext);
+
+    const handleAddCart = () => {
+        setCartItem([...cartItem, props])
+    }
+
     return(
         <div>
             <Card shadow="sm" padding="lg" radius="md" withBorder>
@@ -35,7 +44,12 @@ export function CardNovidades(props: Props){
                 <Rating pt={6} defaultValue={props.rating} fractions={2} readOnly/> 
                 <Text pt={3} color="dimmed">({props.avaliacoes})</Text>
             </Flex>
-            <Button  color="dark" fullWidth mt="md" radius="lg">
+            <Button  
+                color="dark" 
+                fullWidth 
+                mt="md" 
+                radius="lg"
+                onClick={handleAddCart}>
                 Adicionar ao carrinho
             </Button>
             </Card>
