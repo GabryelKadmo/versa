@@ -1,6 +1,6 @@
 import { Flex, Input, createStyles, rem } from "@mantine/core"
 import { IconSearch } from "@tabler/icons-react"
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import fetchProduct from "../../../api/fetchProduct";
 import AppContext from "../Context/AppContext";
 
@@ -76,28 +76,33 @@ function SearchBar() {
 
     const { classes } = useStyles();
 
-    const { setProdutos, setLoading} = useContext(AppContext);
-    
-    const [searchValue, setSearchValue] = useState("");
+    const context = useContext(AppContext);
+
+    if (context === undefined) {
+        // Trate o contexto indefinido aqui, se necessário
+        return <div>Erro: Contexto não definido.</div>;
+    }
+
+    const { setProdutos, setLoading } = context;
+
     const handleSearch = async (e: React.FormEvent) => {
         e.preventDefault();
         setLoading(true)
-        const products = await fetchProduct(`/${searchValue}`);
+        const products = await fetchProduct(`/`);
         setProdutos(products);
         setLoading(false)
-        setSearchValue('');
     }
 
     return (
         <Flex className="teste_borda" ml={100} w={600} justify={"end"}>
             <form className="search-bar" onSubmit={handleSearch}>
                 <Input
-                    value={searchValue}
+                    // value={searchValue}
                     w={332}
                     placeholder={"Pesquisar"}
                     // className="input-iconeLupa"
                     icon={<IconSearch size={16} />}
-                    onChange={({ target }) => setSearchValue(target.value)}
+                    // onChange={({ target }) => setSearchValue(target.value)}
                     className={classes.hiddenMobile}
                 ></Input>
             </form>
