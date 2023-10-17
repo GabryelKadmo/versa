@@ -66,6 +66,7 @@ export default function LoginPage() {
                 type="password"
                 placeholder="Digite sua senha"
               />
+
               <button
                 type="submit"
                 className={` mt-4  w-100 ${load && "disabled"}`}
@@ -73,6 +74,9 @@ export default function LoginPage() {
               >
                 {load ? "Carregando..." : "Entrar"}
               </button>
+              <div className="mt-3">
+                Deseja <a href="./Register">criar uma conta?</a>
+              </div>
             </form>
           </div>
         </div>
