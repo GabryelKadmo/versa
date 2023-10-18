@@ -13,34 +13,9 @@ import {
   Pagination,
   Text,
 } from "@mantine/core";
-import { CardNovidades } from "../CardNovidades/CardNovidades";
-import { useEffect, useState } from "react";
-// import { IconAt } from '@tabler/icons-react';
+import Produtos from "../Produto/Produtos";
 
 export function MeioFiltroProduto() {
-  type product = {
-    id: string;
-    titulo: string;
-    preco: number;
-    descricao: string;
-    marca: string;
-    categoria: string;
-    rating: number;
-    avaliacao: number;
-    imgurl: string;
-  };
-
-  const url = "https://versa.onrender.com/products";
-  const [products, setProducts] = useState<product[]>([]);
-
-  useEffect(() => {
-    async function fetchData() {
-      const res = await fetch(url);
-      const data = await res.json();
-      setProducts(data);
-    }
-    fetchData();
-  }, []);
 
   return (
     <div>
@@ -215,17 +190,7 @@ export function MeioFiltroProduto() {
           ]}
         >
           <>
-            {products.map((products) => (
-              <CardNovidades
-                key={products.id}
-                img={products.imgurl}
-                descricao={products.descricao}
-                title={products.titulo}
-                preco={products.preco}
-                rating={products.avaliacao}
-                avaliacoes={50}
-              />
-            ))}
+            <Produtos />
           </>
         </SimpleGrid>
       </Flex>
