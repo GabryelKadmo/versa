@@ -1,54 +1,45 @@
 import { IconShoppingCart } from "@tabler/icons-react";
 import { useDisclosure } from "@mantine/hooks";
 import { Drawer, Button } from "@mantine/core";
-// import { bearerToken } from "./../../../../Utils/config";
-// import React, { useState, useEffect } from "react";
 import CardProdutosCart from "./CardProdutosCart";
-import img from "./../../components/images/Cart/Camisa florida.jpeg";
-import img2 from "./../../components/images/Cart/CamisetaBerserk.gif";
-import img3 from "./../../components/images/Cart/MoletomRetro.jfif";
 import CartBotton from "./CartBotton";
 import "./Carrinho.css";
+import { useContext } from "react";
+import AppContext from "../Context/AppContext";
 
 export default function Carrinho() {
+  
   const [opened, { open, close }] = useDisclosure(false);
+  const context = useContext(AppContext);
+
+  if (context === undefined) {
+    // Trate o contexto indefinido aqui, se necessário
+    return <div>Erro: Contexto não definido.</div>;
+  }
+
+  const { cartItem } = context;
 
   const conteudo = (
     <div>
       <h1 className="titleCart-h1 text-center pb-4">SEU CARRINHO</h1>
       <hr />
       <div style={{ maxHeight: "400px", overflowY: "auto" }}>
-        <CardProdutosCart
-          title="Camisa floral vintage"
-          preco={79.99}
-          cor="Branco"
-          tamanho="G"
-          img={img}
-        />
-        <br />
-        <br />
-        <CardProdutosCart
-          title="Camiseta Berserk minimalista"
-          preco={39.99}
-          cor="Preto"
-          tamanho="GG"
-          img={img2}
-        />
-        <br />
-        <br />
-        <CardProdutosCart
-          title="Moletom Estampa Retrô"
-          preco={92.59}
-          cor="Branco"
-          tamanho="G"
-          img={img3}
-        />
+      <div className="cart-items">
+          {cartItem.map((item, index: number) => (
+            <><CardProdutosCart
+              key={index}
+              _id={item._id}
+              title={item.titulo}
+              preco={item.preco}
+              img={item.imgurl}
+              cor={item.descricao}
+              tamanho={item.marca} /><hr /></>))}
+      </div>
       </div>
 
       <CartBotton />
     </div>
   );
-  // const [value, setValue] = useState<number | "">(0);
 
   return (
     <>

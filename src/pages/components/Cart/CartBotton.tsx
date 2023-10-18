@@ -1,8 +1,22 @@
+import { useContext } from "react";
+import AppContext from "../Context/AppContext";
+
 const CartBotton = () => {
   function redirectToEndereço() {
     window.location.href = "/endereço";
   }
 
+  const context = useContext(AppContext);
+
+  if (context === undefined) {
+    // Trate o contexto indefinido aqui, se necessário
+    return <div>Erro: Contexto não definido.</div>;
+  }
+
+  const { cartItem } = context;
+
+  const totalPrice = cartItem.reduce(
+    (total, item) => total + item.preco, 0)
   return (
     <>
       <div className=" cartFixed">
@@ -18,7 +32,7 @@ const CartBotton = () => {
             <label>Subtotal</label>
           </div>
           <div>
-            <h5>R$ 212,57</h5>
+            <h5>R${totalPrice}</h5>
           </div>
         </div>
         <div className="infoValores">
@@ -46,7 +60,7 @@ const CartBotton = () => {
             <label>Total</label>
           </div>
           <div>
-            <h5>R$ 226,57</h5>
+            <h5>R${totalPrice + 14}</h5>
           </div>
         </div>
         <br />

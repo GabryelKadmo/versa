@@ -79,7 +79,7 @@ export default function RegisterPage2() {
                   {...form.getInputProps("nome")}
                 />
 
-                {/* <h2 className="inputsRegistro">Celular</h2> */}
+                <h2 className="inputsRegistro">Celular</h2>
                 <TextInput
                   className="w-100"
                   type="tel"
@@ -107,13 +107,6 @@ export default function RegisterPage2() {
                     />
                   </div>
                 </div>
-                <h2 className="inputsRegistro">Endereço</h2>
-                <TextInput
-                  className="w-100"
-                  type="text"
-                  placeholder="Digite seu endereço"
-                  {...form.getInputProps("endereco")}
-                />
 
                 <h2 className="inputsRegistro">Cidade</h2>
                 <TextInput
