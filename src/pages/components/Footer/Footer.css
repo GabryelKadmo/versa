@@ -37,6 +37,7 @@ display: flex;
 }
 Footer{
     background-color: #272525;
+    bottom: 0;
 }
 Footer button{
     background-color: #272525 !important;

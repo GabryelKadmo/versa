@@ -22,7 +22,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/produtos" element={<NovidadesPage />} />
-            <Route path="/produto" element={<InfoProduto />} />
+            <Route path="/produto/:_id" element={<InfoProduto />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage1 />} />
             <Route path="/endereço" element={<EndereçoEntrega />} />
