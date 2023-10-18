@@ -54,7 +54,7 @@ export default function InfoProduto() {
             ) : produto ? (
                 <Flex className="layoutP" align={'center'} justify={'center'} gap={{ base: 50, sm: 100, md: 150, lg: 200, xl: 250 }} wrap={'wrap'} pb={100}>
                     <SlideProduto imgUrl={produto.imgurl} />
-                    <InfoP titulo={produto.titulo} preco={produto.preco} descricao={produto.descricao} _id={produto._id} imgurl={produto.imgurl} rating={0} avaliacao={0} />
+                    <InfoP titulo={produto.titulo} preco={produto.preco} descricao={produto.descricao} _id={produto._id} imgurl={produto.imgurl} rating={0} avaliacao={0} marca={''} categoria={''} />
                 </Flex>
             ) : (
                 <p>Não foi possível carregar os detalhes do produto.</p>
