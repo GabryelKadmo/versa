@@ -13,7 +13,7 @@ type Props = {
 export function CardNovidades(props: Props){
     return(
         <div>
-            <Card shadow="sm" padding="lg" radius="md" withBorder>
+            <Card shadow="sm" padding="lg" radius="md" component="a" href='/produto' withBorder>
                 <Card.Section>
                     <Image
                         src={props.img}
