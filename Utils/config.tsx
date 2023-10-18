@@ -43,7 +43,7 @@ export const getProductById = async (id: any) => {
 
   const response = await fetch(`${API}/products/${id}`, config);
   const data = await response.json();
-
+  console.log(id)
   return data;
 };
 

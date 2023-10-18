@@ -2,6 +2,7 @@ import { Card, Image, Text, Button, Group, Rating, Flex } from '@mantine/core';
 import "./CardNovidades.css"
 import AppContext from '../Context/AppContext';
 import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 
 type Props = {
     _id: string;
@@ -33,11 +34,13 @@ export function CardNovidades(props: Props) {
         <div>
             <Card shadow="sm" padding="lg" radius="md" component="a" href='/produto' withBorder>
                 <Card.Section>
+                    <Link to={"/produto/" + props._id}>
                     <Image
                         src={props.imgurl}
                         height={330}
                         alt="Norway"
                     />
+                    </Link>
                 </Card.Section>
                 <Group
                     position="apart"
