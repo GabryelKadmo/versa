@@ -15,6 +15,7 @@ import InfoProduto from "./pages/InfoProduto/InfoProduto";
 import Provider from "./pages/components/Context/Provider";
 
 export default function App() {
+
   return (
     <div>
       <BrowserRouter>

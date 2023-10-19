@@ -24,10 +24,13 @@ const CardProdutosCart = (props: Props) => {
   }
 
   const { cartItem, setCartItem } = context;
+  const localStorageCart = JSON.parse(localStorage.getItem('cart') ?? '[]');
 
   const handleRemoveItem = () => {
     const updatedItems = cartItem.filter((item) => item._id !== props._id);
-    setCartItem(updatedItems); // Verifique o novo estado aqui
+    const updatedStorage = localStorageCart.filter((item: { _id: string; }) => item._id !== props._id);
+    setCartItem(updatedItems);
+    localStorage.setItem('cart', JSON.stringify(updatedStorage)); // Verifique o novo estado aqui
   }
 
   return (

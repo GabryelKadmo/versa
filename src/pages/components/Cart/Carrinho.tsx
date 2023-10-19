@@ -25,9 +25,9 @@ export default function Carrinho() {
       <hr />
       <div style={{ maxHeight: "400px", overflowY: "auto" }}>
       <div className="cart-items">
-          {cartItem.map((item, index: number) => (
+          {cartItem.map((item) => (
             <><CardProdutosCart
-              key={index}
+              key={item._id}
               _id={item._id}
               title={item.titulo}
               preco={item.preco}

@@ -1,4 +1,4 @@
-import { ReactNode, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import AppContext from "./AppContext";
 
 interface Product {
@@ -17,6 +17,15 @@ function Provider({ children }: { children: ReactNode }) {
   const [produtos, setProdutos] = useState<Product[]>([]);
   const [cartItem, setCartItem] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
+
+  const baixarCarrinho = () => {
+    const localStorageCart = JSON.parse(localStorage.getItem('cart') ?? '[]');
+    setCartItem([...localStorageCart]);
+}
+
+  useEffect(() => {
+    baixarCarrinho();
+  }, []);
 
   return (
     <AppContext.Provider
