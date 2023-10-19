@@ -22,7 +22,7 @@ const CardProdutosCart = (props: Props) => {
     return <div>Erro: Contexto não definido.</div>;
   }
 
-  const { cartItem, setCartItem, setQuantidade } = context;
+  const { cartItem, setCartItem } = context;
   const localStorageCart = JSON.parse(localStorage.getItem("cart") ?? "[]");
 
   const handleRemoveItem = () => {
