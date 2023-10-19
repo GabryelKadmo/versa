@@ -22,7 +22,7 @@ const CardProdutosCart = (props: Props) => {
     return <div>Erro: Contexto não definido.</div>;
   }
 
-  const { cartItem, setCartItem } = context;
+  const { cartItem, setCartItem, setQuantidade } = context;
   const localStorageCart = JSON.parse(localStorage.getItem("cart") ?? "[]");
 
   const handleRemoveItem = () => {
@@ -49,7 +49,7 @@ const CardProdutosCart = (props: Props) => {
           {props.tamanho}
         </p>
         <div className="inputQuantity">
-          <NumberInput min={1} defaultValue={1} withAsterisk />
+          <NumberInput min={0} defaultValue={1} withAsterisk />
         </div>
       </div>
 

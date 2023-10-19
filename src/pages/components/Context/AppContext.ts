@@ -47,7 +47,10 @@ interface AppContextType {
     avaliacao: number;
     imgurl: string;
   }[]>>;
+  quantidade: number;
+  setQuantidade: React.Dispatch<React.SetStateAction<number>>;
 }
+
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
