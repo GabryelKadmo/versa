@@ -3,7 +3,7 @@ import { IconX } from "@tabler/icons-react";
 import { ActionIcon } from "@mantine/core";
 import { NumberInput } from "@mantine/core";
 import AppContext from "../Context/AppContext";
-import { useContext } from "react";
+import { useContext} from "react";
 
 type Props = {
   _id: string;
@@ -23,7 +23,7 @@ const CardProdutosCart = (props: Props) => {
     return <div>Erro: Contexto não definido.</div>;
   }
 
-  const { cartItem, setCartItem } = context;
+  const { cartItem, setCartItem, setQuantidade } = context;
   const localStorageCart = JSON.parse(localStorage.getItem('cart') ?? '[]');
 
   const handleRemoveItem = () => {
@@ -32,6 +32,15 @@ const CardProdutosCart = (props: Props) => {
     setCartItem(updatedItems);
     localStorage.setItem('cart', JSON.stringify(updatedStorage)); // Verifique o novo estado aqui
   }
+
+  const handleChange = (e: number | "") => {
+    if (typeof e === "number") {
+      const value = e;
+      setQuantidade(value);
+    } else {
+      // handle the case when e is ""
+    }
+  };
 
   return (
     <div className="cardProdutosCart">
@@ -48,7 +57,7 @@ const CardProdutosCart = (props: Props) => {
           {props.tamanho}
         </p>
         <div className="inputQuantity">
-          <NumberInput min={0} defaultValue={1} withAsterisk />
+          <NumberInput onChange={ handleChange } min={1} defaultValue={1} withAsterisk />
         </div>
       </div>
 

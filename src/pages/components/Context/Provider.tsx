@@ -17,6 +17,7 @@ function Provider({ children }: { children: ReactNode }) {
   const [produtos, setProdutos] = useState<Product[]>([]);
   const [cartItem, setCartItem] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
+  const [quantidade, setQuantidade] = useState<number>(1);
 
   const baixarCarrinho = () => {
     const localStorageCart = JSON.parse(localStorage.getItem('cart') ?? '[]');
@@ -36,6 +37,8 @@ function Provider({ children }: { children: ReactNode }) {
         setCartItem,
         loading,
         setLoading,
+        quantidade,
+        setQuantidade
       }}
     >
       {children}
