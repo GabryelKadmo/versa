@@ -15,7 +15,6 @@ type Props = {
 };
 
 const CardProdutosCart = (props: Props) => {
-
   const context = useContext(AppContext);
 
   if (context === undefined) {
@@ -24,14 +23,16 @@ const CardProdutosCart = (props: Props) => {
   }
 
   const { cartItem, setCartItem } = context;
-  const localStorageCart = JSON.parse(localStorage.getItem('cart') ?? '[]');
+  const localStorageCart = JSON.parse(localStorage.getItem("cart") ?? "[]");
 
   const handleRemoveItem = () => {
     const updatedItems = cartItem.filter((item) => item._id !== props._id);
-    const updatedStorage = localStorageCart.filter((item: { _id: string; }) => item._id !== props._id);
+    const updatedStorage = localStorageCart.filter(
+      (item: { _id: string }) => item._id !== props._id
+    );
     setCartItem(updatedItems);
-    localStorage.setItem('cart', JSON.stringify(updatedStorage)); // Verifique o novo estado aqui
-  }
+    localStorage.setItem("cart", JSON.stringify(updatedStorage)); // Verifique o novo estado aqui
+  };
 
   return (
     <div className="cardProdutosCart">
@@ -48,14 +49,12 @@ const CardProdutosCart = (props: Props) => {
           {props.tamanho}
         </p>
         <div className="inputQuantity">
-          <NumberInput min={0} defaultValue={1} withAsterisk />
+          <NumberInput min={1} defaultValue={1} withAsterisk />
         </div>
       </div>
 
       <div className="removeItem">
-        <ActionIcon 
-          onClick={ handleRemoveItem } 
-          className=" action-iconX">
+        <ActionIcon onClick={handleRemoveItem} className=" action-iconX">
           <IconX />
         </ActionIcon>
         {/* <a className="tag_X" href="#">

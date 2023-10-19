@@ -11,13 +11,23 @@ import { useEffect, useState } from "react";
 export default function RegisterPage2() {
   const [searchCep, setSearchCep] = useState("");
 
+  // const [dados, setDados] = useState(
+  //   JSON.parse(localStorage.getItem("endereço") as any)
+  // );
+  // const [nome, setNome] = useState("");
+  // useEffect(() => {
+  //   const endereco = localStorage.getItem("endereço");
+  //   if (endereco) {
+  //     const addressObject = JSON.parse(endereco);
+  //     setDados(addressObject);
+  //   }
+  // }, []);
   const form = useForm({
     initialValues: {
       nome: "",
       celular: "",
       CEP: "",
       numero: "",
-      endereco: "",
       cidade: "",
       estado: "",
       bairro: "",
@@ -51,7 +61,14 @@ export default function RegisterPage2() {
           console.error(error);
         });
     }
-  }, [searchCep, form]);
+  }, [searchCep]);
+
+  function handleSubmit(event: any) {
+    event.preventDefault();
+    console.log(form);
+    window.open("https://wa.link/k5lh1v");
+    localStorage.setItem("endereço", JSON.stringify(form.values));
+  }
 
   return (
     <>
@@ -78,16 +95,8 @@ export default function RegisterPage2() {
                   placeholder="Digite seu nome"
                   {...form.getInputProps("nome")}
                 />
-
-                <h2 className="inputsRegistro">Celular</h2>
-                <TextInput
-                  className="w-100"
-                  type="tel"
-                  placeholder="Digite seu número de telefone"
-                  {...form.getInputProps("celular")}
-                />
                 <div className="row mt-2">
-                  <div className="col-md-6">
+                  <div className="col-md-4">
                     <h2 className="inputsRegistro">CEP</h2>
                     <TextInput
                       className="w-100"
@@ -97,13 +106,22 @@ export default function RegisterPage2() {
                       onChange={(event) => setSearchCep(event.target.value)}
                     />
                   </div>
-                  <div className="col-md-6">
+                  <div className="col-md-4">
                     <h2 className="inputsRegistro">Número</h2>
                     <TextInput
                       className="w-100"
                       type="text"
                       placeholder="123"
                       {...form.getInputProps("numero")}
+                    />
+                  </div>
+                  <div className="col-md-4">
+                    <h2 className="inputsRegistro">UF</h2>
+                    <TextInput
+                      className="w-100"
+                      type="text"
+                      placeholder="Digite seu estado"
+                      {...form.getInputProps("estado")}
                     />
                   </div>
                 </div>
@@ -117,21 +135,21 @@ export default function RegisterPage2() {
                 />
                 <div className="row mt-2">
                   <div className="col-md-6">
-                    <h2 className="inputsRegistro">UF</h2>
-                    <TextInput
-                      className="w-100"
-                      type="text"
-                      placeholder="Digite seu estado"
-                      {...form.getInputProps("estado")}
-                    />
-                  </div>
-                  <div className="col-md-6">
                     <h2 className="inputsRegistro">Bairro</h2>
                     <TextInput
                       className="w-100"
                       type="text"
                       placeholder="Digite o bairro"
                       {...form.getInputProps("bairro")}
+                    />
+                  </div>
+                  <div className="col-md-6">
+                    <h2 className="inputsRegistro">Celular</h2>
+                    <TextInput
+                      className="w-100"
+                      type="tel"
+                      placeholder="Digite seu número de telefone"
+                      {...form.getInputProps("celular")}
                     />
                   </div>
                 </div>
@@ -192,7 +210,7 @@ export default function RegisterPage2() {
                   })}
                 />
                 <Button
-                  onClick={() => window.open("https://wa.link/k5lh1v")}
+                  onClick={handleSubmit}
                   type="submit"
                   className="mt-3 mb-3 w-100 "
                   id="criarButton"
