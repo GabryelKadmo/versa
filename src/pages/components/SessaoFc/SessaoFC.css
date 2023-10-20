@@ -3,4 +3,21 @@
     display: flex;
     width: 93%;
     margin: auto;
+    
+}
+
+.borda_teste_fc{
+    border: 1px solid red;
+}
+
+/* .gap_search_button{
+    border: 1px solid red;
+} */
+
+@media (min-width: 1408px) and (max-width: 1771px){
+    .gap_search_button{
+        width: 590px;
+
+    }
+
 }

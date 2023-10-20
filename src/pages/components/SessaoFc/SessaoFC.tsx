@@ -6,28 +6,40 @@ export function FiltroCima(){
     return(
         <div className="filtro_cima">
             <Flex 
+            // className="borda_teste_fc"
+            w={"100vw"}      
+            justify={"center"}
+            >
+            <Flex 
             direction={{base: 'column', sm: 'row'}}
-            gap={{base: 50, sm: 183}} 
             align="Center" 
-            
+            // className="borda_teste_fc" 
             >
                 <Text 
                 size="md" 
                 >
                     Filtros
                 </Text>
-                <Button 
-                variant="default" 
-                radius="xl"
+                <Flex  
+                align="Center"
+                direction={{base: 'column', sm: 'row'}}
+                w={{base: 50, xs: 84, sm: 154, md: 164, lg: 204, xl: 384}}
+                // className="borda_teste_fc"
+                justify={"flex-end"}
                 >
-                    Limpar
-                </Button>
+                    <Button 
+                    variant="default" 
+                    radius="xl"
+                    >
+                        Limpar
+                    </Button>
+                </Flex>
             </Flex>
             <Flex 
             direction={{base: 'column', sm: 'row'}} 
-            gap={{base: 50, lg: 200, xl: 800}} 
             align="Center" 
             pl={12}
+            // className="borda_teste_fc"
             >
                 <Text 
                 size="xs" 
@@ -35,14 +47,24 @@ export function FiltroCima(){
                 >
                     Mostrando 12 resultados de 12
                 </Text>
-                <Input placeholder="Pesquisar" icon={<IconSearch size={16} />} />
+                <Flex
+                justify={"flex-end"}
+                className="gap_search_button"
+                w={{base: 50,xs: 150, sm: 250, md: 450, lg: 650, xl: 880}} 
+                >
+                    <Input placeholder="Pesquisar" icon={<IconSearch size={16} />} />
+                </Flex>
             </Flex>
             <Flex
-            pl={42}
+            
             align="Center"
             direction={{base: 'column', sm: 'row'}}
+            w={{base: 50, xs: 84, sm: 154, md: 164, lg: 204, xl: 264}}         
+            // className="borda_teste_fc"
+            justify={"flex-end"}
             >
                 <NativeSelect size="sm" radius="xl" data={['Popularidade', 'Promoção', 'Preço decrescente', 'Preço crescente']} />
+            </Flex>
             </Flex>
             
         </div>
