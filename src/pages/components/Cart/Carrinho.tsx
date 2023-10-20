@@ -4,13 +4,17 @@ import { Drawer, Button, Indicator } from "@mantine/core";
 import CardProdutosCart from "./CardProdutosCart";
 import CartBotton from "./CartBotton";
 import "./Carrinho.css";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import AppContext from "../Context/AppContext";
 
 export default function Carrinho() {
+
+  const [quantidadeCarrinho, setQuantidadeCarrinho] = useState (0);
   
   const [opened, { open, close }] = useDisclosure(false);
   const context = useContext(AppContext);
+
+  useEffect(() => {quantidadePopup()});
 
   if (context === undefined) {
     // Trate o contexto indefinido aqui, se necessário
@@ -18,6 +22,12 @@ export default function Carrinho() {
   }
 
   const { cartItem } = context;
+  
+  const quantidadePopup = () => {
+    setQuantidadeCarrinho(cartItem.length);
+  }
+
+  
 
   const conteudo = (
     <div>
@@ -25,7 +35,7 @@ export default function Carrinho() {
       <hr />
       <div style={{ maxHeight: "400px", overflowY: "scroll" }}>
       <div className="cart-items">
-          {cartItem.map((item) => (
+          {cartItem.map((item) => (            
             <div><CardProdutosCart
               key={item._id}
               _id={item._id}
@@ -44,12 +54,16 @@ export default function Carrinho() {
     </div>
   );
 
+
+  
+
+
   return (
     <>
       <Drawer position="right" opened={opened} onClose={close}>
         {conteudo}
       </Drawer>
-      <Indicator inline withBorder disabled label="1" size={20} offset={5}>
+      <Indicator inline withBorder label={quantidadeCarrinho} color="dark" size={20} offset={5}>
       <Button
         
         onClick={open}
