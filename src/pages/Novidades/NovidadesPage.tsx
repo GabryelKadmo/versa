@@ -1,5 +1,4 @@
 import "./Novidades.css";
-import { Image } from "@mantine/core";
 import { Novidade } from "../components/SessaoN/SessaoN";
 import { FiltroCima } from "../components/SessaoFc/SessaoFC";
 import { MeioFiltroProduto } from "../components/SessaoFP/SessaoFP";
