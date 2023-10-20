@@ -1,6 +1,6 @@
 import { IconShoppingCart } from "@tabler/icons-react";
 import { useDisclosure } from "@mantine/hooks";
-import { Drawer, Button } from "@mantine/core";
+import { Drawer, Button, Indicator } from "@mantine/core";
 import CardProdutosCart from "./CardProdutosCart";
 import CartBotton from "./CartBotton";
 import "./Carrinho.css";
@@ -49,7 +49,9 @@ export default function Carrinho() {
       <Drawer position="right" opened={opened} onClose={close}>
         {conteudo}
       </Drawer>
+      <Indicator inline withBorder disabled label="1" size={20} offset={5}>
       <Button
+        
         onClick={open}
         style={{
           background: "#f1f1f1",
@@ -65,7 +67,7 @@ export default function Carrinho() {
       >
         <IconShoppingCart size={20} /> Carrinho
       </Button>
-      
+      {/* Botão sem texto */}
     </>
   );
 }
