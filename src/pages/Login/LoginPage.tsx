@@ -58,6 +58,9 @@ export default function LoginPage() {
                 placeholder="Digite seu nome de usuário"
               />
               <h2 className="inputsRegistro">Senha</h2>
+              <div>
+              <a className="forgotPass" href="./recuperar">Esqueci a senha</a>
+              </div>
               <input
                 onChange={(e) => setSenha(e.target.value)}
                 value={senha}

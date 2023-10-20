@@ -15,7 +15,10 @@
     opacity: 50%;
     font-size: 18px;
 }
-
+.forgotPass {
+    justify-content: end;
+    display: flex;
+  }
 #loginInputs{
 display: flex;
 }
