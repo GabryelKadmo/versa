@@ -54,18 +54,18 @@ export default function Carrinho() {
         style={{
           background: "#f1f1f1",
           color: "black",
-          borderRadius: "50%", // Define o border-radius para tornar o fundo redondo
-          display: "flex", // Use display: flex
-          justifyContent: "center", // Centraliza horizontalmente
-          alignItems: "center", // Centraliza verticalmente
-          padding: "1px", // Ajuste o padding conforme necessário
-          width: "50px",
-          height: "50px",
+          borderRadius: "10px", // Define o border-radius como 0 para tornar o botão quadrado
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          padding: "1px",
+          width: "100px", // Largura e altura são iguais para criar um botão quadrado
+          height: "42px", // Largura e altura são iguais para criar um botão quadrado
         }}
       >
-        <IconShoppingCart size={20} />
+        <IconShoppingCart size={20} /> Carrinho
       </Button>
-      {/* Botão sem texto */}
+      
     </>
   );
 }
