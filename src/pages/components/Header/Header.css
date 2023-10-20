@@ -58,3 +58,6 @@
     cursor: pointer;
     flex-shrink: 0;
   }
+.bordinha_teste_header{
+  border: 1px solid red;
+}

@@ -17,7 +17,6 @@ import { useDisclosure } from "@mantine/hooks";
 import { Link } from "react-router-dom";
 import Carrinho from "../Cart/Carrinho";
 import "./Header.css";
-import SearchBar from "../SearchBar/SearchBar";
 
 // const [mostrarHeader, setMostrarHeader] = useState(true);
 
@@ -79,13 +78,13 @@ const useStyles = createStyles((theme) => ({
   },
 
   hiddenMobile: {
-    [theme.fn.smallerThan("sm")]: {
+    [theme.fn.smallerThan("md")]: {
       display: "none",
     },
   },
 
   hiddenDesktop: {
-    [theme.fn.largerThan("sm")]: {
+    [theme.fn.largerThan("md")]: {
       display: "none",
     },
   },
@@ -100,16 +99,23 @@ export default function HeaderMegaMenu() {
   return (
     <Box pb={120}>
       <Header height={60} px="md">
-        <Group position="apart" sx={{ height: "100%" }}>
+        <Group  position="apart" sx={{ height: "100%" }}>
+          <Group 
+          // className="bordinha_teste_header" 
+          w={{base:0, xs: 150, sm: 150, md: 150, lg: 150, xl:150}}
+          >            
           <a href="/" id="versaLogo" className={classes.link}>
             VERSA
           </a>
-
+          </Group>
           <Group
             sx={{ height: "100%" }}
             spacing={0}
             className={classes.hiddenMobile}
-            ml={300}
+            // className={"bordinha_teste_header"}
+            ml={{base:10, sm: 10, md: 20, lg: 20, xl:20}}
+            
+            // ml={300}
           >
             <a href="/" id="header-things" className={classes.link}>
               Home
@@ -118,18 +124,16 @@ export default function HeaderMegaMenu() {
             <a href="/produtos" id="header-things" className={classes.link}>
               Produtos
             </a>
-            <a href="#" id="header-things" className={classes.link}>
+            {/* <a href="#" id="header-things" className={classes.link}>
               Camisas
             </a>
             <a href="#" id="header-things" className={classes.link}>
               Moletons
-            </a>
+            </a> */}
             <a href="#" id="header-things" className={classes.link}>
               Pacotes
             </a>
           </Group>
-
-          <SearchBar />
 
           <Group className={classes.hiddenMobile}>
             <Carrinho />
@@ -139,6 +143,7 @@ export default function HeaderMegaMenu() {
           </Group>
 
           <Burger
+            ml={-180}
             opened={drawerOpened}
             onClick={toggleDrawer}
             className={classes.hiddenDesktop}
@@ -171,12 +176,12 @@ export default function HeaderMegaMenu() {
               </Box>
             </Center>
           </UnstyledButton>
-          <a href="#" className={classes.link}>
+          {/* <a href="#" className={classes.link}>
             Camisas
           </a>
           <a href="#" className={classes.link}>
             Moletons
-          </a>
+          </a> */}
           <a href="#" className={classes.link}>
             Pacotes
           </a>
