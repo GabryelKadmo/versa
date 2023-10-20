@@ -108,13 +108,10 @@ export default function HeaderMegaMenu() {
             sx={{ height: "100%" }}
             spacing={0}
             className={classes.hiddenMobile}
-            ml={10}
+            ml={0}
           >
             <a href="/" id="header-things" className={classes.link}>Home</a>
             <a href="/produtos" id="header-things" className={classes.link}>Produtos</a>
-            {/* <a href="#" id="header-things" className={classes.link}>Camisas</a>
-            <a href="#" id="header-things" className={classes.link}>Moletons</a>
-            <a href="#" id="header-things" className={classes.link}>Pacotes</a> */}
           </Group>
 
           <Group className={classes.hiddenMobile}>
