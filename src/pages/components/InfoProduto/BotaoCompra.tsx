@@ -29,6 +29,7 @@ export function BotaoCompra(props: Props){
 
     const handleAddCart = () => {
         if(props._id !== undefined){
+            localStorage.setItem('cart', JSON.stringify(cartItem))
             setCartItem([...cartItem, props]);
             console.log(cartItem, props)
         }

@@ -30,6 +30,9 @@ export function CardNovidades(props: Props) {
     const handleAddCart = () => {
         setCartItem([...cartItem, props]);
     }
+
+    localStorage.setItem('cart', JSON.stringify(cartItem));
+
     return (
         <div>
             <Card shadow="sm" padding="lg" radius="md" withBorder>
