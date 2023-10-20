@@ -29,9 +29,9 @@ export function CardNovidades(props: Props) {
 
     const handleAddCart = () => {
         setCartItem([...cartItem, props]);
-        localStorage.setItem('cart', JSON.stringify(cartItem));
     }
 
+    localStorage.setItem('cart', JSON.stringify(cartItem));
 
     return (
         <div>

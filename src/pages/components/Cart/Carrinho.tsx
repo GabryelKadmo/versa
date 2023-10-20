@@ -26,7 +26,7 @@ export default function Carrinho() {
       <div style={{ maxHeight: "400px", overflowY: "auto" }}>
       <div className="cart-items">
           {cartItem.map((item) => (
-            <><CardProdutosCart
+            <div><CardProdutosCart
               key={item._id}
               _id={item._id}
               title={item.titulo}
@@ -35,7 +35,7 @@ export default function Carrinho() {
               cor={item.descricao}
               tamanho={item.marca} />
               <hr />
-              </>
+              </div>
               ))}
       </div>
       </div>
