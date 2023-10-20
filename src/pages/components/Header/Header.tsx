@@ -137,9 +137,7 @@ export default function HeaderMegaMenu() {
 
           <Group className={classes.hiddenMobile}>
             <Carrinho />
-            <Link to="/Login" id="LoginButton">
-              Entrar
-            </Link>
+            <Link to="/Login" id="LoginButton">Entrar</Link>
           </Group>
 
           <Burger

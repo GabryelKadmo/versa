@@ -11,19 +11,22 @@ import { useEffect, useState } from "react";
 export default function RegisterPage2() {
   const [searchCep, setSearchCep] = useState("");
 
+  const [dados] = useState(
+    JSON.parse(localStorage.getItem("endereço") as any)
+  );
+
   const form = useForm({
     initialValues: {
-      nome: "",
-      celular: "",
-      CEP: "",
-      numero: "",
-      endereco: "",
-      cidade: "",
-      estado: "",
-      bairro: "",
-      complemento: "",
-      logradouro: "",
-      pontoReferencia: "",
+      nome: dados === "None" ? "" : dados.nome,
+      celular: dados === "None" ? "" : dados.celular,
+      CEP: dados === "None" ? "" : dados.cep,
+      numero: dados === "None" ? "" : dados.numero,
+      cidade: dados === "None" ? "" : dados.cidade,
+      estado: dados === "None" ? "" : dados.estado,
+      bairro: dados === "None" ? "" : dados.bairro,
+      complemento: dados === "None" ? "" : dados.complemento,
+      logradouro: dados === "None" ? "" : dados.logradouro,
+      pontoReferencia: dados === "None" ? "" : dados.pontoReferencia,
     },
     validate: {},
   });
@@ -51,7 +54,17 @@ export default function RegisterPage2() {
           console.error(error);
         });
     }
-  }, [searchCep, form]);
+  }, [searchCep]);
+
+  function handleSubmit(event: any) {
+    event.preventDefault();
+    const obj = {
+      ...form.values,
+      cep: searchCep,
+    };
+    window.open("https://wa.link/k5lh1v");
+    localStorage.setItem("endereço", JSON.stringify(obj));
+  }
 
   return (
     <>
@@ -78,32 +91,33 @@ export default function RegisterPage2() {
                   placeholder="Digite seu nome"
                   {...form.getInputProps("nome")}
                 />
-
-                <h2 className="inputsRegistro">Celular</h2>
-                <TextInput
-                  className="w-100"
-                  type="tel"
-                  placeholder="Digite seu número de telefone"
-                  {...form.getInputProps("celular")}
-                />
                 <div className="row mt-2">
-                  <div className="col-md-6">
+                  <div className="col-md-4">
                     <h2 className="inputsRegistro">CEP</h2>
                     <TextInput
                       className="w-100"
                       type="text"
                       placeholder="00000-000"
-                      value={searchCep}
+                      value={dados.cep === "None" ? searchCep : dados.cep}
                       onChange={(event) => setSearchCep(event.target.value)}
                     />
                   </div>
-                  <div className="col-md-6">
+                  <div className="col-md-4">
                     <h2 className="inputsRegistro">Número</h2>
                     <TextInput
                       className="w-100"
                       type="text"
                       placeholder="123"
                       {...form.getInputProps("numero")}
+                    />
+                  </div>
+                  <div className="col-md-4">
+                    <h2 className="inputsRegistro">UF</h2>
+                    <TextInput
+                      className="w-100"
+                      type="text"
+                      placeholder="Digite seu estado"
+                      {...form.getInputProps("estado")}
                     />
                   </div>
                 </div>
@@ -117,21 +131,21 @@ export default function RegisterPage2() {
                 />
                 <div className="row mt-2">
                   <div className="col-md-6">
-                    <h2 className="inputsRegistro">UF</h2>
-                    <TextInput
-                      className="w-100"
-                      type="text"
-                      placeholder="Digite seu estado"
-                      {...form.getInputProps("estado")}
-                    />
-                  </div>
-                  <div className="col-md-6">
                     <h2 className="inputsRegistro">Bairro</h2>
                     <TextInput
                       className="w-100"
                       type="text"
                       placeholder="Digite o bairro"
                       {...form.getInputProps("bairro")}
+                    />
+                  </div>
+                  <div className="col-md-6">
+                    <h2 className="inputsRegistro">Celular</h2>
+                    <TextInput
+                      className="w-100"
+                      type="tel"
+                      placeholder="Digite seu número de telefone"
+                      {...form.getInputProps("celular")}
                     />
                   </div>
                 </div>
@@ -192,7 +206,7 @@ export default function RegisterPage2() {
                   })}
                 />
                 <Button
-                  onClick={() => window.open("https://wa.link/k5lh1v")}
+                  onClick={handleSubmit}
                   type="submit"
                   className="mt-3 mb-3 w-100 "
                   id="criarButton"
