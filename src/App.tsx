@@ -15,6 +15,9 @@ import InfoProduto from "./pages/InfoProduto/InfoProduto";
 import Provider from "./pages/components/Context/Provider";
 
 export default function App() {
+  if(localStorage.getItem("endereço") === null){     
+    localStorage.setItem("endereço", JSON.stringify("None"));  
+   }
 
   return (
     <div>

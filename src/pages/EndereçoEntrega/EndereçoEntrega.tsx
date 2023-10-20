@@ -11,29 +11,22 @@ import { useEffect, useState } from "react";
 export default function RegisterPage2() {
   const [searchCep, setSearchCep] = useState("");
 
-  // const [dados, setDados] = useState(
-  //   JSON.parse(localStorage.getItem("endereço") as any)
-  // );
-  // const [nome, setNome] = useState("");
-  // useEffect(() => {
-  //   const endereco = localStorage.getItem("endereço");
-  //   if (endereco) {
-  //     const addressObject = JSON.parse(endereco);
-  //     setDados(addressObject);
-  //   }
-  // }, []);
+  const [dados] = useState(
+    JSON.parse(localStorage.getItem("endereço") as any)
+  );
+
   const form = useForm({
     initialValues: {
-      nome: "",
-      celular: "",
-      CEP: "",
-      numero: "",
-      cidade: "",
-      estado: "",
-      bairro: "",
-      complemento: "",
-      logradouro: "",
-      pontoReferencia: "",
+      nome: dados === "None" ? "" : dados.nome,
+      celular: dados === "None" ? "" : dados.celular,
+      CEP: dados === "None" ? "" : dados.cep,
+      numero: dados === "None" ? "" : dados.numero,
+      cidade: dados === "None" ? "" : dados.cidade,
+      estado: dados === "None" ? "" : dados.estado,
+      bairro: dados === "None" ? "" : dados.bairro,
+      complemento: dados === "None" ? "" : dados.complemento,
+      logradouro: dados === "None" ? "" : dados.logradouro,
+      pontoReferencia: dados === "None" ? "" : dados.pontoReferencia,
     },
     validate: {},
   });
@@ -65,9 +58,12 @@ export default function RegisterPage2() {
 
   function handleSubmit(event: any) {
     event.preventDefault();
-    console.log(form);
+    const obj = {
+      ...form.values,
+      cep: searchCep,
+    };
     window.open("https://wa.link/k5lh1v");
-    localStorage.setItem("endereço", JSON.stringify(form.values));
+    localStorage.setItem("endereço", JSON.stringify(obj));
   }
 
   return (
@@ -102,7 +98,7 @@ export default function RegisterPage2() {
                       className="w-100"
                       type="text"
                       placeholder="00000-000"
-                      value={searchCep}
+                      value={dados.cep === "None" ? searchCep : dados.cep}
                       onChange={(event) => setSearchCep(event.target.value)}
                     />
                   </div>
