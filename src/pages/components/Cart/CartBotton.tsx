@@ -18,7 +18,7 @@ const CartBotton = () => {
   const totalPrice = cartItem.reduce(
     (total, item) => total + item.preco, 0
   ).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-  
+
   return (
     <>
       <div className=" cartFixed">
@@ -34,7 +34,7 @@ const CartBotton = () => {
             <label>Subtotal</label>
           </div>
           <div>
-            <h5>R${totalPrice}</h5>
+            <h5>{totalPrice}</h5>
           </div>
         </div>
         <div className="infoValores">
