@@ -17,7 +17,6 @@ import { useDisclosure } from "@mantine/hooks";
 import { Link } from "react-router-dom";
 import Carrinho from "../Cart/Carrinho";
 import "./Header.css";
-import SearchBar from "../SearchBar/SearchBar";
 
 // const [mostrarHeader, setMostrarHeader] = useState(true);
 
@@ -109,33 +108,18 @@ export default function HeaderMegaMenu() {
             sx={{ height: "100%" }}
             spacing={0}
             className={classes.hiddenMobile}
-            ml={300}
+            ml={10}
           >
-            <a href="/" id="header-things" className={classes.link}>
-              Home
-            </a>
-
-            <a href="/produtos" id="header-things" className={classes.link}>
-              Produtos
-            </a>
-            <a href="#" id="header-things" className={classes.link}>
-              Camisas
-            </a>
-            <a href="#" id="header-things" className={classes.link}>
-              Moletons
-            </a>
-            <a href="#" id="header-things" className={classes.link}>
-              Pacotes
-            </a>
+            <a href="/" id="header-things" className={classes.link}>Home</a>
+            <a href="/produtos" id="header-things" className={classes.link}>Produtos</a>
+            {/* <a href="#" id="header-things" className={classes.link}>Camisas</a>
+            <a href="#" id="header-things" className={classes.link}>Moletons</a>
+            <a href="#" id="header-things" className={classes.link}>Pacotes</a> */}
           </Group>
-
-          <SearchBar />
 
           <Group className={classes.hiddenMobile}>
             <Carrinho />
-            <Link to="/Login" id="LoginButton">
-              Entrar
-            </Link>
+            <Link to="/Login" id="LoginButton">Entrar</Link>
           </Group>
 
           <Burger
@@ -171,15 +155,6 @@ export default function HeaderMegaMenu() {
               </Box>
             </Center>
           </UnstyledButton>
-          <a href="#" className={classes.link}>
-            Camisas
-          </a>
-          <a href="#" className={classes.link}>
-            Moletons
-          </a>
-          <a href="#" className={classes.link}>
-            Pacotes
-          </a>
           <Divider
             my="sm"
             color={theme.colorScheme === "dark" ? "dark.5" : "gray.1"}
