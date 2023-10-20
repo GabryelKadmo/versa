@@ -2,6 +2,11 @@ import img2 from "./../components/images/RecuperarSenha/RecuperarImage1.png";
 import Header from "../components/Header/Header";
 import "./Recuperar2.css";
 export default function RecuperarSenha2() {
+  function nextStep() {
+    window.location.href = "/redefinir";
+    
+  }
+
   return (
     <>
       <Header />
@@ -21,7 +26,7 @@ export default function RecuperarSenha2() {
                 placeholder="Insira o código"
               />
 
-              <button className="mt-4 w-100 " id="criarButton">
+              <button className="mt-4 w-100 " id="criarButton" onClick={nextStep}>
                 Continuar
               </button>
             </div>

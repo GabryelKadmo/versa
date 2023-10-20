@@ -5,11 +5,11 @@ import { useState } from 'react';
 export function CoresP(){
 
     const theme = useMantineTheme();
-    const [checked, setChecked] = useState(false);
-    const [checked2, setChecked2] = useState(false);
-    const [checked3, setChecked3] = useState(false);
-    const [checked4, setChecked4] = useState(false);
-    const [checked5, setChecked5] = useState(false);
+    const [checked] = useState(true);
+    // const [checked2, setChecked2] = useState(false);
+    // const [checked3, setChecked3] = useState(false);
+    // const [checked4, setChecked4] = useState(false);
+    // const [checked5, setChecked5] = useState(false);
 
     return(
         <div>
@@ -18,13 +18,13 @@ export function CoresP(){
                 <ColorSwatch
                 component="button"
                 color={theme.colors.dark[9]}
-                onClick={() => setChecked((c) => !c)}
+                // onClick={() => setChecked((c) => !c)}
                 sx={{ color: '#fff', cursor: 'pointer' }}               
                 >
                 {checked && <CheckIcon width={rem(10)} />}
                 </ColorSwatch>
 
-                <ColorSwatch
+                {/* <ColorSwatch
                 component="button"
                 color={theme.colors.dark[9]}
                 onClick={() => setChecked2((c) => !c)}
@@ -58,7 +58,7 @@ export function CoresP(){
                 sx={{ color: '#fff', cursor: 'pointer' }}
                 >
                 {checked5 && <CheckIcon width={rem(10)} />}
-                </ColorSwatch>
+                </ColorSwatch> */}
 
             </Group>
         </div>

@@ -49,7 +49,7 @@ const CardProdutosCart = (props: Props) => {
           {props.tamanho}
         </p>
         <div className="inputQuantity">
-          <NumberInput min={0} defaultValue={1} withAsterisk />
+          <NumberInput min={1} defaultValue={1} withAsterisk />
         </div>
       </div>
 
