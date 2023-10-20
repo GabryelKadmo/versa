@@ -113,7 +113,7 @@ export default function HeaderMegaMenu() {
             spacing={0}
             className={classes.hiddenMobile}
             // className={"bordinha_teste_header"}
-            ml={{base:10, sm: 10, md: 20, lg: 20, xl:20}}
+            ml={{base:10, sm: 30, md: 50, lg: 70, xl:90}}
             
             // ml={300}
           >
