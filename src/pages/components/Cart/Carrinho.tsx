@@ -68,7 +68,6 @@ export default function Carrinho() {
         <IconShoppingCart size={20} /> Carrinho
       </Button>
       </Indicator>
-      {/* Botão sem texto */}
     </>
   );
 }

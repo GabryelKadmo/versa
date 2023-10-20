@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Syne:wght@800&display=swap");
 
+.img_slide{
+  border-radius: 20px;
+}
 .caixa_slide {
   margin-top: -100px;
   /* border: 1px solid red; */
@@ -7,6 +10,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  
 }
 
 .slide_centro {
@@ -14,6 +18,8 @@
   display: flex;
   flex-direction: column;
   width: 85%;
+  margin-top: 100px;
+
 }
 
 .texto_versa {
