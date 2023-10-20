@@ -94,11 +94,19 @@ function SearchBar() {
     }
 
     return (
-        <Flex className="teste_borda" ml={100} w={600} justify={"end"}>
+        <Flex 
+        className="teste_borda" 
+        // className="bordinha_teste_header" 
+        ml={{base:10,sm: 180, md: 50, lg: 140, xl:80}} 
+        // ml={100}
+        w={{base:180, sm: 180, md: 50, lg: 140, xl: 600}} 
+        // w={600}
+        justify={"end"}>
             <form className="search-bar" onSubmit={handleSearch}>
                 <Input
                     // value={searchValue}
-                    w={332}
+                    // w={332}
+                    w={{base:180, sm: 180, md: 120, lg: 270, xl: 332}}
                     placeholder={"Pesquisar"}
                     // className="input-iconeLupa"
                     icon={<IconSearch size={16} />}

@@ -78,13 +78,13 @@ const useStyles = createStyles((theme) => ({
   },
 
   hiddenMobile: {
-    [theme.fn.smallerThan("sm")]: {
+    [theme.fn.smallerThan("md")]: {
       display: "none",
     },
   },
 
   hiddenDesktop: {
-    [theme.fn.largerThan("sm")]: {
+    [theme.fn.largerThan("md")]: {
       display: "none",
     },
   },
@@ -99,19 +99,40 @@ export default function HeaderMegaMenu() {
   return (
     <Box pb={120}>
       <Header height={60} px="md">
-        <Group position="apart" sx={{ height: "100%" }}>
+        <Group  position="apart" sx={{ height: "100%" }}>
+          <Group 
+          // className="bordinha_teste_header" 
+          w={{base:0, xs: 150, sm: 150, md: 150, lg: 150, xl:150}}
+          >            
           <a href="/" id="versaLogo" className={classes.link}>
             VERSA
           </a>
-
+          </Group>
           <Group
             sx={{ height: "100%" }}
             spacing={0}
             className={classes.hiddenMobile}
-            ml={0}
+            // className={"bordinha_teste_header"}
+            ml={{base:10, sm: 10, md: 20, lg: 20, xl:20}}
+            
+            // ml={300}
           >
-            <a href="/" id="header-things" className={classes.link}>Home</a>
-            <a href="/produtos" id="header-things" className={classes.link}>Produtos</a>
+            <a href="/" id="header-things" className={classes.link}>
+              Home
+            </a>
+
+            <a href="/produtos" id="header-things" className={classes.link}>
+              Produtos
+            </a>
+            {/* <a href="#" id="header-things" className={classes.link}>
+              Camisas
+            </a>
+            <a href="#" id="header-things" className={classes.link}>
+              Moletons
+            </a> */}
+            <a href="#" id="header-things" className={classes.link}>
+              Pacotes
+            </a>
           </Group>
 
           <Group className={classes.hiddenMobile}>
@@ -120,6 +141,7 @@ export default function HeaderMegaMenu() {
           </Group>
 
           <Burger
+            ml={-180}
             opened={drawerOpened}
             onClick={toggleDrawer}
             className={classes.hiddenDesktop}
@@ -152,6 +174,15 @@ export default function HeaderMegaMenu() {
               </Box>
             </Center>
           </UnstyledButton>
+          {/* <a href="#" className={classes.link}>
+            Camisas
+          </a>
+          <a href="#" className={classes.link}>
+            Moletons
+          </a> */}
+          <a href="#" className={classes.link}>
+            Pacotes
+          </a>
           <Divider
             my="sm"
             color={theme.colorScheme === "dark" ? "dark.5" : "gray.1"}

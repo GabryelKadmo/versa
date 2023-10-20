@@ -1,6 +1,6 @@
 import { IconShoppingCart } from "@tabler/icons-react";
 import { useDisclosure } from "@mantine/hooks";
-import { Drawer, Button } from "@mantine/core";
+import { Drawer, Button, Indicator } from "@mantine/core";
 import CardProdutosCart from "./CardProdutosCart";
 import CartBotton from "./CartBotton";
 import "./Carrinho.css";
@@ -49,22 +49,25 @@ export default function Carrinho() {
       <Drawer position="right" opened={opened} onClose={close}>
         {conteudo}
       </Drawer>
+      <Indicator inline withBorder disabled label="1" size={20} offset={5}>
       <Button
+        
         onClick={open}
         style={{
           background: "#f1f1f1",
           color: "black",
-          borderRadius: "50%", // Define o border-radius para tornar o fundo redondo
-          display: "flex", // Use display: flex
-          justifyContent: "center", // Centraliza horizontalmente
-          alignItems: "center", // Centraliza verticalmente
-          padding: "1px", // Ajuste o padding conforme necessário
-          width: "50px",
-          height: "50px",
+          borderRadius: "10px", // Define o border-radius como 0 para tornar o botão quadrado
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          padding: "1px",
+          width: "100px", // Largura e altura são iguais para criar um botão quadrado
+          height: "42px", // Largura e altura são iguais para criar um botão quadrado
         }}
       >
-        <IconShoppingCart size={20} />
+        <IconShoppingCart size={20} /> Carrinho
       </Button>
+      </Indicator>
       {/* Botão sem texto */}
     </>
   );
