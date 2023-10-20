@@ -1,6 +1,6 @@
 import "./SlideP.css"
 // import { Carousel } from '@mantine/carousel';
-import { Image, Pagination } from '@mantine/core'; 
+import { Image } from '@mantine/core'; 
 
 type Props = {
     imgUrl: string | undefined;

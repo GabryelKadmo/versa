@@ -35,7 +35,7 @@ export function CardNovidades(props: Props) {
 
     return (
         <div>
-            <Card shadow="sm" padding="lg" radius="md" component="a" href='/produto' withBorder>
+            <Card shadow="sm" padding="lg" radius="md" withBorder>
                 <Card.Section>
                     <Link to={"/produto/" + props._id}>
                     <Image
