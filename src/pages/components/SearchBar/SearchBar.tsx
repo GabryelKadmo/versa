@@ -1,11 +1,38 @@
 import { Flex, Input, createStyles, rem } from "@mantine/core"
 import { IconSearch } from "@tabler/icons-react"
-import { useContext } from "react";
-import fetchProduct from "../../../api/fetchProduct";
+import { ChangeEvent, useContext } from "react";
 import AppContext from "../Context/AppContext";
+import { useNavigate } from "react-router-dom";
 
 
 function SearchBar() {
+
+    const navigate = useNavigate();
+
+    const context = useContext(AppContext);
+
+    if (context === undefined) {
+        // Trate o contexto indefinido aqui, se necessário
+        return <div>Erro: Contexto não definido.</div>;
+    }
+
+    const { produtos, query, setSearchResults } = context
+
+    const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+        const searchValue = e.target.value.toLowerCase();
+        const filteredProducts = produtos.filter((product) =>
+            product.titulo.toLowerCase().includes(searchValue)
+        );
+
+        setSearchResults(filteredProducts);
+
+    };
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        navigate(`/search?q=${query}`);
+    }
+
     const useStyles = createStyles((theme) => ({
         link: {
             display: "flex",
@@ -76,37 +103,20 @@ function SearchBar() {
 
     const { classes } = useStyles();
 
-    const context = useContext(AppContext);
-
-    if (context === undefined) {
-        // Trate o contexto indefinido aqui, se necessário
-        return <div>Erro: Contexto não definido.</div>;
-    }
-
-    const { setProdutos, setLoading } = context;
-
-    const handleSearch = async (e: React.FormEvent) => {
-        e.preventDefault();
-        setLoading(true)
-        const products = await fetchProduct(`/`);
-        setProdutos(products);
-        setLoading(false)
-    }
-
     return (
-        <Flex 
-        className="teste_borda" 
-        // className="bordinha_teste_header" 
-        ml={{base:10,sm: 180, md: 50, lg: 140, xl:80}} 
-        // ml={100}
-        w={{base:180, sm: 180, md: 50, lg: 140, xl: 600}} 
-        // w={600}
-        justify={"end"}>
-            <form className="search-bar" onSubmit={handleSearch}>
-                <Input
+        <Flex
+            className="teste_borda"
+            // className="bordinha_teste_header" 
+            ml={{ base: 10, sm: 180, md: 50, lg: 140, xl: 80 }}
+            // ml={100}
+            w={{ base: 180, sm: 180, md: 50, lg: 140, xl: 600 }}
+            // w={600}
+            justify={"end"}>
+            <form className="search-bar" onSubmit={handleSubmit}>
+                <Input onChange={handleInputChange}
                     // value={searchValue}
                     // w={332}
-                    w={{base:180, sm: 180, md: 120, lg: 270, xl: 332}}
+                    w={{ base: 180, sm: 180, md: 120, lg: 270, xl: 332 }}
                     placeholder={"Pesquisar"}
                     // className="input-iconeLupa"
                     icon={<IconSearch size={16} />}

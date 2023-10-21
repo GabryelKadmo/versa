@@ -1,6 +1,7 @@
 import "./SessaoFC.css"
-import { Text, Button, Input, Flex, NativeSelect } from '@mantine/core';
-import { IconSearch } from '@tabler/icons-react';
+import { Text, Button, Flex, NativeSelect } from '@mantine/core';
+// import { IconSearch } from '@tabler/icons-react';
+import SearchBar from "../SearchBar/SearchBar";
 
 export function FiltroCima(){
     return(
@@ -52,7 +53,7 @@ export function FiltroCima(){
                 className="gap_search_button"
                 w={{base: 50,xs: 150, sm: 250, md: 450, lg: 650, xl: 880}} 
                 >
-                    <Input placeholder="Pesquisar" icon={<IconSearch size={16} />} />
+                    <SearchBar />
                 </Flex>
             </Flex>
             <Flex

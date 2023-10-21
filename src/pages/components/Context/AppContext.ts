@@ -49,6 +49,32 @@ interface AppContextType {
   }[]>>;
   quantidade: number;
   setQuantidade: React.Dispatch<React.SetStateAction<number>>;
+  query: string | undefined;
+  setQuery: React.Dispatch<React.SetStateAction<string | undefined>>
+  searchTerm: string;
+  setSearchTerm: React.Dispatch<React.SetStateAction<string>>;
+  searchResults: {
+    _id: string;
+    titulo: string;
+    preco: number;
+    descricao: string;
+    marca: string;
+    categoria: string;
+    rating: number;
+    avaliacao: number;
+    imgurl: string;
+  }[];
+  setSearchResults: React.Dispatch<React.SetStateAction<{
+    _id: string;
+    titulo: string;
+    preco: number;
+    descricao: string;
+    marca: string;
+    categoria: string;
+    rating: number;
+    avaliacao: number;
+    imgurl: string;
+  }[]>>;
 }
 
 

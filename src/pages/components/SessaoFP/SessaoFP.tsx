@@ -14,8 +14,21 @@ import {
   Text,
 } from "@mantine/core";
 import Produtos from "../Produto/Produtos";
+import AppContext from "../Context/AppContext";
+import { useContext } from "react";
+import SearchResult from "../../SearchResult/SearchResult";
 
 export function MeioFiltroProduto() {
+
+  const context = useContext(AppContext);
+
+  if (context === undefined) {
+    // Trate o contexto indefinido aqui, se necessário
+    return <div>Erro: Contexto não definido.</div>;
+  }
+
+  const { searchResults } = context
+
   return (
     <div>
       <Flex className="borda" maw={1730} pt={40} wrap={"nowrap"}>
@@ -296,7 +309,7 @@ export function MeioFiltroProduto() {
           ]}
         >
           <>
-            <Produtos />
+           {searchResults.length <= 0 ? <Produtos /> : <SearchResult />}
           </>
         </SimpleGrid>
       </Flex>
