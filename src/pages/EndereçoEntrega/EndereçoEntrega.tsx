@@ -9,11 +9,15 @@ import { Checkbox } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import { useEffect, useState } from "react";
 export default function RegisterPage2() {
-  const [searchCep, setSearchCep] = useState("");
-
+  
   const [dados] = useState(
     JSON.parse(localStorage.getItem("endereço") as any)
-  );
+    );
+    useEffect(() => {
+      setSearchCep(dados.cep === "None" || dados.cep === undefined ? "" : dados.cep);
+    }, [dados]);
+
+  const [searchCep, setSearchCep] = useState("");
 
   const form = useForm({
     initialValues: {
@@ -32,7 +36,7 @@ export default function RegisterPage2() {
   });
 
   useEffect(() => {
-    if (searchCep.length === 8) {
+    if (searchCep && searchCep.length === 8) {
       fetch(`https://viacep.com.br/ws/${searchCep}/json/`)
         .then((response) => {
           if (!response.ok) {
@@ -98,7 +102,7 @@ export default function RegisterPage2() {
                       className="w-100"
                       type="text"
                       placeholder="00000-000"
-                      value={dados.cep === "None" ? searchCep : dados.cep}
+                      value={searchCep}
                       onChange={(event) => setSearchCep(event.target.value)}
                     />
                   </div>
