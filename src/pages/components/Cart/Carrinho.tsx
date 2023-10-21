@@ -27,8 +27,6 @@ export default function Carrinho() {
     setQuantidadeCarrinho(cartItem.length);
   }
 
-  
-
   const conteudo = (
     <div>
       <h1 className="titleCart-h1 text-center pb-4">SEU CARRINHO</h1>
@@ -54,18 +52,13 @@ export default function Carrinho() {
     </div>
   );
 
-
-  
-
-
   return (
     <>
       <Drawer position="right" opened={opened} onClose={close}>
         {conteudo}
       </Drawer>
       <Indicator inline withBorder label={quantidadeCarrinho} color="dark" size={20} offset={5}>
-      <Button
-        
+      <Button      
         onClick={open}
         style={{
           background: "#f1f1f1",
