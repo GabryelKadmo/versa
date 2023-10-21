@@ -39,7 +39,7 @@ export default function RegisterPage1() {
   return (
     <section className="row registerfont pb-3">
       <div className="col-md-6 fisrt-inf-index-Regiser">
-        <a className="registerTagA" href="https://versa-blond.vercel.app/">
+        <a className="registerTagA" href="/">
           <img className="logoregistro1" src={img} />
         </a>
 
