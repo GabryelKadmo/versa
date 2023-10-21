@@ -8,12 +8,13 @@ export default function Produtos() {
 
   const context = useContext(AppContext);
 
-      if (context === undefined) {
+  if (context === undefined) {
     // Trate o contexto indefinido aqui, se necessário
     return <div>Erro: Contexto não definido.</div>;
-}
+  }
 
   const { produtos, setProdutos, loading, setLoading } = context
+
 
   useEffect(() => {
     fetchProduct('').then((response) => {
@@ -34,12 +35,12 @@ export default function Produtos() {
             imgurl={produto.imgurl}
             rating={produto.rating}
             avaliacao={produto.avaliacao}
-            descricao={produto.descricao} 
+            descricao={produto.descricao}
             _id={produto._id}
-            marca={""} 
-            categoria={""}          />
+            marca={""}
+            categoria={""} />
         )}
-        
+
       </>
     )
   )
