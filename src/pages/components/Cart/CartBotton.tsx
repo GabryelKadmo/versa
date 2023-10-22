@@ -22,7 +22,6 @@ const CartBotton = () => {
   return (
     <>
       <div className=" cartFixed">
-        <hr />
         <input
           className="inputCupom"
           placeholder="Insira seu cupom aqui"
