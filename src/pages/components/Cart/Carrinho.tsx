@@ -28,10 +28,10 @@ export default function Carrinho() {
   }
 
   const conteudo = (
-    <div>
+    <div className="mt-3">
       <h1 className="titleCart-h1 text-center pb-4">SEU CARRINHO</h1>
       <hr />
-      <div style={{ maxHeight: "400px", overflowY: "scroll" }}>
+      <div style={{ maxHeight: "450px", overflowY: "scroll" }}>
       <div className="cart-items">
           {cartItem.map((item) => (            
             <div><CardProdutosCart
@@ -63,13 +63,13 @@ export default function Carrinho() {
         style={{
           background: "#f1f1f1",
           color: "black",
-          borderRadius: "10px", // Define o border-radius como 0 para tornar o botão quadrado
+          borderRadius: "10px", 
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
           padding: "1px",
-          width: "100px", // Largura e altura são iguais para criar um botão quadrado
-          height: "42px", // Largura e altura são iguais para criar um botão quadrado
+          width: "100px",
+          height: "42px", 
         }}
       >
         <IconShoppingCart size={20} /> Carrinho

@@ -2,13 +2,15 @@
     /* border: 1px solid red; */
     display: flex;
     width: 93%;
-    margin: 10px auto;
+    margin: 100px auto;
 }
 .group{
     flex-direction: column;
 }
 .borda{
-    margin: 10px;
+    margin-top: 0px !important; 
+    margin: auto;
+
 }
 
 /* .borda_teste{

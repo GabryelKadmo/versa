@@ -98,7 +98,7 @@ export default function HeaderMegaMenu() {
 
   return (
     <Box pb={40}>
-      <Header height={60} px="md">
+      <Header height={60} px="md" sx={{ position: 'fixed'}}>
         <Group  position="apart" sx={{ height: "100%" }}>
           <Group 
           // className="bordinha_teste_header" 
