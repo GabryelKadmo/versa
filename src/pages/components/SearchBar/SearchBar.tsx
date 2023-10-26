@@ -2,12 +2,8 @@ import { Flex, Input, createStyles, rem } from "@mantine/core"
 import { IconSearch } from "@tabler/icons-react"
 import { ChangeEvent, useContext } from "react";
 import AppContext from "../Context/AppContext";
-import { useNavigate } from "react-router-dom";
 
-
-function SearchBar() {
-
-    const navigate = useNavigate();
+function SearchBar() {    
 
     const context = useContext(AppContext);
 
@@ -16,7 +12,8 @@ function SearchBar() {
         return <div>Erro: Contexto não definido.</div>;
     }
 
-    const { produtos, query, setSearchResults } = context
+    const { produtos, setSearchResults } = context
+    
 
     const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
         const searchValue = e.target.value.toLowerCase();
@@ -30,7 +27,6 @@ function SearchBar() {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        navigate(`/search?q=${query}`);
     }
 
     const useStyles = createStyles((theme) => ({
