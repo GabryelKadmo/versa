@@ -1,6 +1,6 @@
 import "./QuantidadeCompraP.css";
-import { Flex } from "@mantine/core";
-import { BotaoQuantidade } from "./BotaoQuantidade";
+// import { Flex } from "@mantine/core";
+// import { BotaoQuantidade } from "./BotaoQuantidade";
 
 export function QuantidadeCompraP() {
   return (
