@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Syne:wght@800&display=swap");
+
+.img_slide{
+  border-radius: 20px;
+}
+.caixa_slide {
+  margin-top: -100px;
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.slide_centro {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+  margin-top: 100px;
+
+}
+
+.texto_versa {
+  /* border: 1px solid red; */
+  height: 6rem;
+  width: 100%;
+  max-width: 65rem;
+  margin-top: 89px;
+  margin-bottom: 89px;
+  color: black;
+}
+
+.texto_versa h1 {
+  text-align: center;
+  font-family: "Syne", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 141.5%;
+  /* width: 1268px; */
+  font-style: normal;
+  text-transform: uppercase;
+}
