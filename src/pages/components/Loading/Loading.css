@@ -1,6 +1,6 @@
 .loading {
     font-size: 2rem;
-    margin: -300px ;
+    margin: 200px; ;
     margin-left: 550px;
     animation: spin 1s linear infinite;
 }

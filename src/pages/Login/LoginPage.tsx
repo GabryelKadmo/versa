@@ -19,11 +19,11 @@ export default function LoginPage() {
     const data = await login(loginForm);
     setLoad(false);
 
-    if (data.status === "Login bem-sucedido") {
-      console.log(data.status);
+    if (data.detail === "Login bem-sucedido") {
+      console.log(data.detail);
       window.location.href = "/";
     } else {
-      setError(data.status);
+      setError(data.detail);
     }
     localStorage.setItem("token", data.access_token);
     console.log(data.access_token);
