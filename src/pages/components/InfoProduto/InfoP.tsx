@@ -8,6 +8,7 @@ import {
 import { CoresP } from "./CoresP";
 import "./InfoP.css";
 import { TamanhoP } from "./TamanhoP";
+// import { QuantidadeCompraP } from "./QuantidadeCompraP";
 import { BotaoCompra } from "./BotaoCompra";
 import { useDisclosure } from "@mantine/hooks";
 import { Modal } from "@mantine/core";
