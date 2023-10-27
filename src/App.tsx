@@ -1,6 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 // import Header from "./pages/components/Header/Header";
-import { LandingPage } from "./pages/LandingPage/LandingPage";
 import Footer from "./pages/components/Footer/Footer";
 import EndereçoEntrega from "./pages/EndereçoEntrega/EndereçoEntrega";
 // import Layout from "./pages/components/Layout/Layout";
@@ -25,8 +24,7 @@ export default function App() {
       <BrowserRouter>
         <Provider>
           <Routes>
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/ian" element={<LandingPageNew />} />
+            <Route path="/" element={<LandingPageNew />} />
             <Route path="/produtos" element={<NovidadesPage />} />
             <Route path="/produto/:_id" element={<InfoProduto />} />
             <Route path="/login" element={<LoginPage />} />
