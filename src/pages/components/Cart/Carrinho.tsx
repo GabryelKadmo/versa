@@ -67,31 +67,60 @@ export default function Carrinho() {
       <Drawer position="right" opened={opened} onClose={close}>
         {conteudo}
       </Drawer>
-      <Indicator
-        inline
-        withBorder
-        label={quantidadeCarrinho}
-        color="dark"
-        size={20}
-        offset={5}
-      >
-        <Button
-          onClick={open}
-          style={{
-            background: "#f1f1f1",
-            color: "black",
-            borderRadius: "10px",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            padding: "1px",
-            width: "100px",
-            height: "42px",
-          }}
-        >
-          <IconShoppingCart size={20} /> Carrinho
-        </Button>
-      </Indicator>
+      {quantidadeCarrinho < 1 ? (
+  // Renderizar o componente sem label e com size 0
+  <Indicator
+    inline
+    withBorder
+    color="dark"
+    size={0}
+    offset={5}
+  >
+    <Button
+      onClick={open}
+      style={{
+        background: "#f1f1f1",
+        color: "black",
+        borderRadius: "10px",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        padding: "1px",
+        width: "100px",
+        height: "42px",
+      }}
+    >
+      <IconShoppingCart size={20} /> Carrinho
+    </Button>
+  </Indicator>
+) : (
+  <Indicator
+    inline
+    withBorder
+    label={quantidadeCarrinho}
+    color="dark"
+    size={20}
+    offset={5}
+  >
+    <Button
+      onClick={open}
+      style={{
+        background: "#f1f1f1",
+        color: "black",
+        borderRadius: "10px",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        padding: "1px",
+        width: "100px",
+        height: "42px",
+      }}
+    >
+      <IconShoppingCart size={20} /> Carrinho
+    </Button>
+  </Indicator>
+)}
+
     </>
   );
 }
