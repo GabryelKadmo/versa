@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+.container_co {
+  /* border: 1px solid red; */
+  margin: 0 auto;
+  /* display: flex; */
+  /* align-items: center; */
+  width: 85%;
+}
+
+.hover_click_co{
+  transition: transform 0.8s;
+}
+
+.hover_click_co:hover {
+  transform: scale(0.98);
+  cursor: pointer;
+}
+
+.mais_estilos {
+  margin-top: 4rem;
+  width: 100%;
+  height: 88px;
+  background: white;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 141.5%;
+  font-variant: all-small-caps;
+  transition: transform 0.8s;
+}
+
+.mais_estilos:hover {
+  transform: scale(0.98);
+}
+
+

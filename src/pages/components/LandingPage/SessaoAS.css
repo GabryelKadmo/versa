@@ -1,0 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+.container_as {
+    width: 85%;
+    margin: 69px auto;
+    /* border: 1px solid red; */
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+}
