@@ -69,13 +69,6 @@ export default function Carrinho() {
       </Drawer>
       {quantidadeCarrinho < 1 ? (
   // Renderizar o componente sem label e com size 0
-  <Indicator
-    inline
-    withBorder
-    color="dark"
-    size={0}
-    offset={5}
-  >
     <Button
       onClick={open}
       style={{
@@ -92,7 +85,6 @@ export default function Carrinho() {
     >
       <IconShoppingCart size={20} /> Carrinho
     </Button>
-  </Indicator>
 ) : (
   <Indicator
     inline
