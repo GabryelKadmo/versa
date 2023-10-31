@@ -33,7 +33,7 @@ const CartBotton = () => {
             <label>Subtotal</label>
           </div>
           <div>
-            <h5>{totalPrice}</h5>
+            <h5 className="cartBottonText">{totalPrice}</h5>
           </div>
         </div>
         <div className="infoValores">
@@ -42,7 +42,7 @@ const CartBotton = () => {
             <label>Frete</label>
           </div>
           <div>
-            <h5>R$ 0,00</h5>
+            <h5 className="cartBottonText">R$ 0,00</h5>
           </div>
         </div>
         <div className="infoValores2">
@@ -51,17 +51,17 @@ const CartBotton = () => {
             <label>Desconto</label>
           </div>
           <div>
-            <h5>R$ 0,00</h5>
+            <h5 className="cartBottonText">R$ 0,00</h5>
           </div>
         </div>
-        <hr />
-        <div className="infoValores">
+        <hr className="hrTotal mb-3" />
+        <div className="infoValorTotal">
           <br />
           <div>
             <label>Total</label>
           </div>
           <div>
-            <h5>{totalPrice}</h5>
+            <h5 className="cartBottonText">{totalPrice}</h5>
           </div>
         </div>
         <br />
