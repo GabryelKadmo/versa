@@ -30,20 +30,20 @@ export default function Carrinho() {
   };
 
   const conteudo = (
-    <div className="mt-3 " style={{ overflow: "hidden" }}>
+    <div className="cartTestArea" style={{ overflow: "hidden" }}>
       <h1 className="titleCart-h1 text-center pt-2 pb-2">SEU CARRINHO</h1>
       <hr />
-      <div>
+      <div className="cartTestArea2" style={{ minHeight: "350px", maxHeight: "350px"}}>
         {quantidadeCarrinho >= 1 ? (
           <div
             className="cartContent"
-            style={{ maxHeight: "450px", overflowY: "scroll" }}
+            style={{minHeight: "460px", maxHeight: "400px", overflowY: "scroll" }}
           >
             <div className="cart-items">
               {cartItem.map((item) => (
-                <div>
+                <div key={item._id}>
+                  
                   <CardProdutosCart
-                    key={item._id}
                     _id={item._id}
                     title={item.titulo}
                     preco={item.preco}
@@ -58,9 +58,10 @@ export default function Carrinho() {
           </div>
         ) : (
           <img
+            className="imgEmptyCart"
             src={cartSVG}
             alt="imagem carrinho vazio"
-            style={{ width: "100%", height: "auto" }}
+            style={{ width: "90%", height: "auto" }}
           />
         )}
       </div>

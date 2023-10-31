@@ -3,6 +3,7 @@ import "./CardNovidades.css";
 import AppContext from "../Context/AppContext";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
+import Swal from 'sweetalert'
 
 type Props = {
   _id: string;
@@ -30,7 +31,6 @@ export function CardNovidades(props: Props) {
   };
 
   localStorage.setItem("cart", JSON.stringify(cartItem));
-
   return (
     <div>
       <Card shadow="sm" padding="lg" radius="md" withBorder>
