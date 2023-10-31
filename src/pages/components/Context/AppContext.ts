@@ -13,7 +13,6 @@ interface AppContextType {
     imgurl: string;
   }[];
   cartItem: {
-    total: number;
     _id: string;
     titulo: string;
     preco: number;
