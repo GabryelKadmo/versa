@@ -27,7 +27,7 @@ export default function Produtos() {
   return (
     (loading ? <Loading /> :
       <>
-        {produtos.map((produto: { _id: string; titulo: string; preco: number; imgurl: string; rating: number; avaliacao: number; descricao: string; },) =>
+        {produtos.map((produto: { _id: string; titulo: string; preco: number; imgurl: string; rating: number; avaliacao: number; descricao: string; marca: string; categoria: string;},) =>
           <CardNovidades
             key={produto._id}
             titulo={produto.titulo}
@@ -37,8 +37,8 @@ export default function Produtos() {
             avaliacao={produto.avaliacao}
             descricao={produto.descricao}
             _id={produto._id}
-            marca={""}
-            categoria={""} />
+            marca={produto.marca}
+            categoria={produto.categoria} />
         )}
 
       </>

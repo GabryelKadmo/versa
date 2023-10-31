@@ -36,8 +36,8 @@ export function MeioFiltroProduto() {
           gap={1000}
           direction={"column"}
           // className="borda"
-          w={300}
-          // maw={200}
+          miw={300}
+          maw={300}
         >
           <Accordion
             multiple
@@ -47,85 +47,57 @@ export function MeioFiltroProduto() {
               <Accordion.Control>Categoria</Accordion.Control>
               <Accordion.Panel>
                 <Flex className="borda_teste">
-                  <Checkbox fz={13} label="Esportivo" />
+                  <Checkbox fz={13} label="Camisetas" />
                   <Flex
                     className="borda_teste"
                     align={"end"}
                     justify={"end"}
-                    w={176}
+                    w={173}
                   >
                     <Text ta={"right"} color="dimmed">
-                      (18)
+                      (1)
                     </Text>
                   </Flex>
                 </Flex>
                 <Space h="sm" />
                 <Flex className="borda_teste">
-                  <Checkbox fz={13} label="Formal" />
+                  <Checkbox fz={13} label="Camisas" />
                   <Flex
                     className="borda_teste"
                     align={"end"}
                     justify={"end"}
-                    w={191}
+                    w={185}
                   >
                     <Text ta={"right"} color="dimmed">
-                      (12)
+                      (10)
                     </Text>
                   </Flex>
                 </Flex>
                 <Space h="sm" />
                 <Flex className="borda_teste">
-                  <Checkbox fz={13} label="Casual" />
+                  <Checkbox fz={13} label="Moletom" />
                   <Flex
                     className="borda_teste"
                     align={"end"}
                     justify={"end"}
-                    w={193}
+                    w={179}
                   >
                     <Text ta={"right"} color="dimmed">
-                      (23)
+                      (4)
                     </Text>
                   </Flex>
                 </Flex>
                 <Space h="sm" />
                 <Flex className="borda_teste">
-                  <Checkbox fz={13} label="Minimalista" />
+                  <Checkbox fz={13} label="Calças" />
                   <Flex
                     className="borda_teste"
                     align={"end"}
                     justify={"end"}
-                    w={163}
+                    w={197}
                   >
                     <Text ta={"right"} color="dimmed">
-                      (67)
-                    </Text>
-                  </Flex>
-                </Flex>
-                <Space h="sm" />
-                <Flex className="borda_teste">
-                  <Checkbox fz={13} label="StreetWear" />
-                  <Flex
-                    className="borda_teste"
-                    align={"end"}
-                    justify={"end"}
-                    w={166}
-                  >
-                    <Text ta={"right"} color="dimmed">
-                      (34)
-                    </Text>
-                  </Flex>
-                </Flex>
-                <Space h="sm" />
-                <Flex className="borda_teste">
-                  <Checkbox fz={13} label="Floral" />
-                  <Flex
-                    className="borda_teste"
-                    align={"end"}
-                    justify={"end"}
-                    w={200}
-                  >
-                    <Text ta={"right"} color="dimmed">
-                      (12)
+                      (5)
                     </Text>
                   </Flex>
                 </Flex>
@@ -135,7 +107,6 @@ export function MeioFiltroProduto() {
                 </Anchor>
               </Accordion.Panel>
             </Accordion.Item>
-
             <Accordion.Item value="item-2">
               <Accordion.Control>Avaliações</Accordion.Control>
               <Accordion.Panel>
@@ -151,9 +122,9 @@ export function MeioFiltroProduto() {
                         className="borda_teste"
                         align={"end"}
                         justify={"end"}
-                        w={93}
+                        w={95}
                       >
-                        <Text color="dimmed">(1991)</Text>
+                        <Text color="dimmed">(18)</Text>
                       </Flex>
                     </Flex>
                     <Flex gap={12} className="borda_teste">
@@ -168,9 +139,9 @@ export function MeioFiltroProduto() {
                         className="borda_teste"
                         align={"end"}
                         justify={"end"}
-                        w={93}
+                        w={95}
                       >
-                        <Text color="dimmed">(200)</Text>
+                        <Text color="dimmed">(1)</Text>
                       </Flex>
                     </Flex>
                     <Flex gap={12} className="borda_teste">
@@ -183,9 +154,9 @@ export function MeioFiltroProduto() {
                         className="borda_teste"
                         align={"end"}
                         justify={"end"}
-                        w={93}
+                        w={95}
                       >
-                        <Text color="dimmed">(300)</Text>
+                        <Text color="dimmed">(0)</Text>
                       </Flex>
                     </Flex>
                     <Flex gap={12} className="borda_teste">
@@ -200,9 +171,9 @@ export function MeioFiltroProduto() {
                         className="borda_teste"
                         align={"end"}
                         justify={"end"}
-                        w={93}
+                        w={95}
                       >
-                        <Text color="dimmed">(500)</Text>
+                        <Text color="dimmed">(0)</Text>
                       </Flex>
                     </Flex>
                   </Group>
@@ -214,29 +185,29 @@ export function MeioFiltroProduto() {
               <Accordion.Control>Marcas</Accordion.Control>
               <Accordion.Panel>
                 <Flex className="borda_teste">
-                  <Checkbox fz={13} label="Adidas" />
+                  <Checkbox fz={13} label="Cavallier" />
                   <Flex
                     className="borda_teste"
                     align={"end"}
                     justify={"end"}
-                    w={192}
+                    w={184}
                   >
                     <Text ta={"right"} color="dimmed">
-                      (18)
+                      (1)
                     </Text>
                   </Flex>
                 </Flex>
                 <Space h="sm" />
                 <Flex className="borda_teste">
-                  <Checkbox fz={13} label="Gymshark" />
+                  <Checkbox fz={13} label="Manfinity" />
                   <Flex
                     className="borda_teste"
                     align={"end"}
                     justify={"end"}
-                    w={173}
+                    w={177}
                   >
                     <Text ta={"right"} color="dimmed">
-                      (12)
+                      (2)
                     </Text>
                   </Flex>
                 </Flex>
@@ -247,38 +218,94 @@ export function MeioFiltroProduto() {
                     className="borda_teste"
                     align={"end"}
                     justify={"end"}
-                    w={205}
+                    w={207}
                   >
                     <Text ta={"right"} color="dimmed">
-                      (23)
+                      (1)
                     </Text>
                   </Flex>
                 </Flex>
                 <Space h="sm" />
                 <Flex className="borda_teste">
-                  <Checkbox fz={13} label="Kenneth Cole" />
+                  <Checkbox fz={13} label="PerfectBlend" />
                   <Flex
                     className="borda_teste"
                     align={"end"}
                     justify={"end"}
-                    w={151}
+                    w={158}
                   >
                     <Text ta={"right"} color="dimmed">
-                      (67)
+                      (1)
                     </Text>
                   </Flex>
                 </Flex>
                 <Space h="sm" />
                 <Flex className="borda_teste">
-                  <Checkbox fz={13} label="Puma" />
+                  <Checkbox fz={13} label="BECLOT" />
                   <Flex
                     className="borda_teste"
                     align={"end"}
                     justify={"end"}
-                    w={199}
+                    w={188}
                   >
                     <Text ta={"right"} color="dimmed">
-                      (34)
+                      (6)
+                    </Text>
+                  </Flex>
+                </Flex>
+                <Space h="sm" />
+                <Flex className="borda_teste">
+                  <Checkbox fz={13} label="Voker" />
+                  <Flex
+                    className="borda_teste"
+                    align={"end"}
+                    justify={"end"}
+                    w={200}
+                  >
+                    <Text ta={"right"} color="dimmed">
+                      (1)
+                    </Text>
+                  </Flex>
+                </Flex>
+                <Space h="sm" />
+                <Flex className="borda_teste">
+                  <Checkbox fz={13} label="Harlan" />
+                  <Flex
+                    className="borda_teste"
+                    align={"end"}
+                    justify={"end"}
+                    w={195}
+                  >
+                    <Text ta={"right"} color="dimmed">
+                      (4)
+                    </Text>
+                  </Flex>
+                </Flex>
+                <Space h="sm" />
+                <Flex className="borda_teste">
+                  <Checkbox fz={13} label="Prison" />
+                  <Flex
+                    className="borda_teste"
+                    align={"end"}
+                    justify={"end"}
+                    w={197}
+                  >
+                    <Text ta={"right"} color="dimmed">
+                      (3)
+                    </Text>
+                  </Flex>
+                </Flex>
+                <Space h="sm" />
+                <Flex className="borda_teste">
+                  <Checkbox fz={13} label="HUF" />
+                  <Flex
+                    className="borda_teste"
+                    align={"end"}
+                    justify={"end"}
+                    w={209}
+                  >
+                    <Text ta={"right"} color="dimmed">
+                      (1)
                     </Text>
                   </Flex>
                 </Flex>
