@@ -11,6 +11,9 @@ interface Product {
   rating: number;
   avaliacao: number;
   imgurl: string;
+  quantidade_estoque: string;
+  quantidade: number;
+  total: number;
 }
 
 function Provider({ children }: { children: ReactNode }) {
@@ -19,13 +22,13 @@ function Provider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(true);
   const [quantidade, setQuantidade] = useState<number>(1);
   const [query, setQuery] = useState<string>();
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState<Product[]>([]);
 
   const baixarCarrinho = () => {
-    const localStorageCart = JSON.parse(localStorage.getItem('cart') ?? '[]');
+    const localStorageCart = JSON.parse(localStorage.getItem("cart") ?? "[]");
     setCartItem([...localStorageCart]);
-}
+  };
 
   useEffect(() => {
     baixarCarrinho();
@@ -47,7 +50,7 @@ function Provider({ children }: { children: ReactNode }) {
         searchTerm,
         setSearchTerm,
         searchResults,
-        setSearchResults
+        setSearchResults,
       }}
     >
       {children}

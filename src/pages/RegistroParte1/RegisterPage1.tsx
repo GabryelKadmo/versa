@@ -29,7 +29,6 @@ export default function RegisterPage1() {
     setLoad(false);
 
     if (data.mensagem === "Usuário cadastrado com sucesso") {
-      console.log(data.mensagem);
       window.location.href = "/Login";
     } else {
       setError(data.mensagem);

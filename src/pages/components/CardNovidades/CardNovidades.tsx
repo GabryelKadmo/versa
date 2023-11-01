@@ -3,7 +3,6 @@ import "./CardNovidades.css";
 import AppContext from "../Context/AppContext";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import Swal from 'sweetalert'
 
 type Props = {
   _id: string;
@@ -15,6 +14,9 @@ type Props = {
   rating: number;
   avaliacao: number;
   imgurl: string;
+  quantidade_estoque: string;
+  quantidade: number;
+  total: number;
 };
 
 export function CardNovidades(props: Props) {
@@ -25,10 +27,17 @@ export function CardNovidades(props: Props) {
     return <div>Erro: Contexto não definido.</div>;
   }
   const { cartItem, setCartItem } = context;
-
   const handleAddCart = () => {
-    setCartItem([...cartItem, props]);
+    if (cartItem.some(item => item._id === props._id)) {
+      // Produto já no carrinho, exibe um Swal de erro
+      alert("Produto já adicionado ao carrinho.");
+    } else {
+      // Produto não está no carrinho, adiciona ao carrinho e exibe um Swal de sucesso
+      setCartItem([...cartItem, props ]);
+      alert("Produto adicionado com sucesso.");
+    }
   };
+  
 
   localStorage.setItem("cart", JSON.stringify(cartItem));
   return (

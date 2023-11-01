@@ -20,13 +20,11 @@ export default function LoginPage() {
     setLoad(false);
 
     if (data.detail === "Login bem-sucedido") {
-      console.log(data.detail);
       window.location.href = "/";
     } else {
       setError(data.detail);
     }
     localStorage.setItem("token", data.access_token);
-    console.log(data.access_token);
   };
 
   return (

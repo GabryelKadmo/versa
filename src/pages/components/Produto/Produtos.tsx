@@ -5,7 +5,6 @@ import Loading from "../Loading/Loading";
 import AppContext from "../Context/AppContext";
 
 export default function Produtos() {
-
   const context = useContext(AppContext);
 
   if (context === undefined) {
@@ -13,21 +12,32 @@ export default function Produtos() {
     return <div>Erro: Contexto não definido.</div>;
   }
 
-  const { produtos, setProdutos, loading, setLoading } = context
-
+  const { produtos, setProdutos, loading, setLoading } = context;
 
   useEffect(() => {
-    fetchProduct('').then((response) => {
+    fetchProduct("").then((response) => {
       setProdutos(response);
       setLoading(false);
     });
   }, [setProdutos, setLoading]);
 
-
-  return (
-    (loading ? <Loading /> :
-      <>
-        {produtos.map((produto: { _id: string; titulo: string; preco: number; imgurl: string; rating: number; avaliacao: number; descricao: string; marca: string; categoria: string;},) =>
+  return loading ? (
+    <Loading />
+  ) : (
+    <>
+      {produtos.map(
+        (produto: {
+          _id: string;
+          titulo: string;
+          preco: number;
+          imgurl: string;
+          rating: number;
+          avaliacao: number;
+          descricao: string;
+          marca: string;
+          categoria: string;
+          quantidade_estoque: string;
+        }) => (
           <CardNovidades
             key={produto._id}
             titulo={produto.titulo}
@@ -38,11 +48,11 @@ export default function Produtos() {
             descricao={produto.descricao}
             _id={produto._id}
             marca={produto.marca}
-            categoria={produto.categoria} />
-        )}
-
-      </>
-    )
-  )
+            categoria={produto.categoria}
+            quantidade_estoque={produto.quantidade_estoque}
+          />
+        )
+      )}
+    </>
+  );
 }
-

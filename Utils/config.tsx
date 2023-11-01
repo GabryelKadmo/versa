@@ -1,4 +1,4 @@
-const API = "https://versa.onrender.com";
+const API = "https://versa-api.vercel.app";
 const bearerToken = localStorage.getItem("token");
 
 export const login = async (loginForm: any) => {
@@ -43,8 +43,23 @@ export const getProductById = async (id: any) => {
 
   const response = await fetch(`${API}/products/${id}`, config);
   const data = await response.json();
-  console.log(id)
   return data;
 };
+
+export const pedido = async (pedidoForm: any) => {
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+    },
+    method: "POST",
+    body: JSON.stringify(pedidoForm),
+  };
+
+  const response = await fetch(`${API}/orders`, config);
+  const data = await response.json();
+
+  return data;
+};
+
 
 export { bearerToken };

@@ -8,16 +8,19 @@ import { Select } from "@mantine/core";
 import { Checkbox } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import { useEffect, useState } from "react";
+import { pedido } from "../../../Utils/config";
 export default function RegisterPage2() {
-  
-  const [dados] = useState(
-    JSON.parse(localStorage.getItem("endereço") as any)
+
+  const [dados] = useState(JSON.parse(localStorage.getItem("endereço") as any));
+  useEffect(() => {
+    setSearchCep(
+      dados.cep === "None" || dados.cep === undefined ? "" : dados.cep
     );
-    useEffect(() => {
-      setSearchCep(dados.cep === "None" || dados.cep === undefined ? "" : dados.cep);
-    }, [dados]);
+  }, [dados]);
 
   const [searchCep, setSearchCep] = useState("");
+
+  const [cart] = useState(JSON.parse(localStorage.getItem("cart") ?? "[]"));
 
   const form = useForm({
     initialValues: {
@@ -48,6 +51,7 @@ export default function RegisterPage2() {
           if (data.erro) {
             throw new Error("CEP não encontrado");
           }
+          form.setFieldValue("nome", data.nome);
           form.setFieldValue("logradouro", data.logradouro);
           form.setFieldValue("bairro", data.bairro);
           form.setFieldValue("cidade", data.localidade);
@@ -60,14 +64,44 @@ export default function RegisterPage2() {
     }
   }, [searchCep]);
 
-  function handleSubmit(event: any) {
+  async function handleSubmit(event: any) {
+    console.log(form.values);
     event.preventDefault();
-    const obj = {
+    const produtos =
+      cart &&
+      cart.map((item: any) => ({
+        id: item._id,
+        nome: item.titulo,
+        // quantidade: item.quantidade_estoque,
+        quantidade: 1,
+        preco_unitario: item.preco,
+      }));
+
+    const object = {
       ...form.values,
       cep: searchCep,
     };
-    window.open("https://wa.link/k5lh1v");
-    localStorage.setItem("endereço", JSON.stringify(obj));
+    const order = {
+      nome: form.values.nome,
+      endereco: `${form.values.logradouro}, ${form.values.bairro}, ${form.values.complemento}, ${form.values.numero}`,
+      produtos: [...produtos],
+      telefone: form.values.celular,
+      tipo_pagamento: "PIX",
+    };
+
+    await pedido(order);
+    const produtosStr = produtos.map((produtos:any) => {
+      return `${produtos.nome} - R$ ${produtos.preco_unitario}`;
+    }).join("%0A");
+    const total = produtos.reduce((accumulator:any, produtos:any) => {
+      return accumulator + produtos.preco_unitario;
+    }, 0);
+    
+    const whatsapp = `*DETALHES%20DO%20PEDIDO*%3A%0A%0A*INFORMA%C3%87%C3%95ES%20DO%20CLIENTE*%3A%0A*NOME*%3A ${form.values.nome}%0A%0A*TELEFONE:* ${form.values.celular} %0A%0A*ENDEREÇO* ${form.values.logradouro}. ${form.values.bairro}, ${form.values.complemento}, Nº ${form.values.numero} %0A%0A*REFERÊNCIA:* ${form.values.pontoReferencia}%0A%0A*PRODUTOS:*%0A${produtosStr}%0A%0A *TOTAL:* R$ ${total}%0A%0A*FORMA DE PAGAMENTO:*%0A${"PIX"}`;
+
+    window.open(`https://wa.me/557391163838/?text=${whatsapp}`);
+
+    localStorage.setItem("endereço", JSON.stringify(object));
   }
 
   return (
@@ -133,6 +167,20 @@ export default function RegisterPage2() {
                   placeholder="Digite sua cidade"
                   {...form.getInputProps("cidade")}
                 />
+                <h2 className="inputsRegistro">Logradouro</h2>
+                <TextInput
+                  className="w-100"
+                  type="text"
+                  placeholder="Digite o logradouro"
+                  {...form.getInputProps("logradouro")}
+                />
+                <h2 className="inputsRegistro">Complemento</h2>
+                <TextInput
+                  className="w-100"
+                  type="text"
+                  placeholder="Digite o complemento"
+                  {...form.getInputProps("complemento")}
+                />
                 <div className="row mt-2">
                   <div className="col-md-6">
                     <h2 className="inputsRegistro">Bairro</h2>
@@ -153,23 +201,9 @@ export default function RegisterPage2() {
                     />
                   </div>
                 </div>
-
-                <h2 className="inputsRegistro">Logradouro</h2>
-                <TextInput
-                  className="w-100"
-                  type="text"
-                  placeholder="Digite o logradouro"
-                  {...form.getInputProps("logradouro")}
-                />
-                <h2 className="inputsRegistro">Complemento</h2>
-                <TextInput
-                  className="w-100"
-                  type="text"
-                  placeholder="Digite o complemento"
-                  {...form.getInputProps("complemento")}
-                />
-
-                <h2 className="inputsRegistro">Ponto de referência</h2>
+                <h2 className="inputsRegistro">
+                  Ponto de referência (opcional)
+                </h2>
                 <TextInput
                   className="w-100"
                   type="text"

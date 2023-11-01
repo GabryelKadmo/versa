@@ -14,6 +14,7 @@ type Props = {
   rating: number;
   avaliacao: number;
   imgurl: string;
+  quantidade_estoque: string;
 };
 
 export function BotaoCompra(props: Props) {
@@ -27,11 +28,9 @@ export function BotaoCompra(props: Props) {
   const { cartItem, setCartItem } = context;
 
   const handleAddCart = () => {
-    console.log(cartItem, props);
 
     if (props._id !== undefined) {
       setCartItem([...cartItem, props]);
-      console.log(cartItem, props);
     }
   };
   localStorage.setItem("cart", JSON.stringify(cartItem));

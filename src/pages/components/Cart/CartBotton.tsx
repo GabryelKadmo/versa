@@ -3,9 +3,16 @@ import AppContext from "../Context/AppContext";
 
 const CartBotton = () => {
   function redirectToEndereço() {
-    window.location.href = "/endereço";
-  }
+    if (cartItem.length === 0) {
+      // Carrinho vazio, exibe uma mensagem de erro ou faz alguma ação apropriada
+      alert("Seu carrinho está vazio.");
+    } else {
+      // Fazer o esquema da API de pedidos aqui
 
+
+      window.location.href = "/endereço";
+    }
+  }
   const context = useContext(AppContext);
 
   if (context === undefined) {
@@ -17,7 +24,9 @@ const CartBotton = () => {
 
   const totalPrice = cartItem.reduce(
     (total, item) => total + item.preco, 0
-  ).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  ).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+  localStorage.setItem("valor_total",(totalPrice));
+  ;
 
   return (
     <>
@@ -76,5 +85,5 @@ const CartBotton = () => {
     </>
   );
 };
-
+ 
 export default CartBotton;
