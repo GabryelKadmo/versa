@@ -50,6 +50,8 @@ export default function Produtos() {
             marca={produto.marca}
             categoria={produto.categoria}
             quantidade_estoque={produto.quantidade_estoque}
+            quantidade={1}
+            total={produto.preco}
           />
         )
       )}

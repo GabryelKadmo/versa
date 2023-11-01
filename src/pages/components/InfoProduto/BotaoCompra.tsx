@@ -15,6 +15,8 @@ type Props = {
   avaliacao: number;
   imgurl: string;
   quantidade_estoque: string;
+  quantidade: number;
+  total: number;
 };
 
 export function BotaoCompra(props: Props) {

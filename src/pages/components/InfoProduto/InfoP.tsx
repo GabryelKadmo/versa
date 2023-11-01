@@ -110,14 +110,12 @@ export function InfoP(props: Props) {
               rating={props.rating}
               avaliacao={props.avaliacao}
               imgurl={props.imgurl}
+              quantidade={1}
+              quantidade_estoque={""}
+              total={0}
             />
 
-            <Modal
-              opened={opened}
-              onClose={close}
-              centered
-              size={1020}
-            >
+            <Modal opened={opened} onClose={close} centered size={1020}>
               <img src={medidaMasculina} alt="Tabela de medidas" />
             </Modal>
             <Button onClick={open} className="tabelaMedida">
