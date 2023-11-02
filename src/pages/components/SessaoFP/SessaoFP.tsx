@@ -17,6 +17,7 @@ import Produtos from "../Produto/Produtos";
 import AppContext from "../Context/AppContext";
 import { useContext } from "react";
 import SearchResult from "../../SearchResult/SearchResult";
+import FilterResult from "../../FilterResult/FilterResult";
 
 export function MeioFiltroProduto() {
 
@@ -28,6 +29,7 @@ export function MeioFiltroProduto() {
   }
 
   const { searchResults } = context
+  const { filterResults } = context
 
   return (
     <div>
@@ -339,6 +341,9 @@ export function MeioFiltroProduto() {
         >
           <>
            {searchResults.length <= 0 ? <Produtos /> : <SearchResult />}
+          </>
+          <>
+           {filterResults.length <= 0 ? <Produtos /> : <FilterResult />}
           </>
         </SimpleGrid>
       </Flex>
