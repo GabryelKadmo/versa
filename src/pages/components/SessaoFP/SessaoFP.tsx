@@ -47,7 +47,7 @@ export function MeioFiltroProduto() {
               <Accordion.Control>Categoria</Accordion.Control>
               <Accordion.Panel>
                 <Flex className="borda_teste">
-                  <Checkbox fz={13} label="Camisetas" />
+                  <Checkbox fz={13} label="Camisetas" value="Camisetas" />
                   <Flex
                     className="borda_teste"
                     align={"end"}
@@ -61,7 +61,7 @@ export function MeioFiltroProduto() {
                 </Flex>
                 <Space h="sm" />
                 <Flex className="borda_teste">
-                  <Checkbox fz={13} label="Camisas" />
+                  <Checkbox fz={13} label="Camisas" value="Camisas" />
                   <Flex
                     className="borda_teste"
                     align={"end"}
@@ -75,7 +75,7 @@ export function MeioFiltroProduto() {
                 </Flex>
                 <Space h="sm" />
                 <Flex className="borda_teste">
-                  <Checkbox fz={13} label="Moletom" />
+                  <Checkbox fz={13} label="Moletom" value="Moletom" />
                   <Flex
                     className="borda_teste"
                     align={"end"}
@@ -89,7 +89,7 @@ export function MeioFiltroProduto() {
                 </Flex>
                 <Space h="sm" />
                 <Flex className="borda_teste">
-                  <Checkbox fz={13} label="Calças" />
+                  <Checkbox fz={13} label="Calças" value="Calças" />
                   <Flex
                     className="borda_teste"
                     align={"end"}
@@ -114,8 +114,10 @@ export function MeioFiltroProduto() {
                   <Group className="group" fz={13} align="initial">
                     <Flex gap={12} className="borda_teste">
                       <Radio
-                        value="5.0"
-                        label={<Rating defaultValue={5} readOnly />}
+                        value="5"
+                        label={
+                          <Rating defaultValue={5} readOnly />
+                        }
                       />
                       <Text>5.0</Text>
                       <Flex
@@ -129,7 +131,7 @@ export function MeioFiltroProduto() {
                     </Flex>
                     <Flex gap={12} className="borda_teste">
                       <Radio
-                        value="5.0"
+                        value="4.5"
                         label={
                           <Rating defaultValue={4.5} fractions={2} readOnly />
                         }
@@ -146,7 +148,7 @@ export function MeioFiltroProduto() {
                     </Flex>
                     <Flex gap={12} className="borda_teste">
                       <Radio
-                        value="5.0"
+                        value="4"
                         label={<Rating defaultValue={4} readOnly />}
                       />
                       <Text>4.0</Text>
@@ -161,7 +163,7 @@ export function MeioFiltroProduto() {
                     </Flex>
                     <Flex gap={12} className="borda_teste">
                       <Radio
-                        value="5.0"
+                        value="3.5"
                         label={
                           <Rating defaultValue={3.5} fractions={2} readOnly />
                         }
@@ -185,7 +187,7 @@ export function MeioFiltroProduto() {
               <Accordion.Control>Marcas</Accordion.Control>
               <Accordion.Panel>
                 <Flex className="borda_teste">
-                  <Checkbox fz={13} label="Cavallier" />
+                  <Checkbox fz={13} label="Cavallier" value="Cavallier" />
                   <Flex
                     className="borda_teste"
                     align={"end"}
@@ -199,7 +201,7 @@ export function MeioFiltroProduto() {
                 </Flex>
                 <Space h="sm" />
                 <Flex className="borda_teste">
-                  <Checkbox fz={13} label="Manfinity" />
+                  <Checkbox fz={13} label="Manfinity" value="Manfinity"/>
                   <Flex
                     className="borda_teste"
                     align={"end"}
@@ -213,7 +215,7 @@ export function MeioFiltroProduto() {
                 </Flex>
                 <Space h="sm" />
                 <Flex className="borda_teste">
-                  <Checkbox fz={13} label="Nike" />
+                  <Checkbox fz={13} label="Nike" value="Nike" />
                   <Flex
                     className="borda_teste"
                     align={"end"}
@@ -227,7 +229,7 @@ export function MeioFiltroProduto() {
                 </Flex>
                 <Space h="sm" />
                 <Flex className="borda_teste">
-                  <Checkbox fz={13} label="PerfectBlend" />
+                  <Checkbox fz={13} label="PerfectBlend" value="PerfectBlend" />
                   <Flex
                     className="borda_teste"
                     align={"end"}
@@ -241,7 +243,7 @@ export function MeioFiltroProduto() {
                 </Flex>
                 <Space h="sm" />
                 <Flex className="borda_teste">
-                  <Checkbox fz={13} label="BECLOT" />
+                  <Checkbox fz={13} label="BECLOT" value="BECLOT" />
                   <Flex
                     className="borda_teste"
                     align={"end"}
@@ -255,7 +257,7 @@ export function MeioFiltroProduto() {
                 </Flex>
                 <Space h="sm" />
                 <Flex className="borda_teste">
-                  <Checkbox fz={13} label="Voker" />
+                  <Checkbox fz={13} label="Voker" value="Voker" />
                   <Flex
                     className="borda_teste"
                     align={"end"}
@@ -269,7 +271,7 @@ export function MeioFiltroProduto() {
                 </Flex>
                 <Space h="sm" />
                 <Flex className="borda_teste">
-                  <Checkbox fz={13} label="Harlan" />
+                  <Checkbox fz={13} label="Harlan" value="Harlan" />
                   <Flex
                     className="borda_teste"
                     align={"end"}
@@ -283,7 +285,7 @@ export function MeioFiltroProduto() {
                 </Flex>
                 <Space h="sm" />
                 <Flex className="borda_teste">
-                  <Checkbox fz={13} label="Prison" />
+                  <Checkbox fz={13} label="Prison" value="Prison" />
                   <Flex
                     className="borda_teste"
                     align={"end"}
@@ -297,7 +299,7 @@ export function MeioFiltroProduto() {
                 </Flex>
                 <Space h="sm" />
                 <Flex className="borda_teste">
-                  <Checkbox fz={13} label="HUF" />
+                  <Checkbox fz={13} label="HUF" value="HUF" />
                   <Flex
                     className="borda_teste"
                     align={"end"}
