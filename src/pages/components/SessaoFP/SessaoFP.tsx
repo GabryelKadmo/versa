@@ -340,11 +340,8 @@ export function MeioFiltroProduto() {
           ]}
         >
           <>
-           {searchResults.length <= 0 ? <Produtos /> : <SearchResult />}
-          </>
-          <>
-           {filterResults.length <= 0 ? <Produtos /> : <FilterResult />}
-          </>
+           {searchResults.length <= 0 && filterResults.length <= 0 ? <Produtos /> : searchResults.length >= 0 ? <SearchResult /> : filterResults.length >= 0 ? <FilterResult /> : <Produtos />}
+          </>          
         </SimpleGrid>
       </Flex>
 
