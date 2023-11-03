@@ -4,6 +4,19 @@ import fetchProduct from "../../../api/fetchProduct";
 import Loading from "../Loading/Loading";
 import AppContext from "../Context/AppContext";
 
+type product = {
+  _id: string;
+  titulo: string;
+  preco: number;
+  imgurl: string;
+  rating: number;
+  avaliacao: number;
+  descricao: string;
+  marca: string;
+  categoria: string;
+  quantidade_estoque: string;
+}
+
 export default function Produtos() {
   const context = useContext(AppContext);
 
@@ -13,6 +26,19 @@ export default function Produtos() {
   }
 
   const { produtos, setProdutos, loading, setLoading } = context;
+
+  // Uma função que embaralhe o array
+  function produtosSortidos(produtos: product[]) {
+    for (let i = produtos.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const temp = produtos[i];
+      produtos[i] = produtos[j];
+      produtos[j] = temp;
+    }
+    return produtos;
+  }
+
+  produtosSortidos(produtos);
 
   useEffect(() => {
     fetchProduct("").then((response) => {
