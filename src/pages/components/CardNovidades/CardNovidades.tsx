@@ -1,9 +1,18 @@
-import { Card, Image, Text, Button, Group, Rating, Flex } from "@mantine/core";
+import {
+  Card,
+  Image,
+  Text,
+  Button,
+  Group,
+  Rating,
+  Flex,
+  Alert,
+} from "@mantine/core";
 import "./CardNovidades.css";
 import AppContext from "../Context/AppContext";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-// import { Alert } from '@mantine/core';
+import { toast } from "react-toastify";
 
 type Props = {
   _id: string;
@@ -29,16 +38,11 @@ export function CardNovidades(props: Props) {
   }
   const { cartItem, setCartItem } = context;
   const handleAddCart = () => {
-    if (cartItem.some(item => item._id === props._id)) {
-      // Produto já no carrinho, exibe um Swal de erro
-      alert("Produto já adicionado ao carrinho.");
+    if (cartItem.some((item) => item._id === props._id)) {
     } else {
-      // Produto não está no carrinho, adiciona ao carrinho e exibe um Swal de sucesso
-      setCartItem([...cartItem, props ]);
-      alert("Produto adicionado com sucesso.");
+      setCartItem([...cartItem, props]);
     }
   };
-  
 
   localStorage.setItem("cart", JSON.stringify(cartItem));
   return (
