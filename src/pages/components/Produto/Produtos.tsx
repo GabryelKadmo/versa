@@ -28,17 +28,7 @@ export default function Produtos() {
   const { produtos, setProdutos, loading, setLoading } = context;
 
   // Uma função que embaralhe o array
-  function produtosSortidos(produtos: product[]) {
-    for (let i = produtos.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      const temp = produtos[i];
-      produtos[i] = produtos[j];
-      produtos[j] = temp;
-    }
-    return produtos;
-  }
 
-  produtosSortidos(produtos);
 
   useEffect(() => {
     fetchProduct("").then((response) => {

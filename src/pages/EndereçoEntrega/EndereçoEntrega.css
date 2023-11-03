@@ -77,9 +77,6 @@
 .formaPagamento {
   width: 54%;
 }
-.formaPagamento select {
-  /* font-family: 'Poppins', sans-serif; */
-}
 
 .formaPagamento select:checked {
   background-color: #272525;
