@@ -215,7 +215,7 @@ const [opened, { toggle: abrirDrawer, close: fecharDrawer }] =
               <Accordion.Control>Categoria</Accordion.Control>
               <Accordion.Panel>
                 <Flex className="borda_teste">
-                  <Checkbox fz={13} label="Camisetas" />
+                  <Checkbox fz={13} label="Camisetas" onChange={camisetaOnChange}/>
                   <Flex
                     className="borda_teste"
                     align={"end"}
@@ -229,7 +229,7 @@ const [opened, { toggle: abrirDrawer, close: fecharDrawer }] =
                 </Flex>
                 <Space h="sm" />
                 <Flex className="borda_teste">
-                  <Checkbox fz={13} label="Camisas" />
+                  <Checkbox fz={13} label="Camisas" onChange={camisaOnChange}/>
                   <Flex
                     className="borda_teste"
                     align={"end"}
@@ -243,7 +243,7 @@ const [opened, { toggle: abrirDrawer, close: fecharDrawer }] =
                 </Flex>
                 <Space h="sm" />
                 <Flex className="borda_teste">
-                  <Checkbox fz={13} label="Moletom" />
+                  <Checkbox fz={13} label="Moletom" onChange={moletomOnChange}/>
                   <Flex
                     className="borda_teste"
                     align={"end"}
@@ -257,7 +257,7 @@ const [opened, { toggle: abrirDrawer, close: fecharDrawer }] =
                 </Flex>
                 <Space h="sm" />
                 <Flex className="borda_teste">
-                  <Checkbox fz={13} label="Calças" />
+                  <Checkbox fz={13} label="Calças" onChange={calcaOnChange}/>
                   <Flex
                     className="borda_teste"
                     align={"end"}
