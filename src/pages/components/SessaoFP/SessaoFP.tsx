@@ -137,7 +137,7 @@ export function MeioFiltroProduto() {
                     w={173}
                   >
                     <Text ta={"right"} color="dimmed">
-                      (1)
+                      (6)
                     </Text>
                   </Flex>
                 </Flex>
@@ -151,7 +151,7 @@ export function MeioFiltroProduto() {
                     w={185}
                   >
                     <Text ta={"right"} color="dimmed">
-                      (10)
+                      (11)
                     </Text>
                   </Flex>
                 </Flex>
@@ -165,7 +165,7 @@ export function MeioFiltroProduto() {
                     w={179}
                   >
                     <Text ta={"right"} color="dimmed">
-                      (4)
+                      (5)
                     </Text>
                   </Flex>
                 </Flex>
@@ -179,7 +179,7 @@ export function MeioFiltroProduto() {
                     w={197}
                   >
                     <Text ta={"right"} color="dimmed">
-                      (5)
+                      (9)
                     </Text>
                   </Flex>
                 </Flex>

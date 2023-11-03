@@ -130,7 +130,7 @@ export default function HeaderMegaMenu() {
             <a href="#" id="header-things" className={classes.link}>
               Moletons
             </a> */}
-            <a href="#" id="header-things" className={classes.link}>
+            <a href="/pacotes" id="header-things" className={classes.link}>
               Pacotes
             </a>
           </Group>

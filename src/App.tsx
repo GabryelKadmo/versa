@@ -13,6 +13,7 @@ import RecuperarSenha3 from "./pages/RecuperarSenha3/Recuperar3";
 import Carrinho from "./pages/components/Cart/Carrinho";
 import InfoProduto from "./pages/InfoProduto/InfoProduto";
 import Provider from "./pages/components/Context/Provider";
+import PacotesPage from "./pages/Pacotes/PacotesPage";
 
 export default function App() {
   if(localStorage.getItem("endereço") === null){     
@@ -26,6 +27,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<LandingPageNew />} />
             <Route path="/produtos" element={<NovidadesPage />} />
+            <Route path="/pacotes" element={<PacotesPage />} />
             <Route path="/produto/:_id" element={<InfoProduto />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage1 />} />
