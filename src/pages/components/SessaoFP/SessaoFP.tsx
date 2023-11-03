@@ -80,7 +80,7 @@ const useStyles = createStyles((theme) => ({
   },
 
   hiddenMobile: {
-    [theme.fn.smallerThan("md")]: {
+    [theme.fn.smallerThan("sm")]: {
       display: "none",
     },
   },
