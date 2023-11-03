@@ -15,10 +15,12 @@ import {
 } from "@mantine/core";
 import Produtos from "../Produto/Produtos";
 import AppContext from "../Context/AppContext";
-import { useContext } from "react";
+import { ChangeEvent, useContext, useState } from "react";
 import SearchResult from "../../SearchResult/SearchResult";
 
 export function MeioFiltroProduto() {
+
+  const [, setFiltroOn] = useState(true);
 
   const context = useContext(AppContext);
 
@@ -27,7 +29,87 @@ export function MeioFiltroProduto() {
     return <div>Erro: Contexto não definido.</div>;
   }
 
-  const { searchResults } = context
+  const { produtos, searchResults, setSearchResults } = context
+
+  const camisetaOnChange = (e: ChangeEvent<HTMLInputElement>) => {
+    
+    const checkOn = e.target.checked;
+    setFiltroOn(checkOn);
+
+    if (checkOn) {
+      setFiltroOn(true);
+      const camiseta = 'camiseta';
+      const filteredProducts = produtos.filter((product) =>
+        product.categoria.toLowerCase().includes(camiseta)
+      );
+      setSearchResults(filteredProducts);
+    } else {
+      setFiltroOn(false);
+      // Se desejar, pode limpar a lista de resultados aqui quando o checkbox for desmarcado.
+      setSearchResults([]);
+    }
+
+  };
+
+  const camisaOnChange = (e: ChangeEvent<HTMLInputElement>) => {
+    
+    const checkOn = e.target.checked;
+    setFiltroOn(checkOn);
+
+    if (checkOn) {
+      setFiltroOn(true);
+      const camiseta = 'camisa';
+      const filteredProducts = produtos.filter((product) =>
+        product.categoria.toLowerCase().includes(camiseta)
+      );
+      setSearchResults(filteredProducts);
+    } else {
+      setFiltroOn(false);
+      // Se desejar, pode limpar a lista de resultados aqui quando o checkbox for desmarcado.
+      setSearchResults([]);
+    }
+
+  };
+
+  const moletomOnChange = (e: ChangeEvent<HTMLInputElement>) => {
+    
+    const checkOn = e.target.checked;
+    setFiltroOn(checkOn);
+
+    if (checkOn) {
+      setFiltroOn(true);
+      const camiseta = 'moletom';
+      const filteredProducts = produtos.filter((product) =>
+        product.categoria.toLowerCase().includes(camiseta)
+      );
+      setSearchResults(filteredProducts);
+    } else {
+      setFiltroOn(false);
+      // Se desejar, pode limpar a lista de resultados aqui quando o checkbox for desmarcado.
+      setSearchResults([]);
+    }
+
+  };
+
+  const calcaOnChange = (e: ChangeEvent<HTMLInputElement>) => {
+    
+    const checkOn = e.target.checked;
+    setFiltroOn(checkOn);
+
+    if (checkOn) {
+      setFiltroOn(true);
+      const camiseta = 'calça';
+      const filteredProducts = produtos.filter((product) =>
+        product.categoria.toLowerCase().includes(camiseta)
+      );
+      setSearchResults(filteredProducts);
+    } else {
+      setFiltroOn(false);
+      // Se desejar, pode limpar a lista de resultados aqui quando o checkbox for desmarcado.
+      setSearchResults([]);
+    }
+
+  };
 
   return (
     <div>
@@ -47,7 +129,7 @@ export function MeioFiltroProduto() {
               <Accordion.Control>Categoria</Accordion.Control>
               <Accordion.Panel>
                 <Flex className="borda_teste">
-                  <Checkbox fz={13} label="Camisetas" />
+                  <Checkbox onChange={camisetaOnChange} fz={13} label="Camiseta" />
                   <Flex
                     className="borda_teste"
                     align={"end"}
@@ -61,7 +143,7 @@ export function MeioFiltroProduto() {
                 </Flex>
                 <Space h="sm" />
                 <Flex className="borda_teste">
-                  <Checkbox fz={13} label="Camisas" />
+                  <Checkbox onChange={camisaOnChange} fz={13} label="Camisas" />
                   <Flex
                     className="borda_teste"
                     align={"end"}
@@ -75,7 +157,7 @@ export function MeioFiltroProduto() {
                 </Flex>
                 <Space h="sm" />
                 <Flex className="borda_teste">
-                  <Checkbox fz={13} label="Moletom" />
+                  <Checkbox onChange={moletomOnChange} fz={13} label="Moletom" />
                   <Flex
                     className="borda_teste"
                     align={"end"}
@@ -89,7 +171,7 @@ export function MeioFiltroProduto() {
                 </Flex>
                 <Space h="sm" />
                 <Flex className="borda_teste">
-                  <Checkbox fz={13} label="Calças" />
+                  <Checkbox onChange={calcaOnChange} fz={13} label="Calças" />
                   <Flex
                     className="borda_teste"
                     align={"end"}
@@ -336,7 +418,7 @@ export function MeioFiltroProduto() {
           ]}
         >
           <>
-           {searchResults.length <= 0 ? <Produtos /> : <SearchResult />}
+            {searchResults.length <= 0 ? <Produtos /> : <SearchResult />}
           </>
         </SimpleGrid>
       </Flex>

@@ -14,9 +14,6 @@ export default function Produtos() {
 
   const { produtos, setProdutos, loading, setLoading } = context;
 
-  // Uma função que embaralhe o array
-
-
   useEffect(() => {
     fetchProduct("").then((response) => {
       setProdutos(response);
