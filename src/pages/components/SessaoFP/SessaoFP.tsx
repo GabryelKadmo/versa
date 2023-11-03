@@ -12,12 +12,85 @@ import {
   Slider,
   Pagination,
   Text,
+  createStyles,
+  rem,
+  Burger,
+  Drawer,
 } from "@mantine/core";
 import Produtos from "../Produto/Produtos";
 import AppContext from "../Context/AppContext";
 import { useContext } from "react";
 import SearchResult from "../../SearchResult/SearchResult";
-import FilterResult from "../../FilterResult/FilterResult";
+import { useDisclosure } from "@mantine/hooks";
+
+const useStyles = createStyles((theme) => ({
+  link: {
+    display: "flex",
+    alignItems: "center",
+    height: "100%",
+    paddingLeft: theme.spacing.md,
+    paddingRight: theme.spacing.md,
+    textDecoration: "none",
+    color: theme.colorScheme === "dark" ? theme.white : theme.black,
+    fontWeight: 500,
+    fontSize: theme.fontSizes.sm,
+
+    [theme.fn.smallerThan("sm")]: {
+      height: rem(42),
+      display: "flex",
+      alignItems: "center",
+      width: "100%",
+    },
+
+    ...theme.fn.hover({
+      backgroundColor:
+        theme.colorScheme === "dark"
+          ? theme.colors.dark[6]
+          : theme.colors.gray[0],
+    }),
+  },
+
+  subLink: {
+    width: "100%",
+    padding: `${theme.spacing.xs} ${theme.spacing.md}`,
+    borderRadius: theme.radius.md,
+
+    ...theme.fn.hover({
+      backgroundColor:
+        theme.colorScheme === "dark"
+          ? theme.colors.dark[7]
+          : theme.colors.gray[0],
+    }),
+
+    "&:active": theme.activeStyles,
+  },
+
+  dropdownFooter: {
+    backgroundColor:
+      theme.colorScheme === "dark"
+        ? theme.colors.dark[7]
+        : theme.colors.gray[0],
+    margin: `calc(${theme.spacing.md} * -1)`,
+    marginTop: theme.spacing.sm,
+    padding: `${theme.spacing.md} calc(${theme.spacing.md} * 2)`,
+    paddingBottom: theme.spacing.xl,
+    borderTop: `${rem(1)} solid ${
+      theme.colorScheme === "dark" ? theme.colors.dark[5] : theme.colors.gray[1]
+    }`,
+  },
+
+  hiddenMobile: {
+    [theme.fn.smallerThan("md")]: {
+      display: "none",
+    },
+  },
+
+  hiddenDesktop: {
+    [theme.fn.largerThan("md")]: {
+      display: "none",
+    },
+  },
+}));
 
 export function MeioFiltroProduto() {
 
@@ -28,13 +101,24 @@ export function MeioFiltroProduto() {
     return <div>Erro: Contexto não definido.</div>;
   }
 
+
   const { searchResults } = context
-  const { filterResults } = context
+
+const [opened, { toggle: abrirDrawer, close: fecharDrawer }] =
+    useDisclosure(false);
+  const { classes } = useStyles();
 
   return (
     <div>
+      <Burger
+            ml={-180}
+            opened={opened}
+            onClick={abrirDrawer}
+            className={classes.hiddenDesktop}
+          />
       <Flex className="borda" maw={1730} pt={40} wrap={"nowrap"}>
         <Flex
+          className={classes.hiddenMobile}
           gap={1000}
           direction={"column"}
           // className="borda"
@@ -48,65 +132,73 @@ export function MeioFiltroProduto() {
             <Accordion.Item value="item-1">
               <Accordion.Control>Categoria</Accordion.Control>
               <Accordion.Panel>
-                <Flex className="borda_teste">
-                  <Checkbox fz={13} label="Camisetas" value="Camisetas" />
-                  <Flex
-                    className="borda_teste"
-                    align={"end"}
-                    justify={"end"}
-                    w={173}
-                  >
-                    <Text ta={"right"} color="dimmed">
-                      (1)
-                    </Text>
+
+               
+
+                  <Flex className="borda_teste">
+                    
+                    <Checkbox fz={13} label="Camisetas" value="Camisetas" />
+                  
+                    <Flex
+                      className="borda_teste"
+                      align={"end"}
+                      justify={"end"}
+                      w={173}
+                    >
+                      <Text ta={"right"} color="dimmed">
+                        (1)
+                      </Text>
+                    </Flex>
                   </Flex>
-                </Flex>
-                <Space h="sm" />
-                <Flex className="borda_teste">
-                  <Checkbox fz={13} label="Camisas" value="Camisas" />
-                  <Flex
-                    className="borda_teste"
-                    align={"end"}
-                    justify={"end"}
-                    w={185}
-                  >
-                    <Text ta={"right"} color="dimmed">
-                      (10)
-                    </Text>
+                  <Space h="sm" />
+                  <Flex className="borda_teste">
+                    <Checkbox
+                    fz={13} label="Camisas" value="Camisas" />
+                    <Flex
+                      className="borda_teste"
+                      align={"end"}
+                      justify={"end"}
+                      w={185}
+                    >
+                      <Text ta={"right"} color="dimmed">
+                        (10)
+                      </Text>
+                    </Flex>
                   </Flex>
-                </Flex>
-                <Space h="sm" />
-                <Flex className="borda_teste">
-                  <Checkbox fz={13} label="Moletom" value="Moletom" />
-                  <Flex
-                    className="borda_teste"
-                    align={"end"}
-                    justify={"end"}
-                    w={179}
-                  >
-                    <Text ta={"right"} color="dimmed">
-                      (4)
-                    </Text>
+                  <Space h="sm" />
+                  <Flex className="borda_teste">
+                    <Checkbox
+                    fz={13} label="Moletom" value="Moletom" />
+                    <Flex
+                      className="borda_teste"
+                      align={"end"}
+                      justify={"end"}
+                      w={179}
+                    >
+                      <Text ta={"right"} color="dimmed">
+                        (4)
+                      </Text>
+                    </Flex>
                   </Flex>
-                </Flex>
-                <Space h="sm" />
-                <Flex className="borda_teste">
-                  <Checkbox fz={13} label="Calças" value="Calças" />
-                  <Flex
-                    className="borda_teste"
-                    align={"end"}
-                    justify={"end"}
-                    w={197}
-                  >
-                    <Text ta={"right"} color="dimmed">
-                      (5)
-                    </Text>
+                  <Space h="sm" />
+                  <Flex className="borda_teste">
+                    <Checkbox
+                    fz={13} label="Calças" value="Calças" />
+                    <Flex
+                      className="borda_teste"
+                      align={"end"}
+                      justify={"end"}
+                      w={197}
+                    >
+                      <Text ta={"right"} color="dimmed">
+                        (5)
+                      </Text>
+                    </Flex>
                   </Flex>
-                </Flex>
-                <Space h="sm" />
-                <Anchor fz={13} target="_blank">
-                  Mostrar mais
-                </Anchor>
+                  <Space h="sm" />
+                  <Anchor fz={13} target="_blank">
+                    Mostrar mais
+                  </Anchor>
               </Accordion.Panel>
             </Accordion.Item>
             <Accordion.Item value="item-2">
@@ -327,6 +419,18 @@ export function MeioFiltroProduto() {
             </Accordion.Item>
           </Accordion>
         </Flex>
+        
+          <Drawer
+        opened={opened}
+        onClose={fecharDrawer}
+        size="100%"
+        padding="md"
+        title="Navigation"
+        className={classes.hiddenDesktop}
+        zIndex={1000000}
+      >
+        asdasd
+      </Drawer>
         <SimpleGrid
           className="borda"
           cols={4}
@@ -335,12 +439,12 @@ export function MeioFiltroProduto() {
           breakpoints={[
             { maxWidth: "xl", cols: 4, spacing: "lg" },
             { maxWidth: "lg", cols: 3, spacing: "md" },
-            { maxWidth: "md", cols: 2, spacing: "sm" },
-            { maxWidth: "sm", cols: 1, spacing: "sm" },
+            { maxWidth: "md", cols: 3, spacing: "sm" },
+            { maxWidth: "sm", cols: 2, spacing: "sm" },
           ]}
         >
           <>
-           {searchResults.length <= 0 && filterResults.length <= 0 ? <Produtos /> : searchResults.length >= 0 ? <SearchResult /> : filterResults.length >= 0 ? <FilterResult /> : <Produtos />}
+          {searchResults.length <= 0 ? <Produtos /> : <SearchResult />}
           </>          
         </SimpleGrid>
       </Flex>

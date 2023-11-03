@@ -12,7 +12,7 @@ function SearchBar() {
         return <div>Erro: Contexto não definido.</div>;
     }
 
-    const { produtos, setSearchResults } = context
+    const { produtos, setSearchResults} = context
     
 
     const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -22,7 +22,7 @@ function SearchBar() {
         );
 
         setSearchResults(filteredProducts);
-
+    
     };
 
     const handleSubmit = (e: React.FormEvent) => {

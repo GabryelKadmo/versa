@@ -104,39 +104,7 @@ interface AppContextType {
       }[]
     >
   >;
-  filterTerm: string;
-  setFilterTerm: React.Dispatch<React.SetStateAction<string>>;
-  filterResults: {
-    _id: string;
-    titulo: string;
-    preco: number;
-    descricao: string;
-    marca: string;
-    categoria: string;
-    rating: number;
-    avaliacao: number;
-    imgurl: string;
-    quantidade_estoque: string;
-    quantidade: number;
-  }[];
-  setFilterResults: React.Dispatch<
-    React.SetStateAction<
-      {
-        _id: string;
-        titulo: string;
-        preco: number;
-        descricao: string;
-        marca: string;
-        categoria: string;
-        rating: number;
-        avaliacao: number;
-        imgurl: string;
-        quantidade_estoque: string;
-        quantidade: number;
-        total: number;
-      }[]
-    >
-  >;
+  
 }
 
 const AppContext = createContext<AppContextType | undefined>(undefined);

@@ -24,8 +24,6 @@ function Provider({ children }: { children: ReactNode }) {
   const [query, setQuery] = useState<string>();
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState<Product[]>([]);
-  const [filterTerm, setFilterTerm] = useState("");
-  const [filterResults, setFilterResults] = useState<Product[]>([]);
 
   const baixarCarrinho = () => {
     const localStorageCart = JSON.parse(localStorage.getItem("cart") ?? "[]");
@@ -53,10 +51,6 @@ function Provider({ children }: { children: ReactNode }) {
         setSearchTerm,
         searchResults,
         setSearchResults,
-        filterTerm,
-        setFilterTerm,
-        filterResults,
-        setFilterResults,
       }}
     >
       {children}
