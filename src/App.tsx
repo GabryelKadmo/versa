@@ -14,16 +14,31 @@ import Carrinho from "./pages/components/Cart/Carrinho";
 import InfoProduto from "./pages/InfoProduto/InfoProduto";
 import Provider from "./pages/components/Context/Provider";
 import PacotesPage from "./pages/Pacotes/PacotesPage";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function App() {
-  if(localStorage.getItem("endereço") === null){     
-    localStorage.setItem("endereço", JSON.stringify("None"));  
-   }
+
+  if (localStorage.getItem("endereço") === null) {
+    localStorage.setItem("endereço", JSON.stringify("None"));
+  }
 
   return (
     <div>
       <BrowserRouter>
         <Provider>
+          <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+          />
           <Routes>
             <Route path="/" element={<LandingPageNew />} />
             <Route path="/produtos" element={<NovidadesPage />} />
@@ -38,6 +53,7 @@ export default function App() {
             <Route path="/carrinho" element={<Carrinho />} />
           </Routes>
         </Provider>
+        <ToastContainer />
         <Footer />
       </BrowserRouter>
     </div>

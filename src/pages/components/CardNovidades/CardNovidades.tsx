@@ -1,17 +1,10 @@
-import {
-  Card,
-  Image,
-  Text,
-  Button,
-  Group,
-  Rating,
-  Flex,
-  Alert,
-} from "@mantine/core";
+import { Card, Image, Text, Button, Group, Rating, Flex } from "@mantine/core";
 import "./CardNovidades.css";
 import AppContext from "../Context/AppContext";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
+// import { Alert } from '@mantine/core';
 
 type Props = {
   _id: string;
@@ -29,6 +22,20 @@ type Props = {
 };
 
 export function CardNovidades(props: Props) {
+
+  const notify = () => {
+    toast.success('Adicionado ao Carrinho', {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      });
+  }
+
   const context = useContext(AppContext);
 
   if (context === undefined) {
@@ -37,11 +44,15 @@ export function CardNovidades(props: Props) {
   }
   const { cartItem, setCartItem } = context;
   const handleAddCart = () => {
-    if (cartItem.some((item) => item._id === props._id)) {
+    if (cartItem.some(item => item._id === props._id)) {
+      // Produto já no carrinho, exibe um Swal de erro
+      notify();
     } else {
-      setCartItem([...cartItem, props]);
+      // Produto não está no carrinho, adiciona ao carrinho e exibe um Swal de sucesso
+      setCartItem([...cartItem, props ]);
     }
   };
+  
 
   localStorage.setItem("cart", JSON.stringify(cartItem));
   return (
