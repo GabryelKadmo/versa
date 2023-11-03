@@ -24,8 +24,21 @@ type Props = {
 export function CardNovidades(props: Props) {
 
   const notify = () => {
-    toast.success('Adicionado ao Carrinho', {
-      position: "top-right",
+    toast.success('Produto adicionado ao carrinho', {
+      position: "bottom-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      });
+  }
+
+  const notifyBad = () => {
+    toast.error('Produto já no carrinho', {
+      position: "bottom-right",
       autoClose: 5000,
       hideProgressBar: false,
       closeOnClick: true,
@@ -46,10 +59,11 @@ export function CardNovidades(props: Props) {
   const handleAddCart = () => {
     if (cartItem.some(item => item._id === props._id)) {
       // Produto já no carrinho, exibe um Swal de erro
-      notify();
+      notifyBad();
     } else {
       // Produto não está no carrinho, adiciona ao carrinho e exibe um Swal de sucesso
       setCartItem([...cartItem, props ]);
+      notify();
     }
   };
   
