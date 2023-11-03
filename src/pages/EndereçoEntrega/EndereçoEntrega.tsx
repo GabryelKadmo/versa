@@ -314,7 +314,7 @@ export default function RegisterPage2() {
                   <>
                     Eu aceito os{" "}
                     <a
-                      href="https://www.instagram.com/vixenp_/"
+                      href="https://cloud.google.com/security/compliance/lgpd?hl=pt-br"
                       target="_blank"
                     >
                       termos e condições
