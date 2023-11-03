@@ -26,7 +26,7 @@ export function CardNovidades(props: Props) {
   const notify = () => {
     toast.success('Produto adicionado ao carrinho', {
       position: "bottom-right",
-      autoClose: 3000,
+      autoClose: 2000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
@@ -39,7 +39,7 @@ export function CardNovidades(props: Props) {
   const notifyBad = () => {
     toast.error('Produto já no carrinho', {
       position: "bottom-right",
-      autoClose: 5000,
+      autoClose: 2000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
