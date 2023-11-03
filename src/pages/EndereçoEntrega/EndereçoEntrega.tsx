@@ -42,6 +42,7 @@ export default function RegisterPage2() {
     },
     validate: {
       nome: isNotEmpty(""),
+      CEP: isNotEmpty(""),
     },
   });
 

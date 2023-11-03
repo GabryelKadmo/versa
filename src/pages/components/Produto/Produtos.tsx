@@ -4,19 +4,6 @@ import fetchProduct from "../../../api/fetchProduct";
 import Loading from "../Loading/Loading";
 import AppContext from "../Context/AppContext";
 
-type product = {
-  _id: string;
-  titulo: string;
-  preco: number;
-  imgurl: string;
-  rating: number;
-  avaliacao: number;
-  descricao: string;
-  marca: string;
-  categoria: string;
-  quantidade_estoque: string;
-}
-
 export default function Produtos() {
   const context = useContext(AppContext);
 
