@@ -12,7 +12,6 @@ import "./CardNovidades.css";
 import AppContext from "../Context/AppContext";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { toast } from "react-toastify";
 
 type Props = {
   _id: string;
