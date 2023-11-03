@@ -23,10 +23,11 @@ const CartBotton = () => {
   const { cartItem } = context;
 
   const totalPrice = cartItem.reduce(
-    (total, item) => total + item.preco, 0
+    (total, item) => total + (item.preco * item.quantidade),0 
   ).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
   localStorage.setItem("valor_total",(totalPrice));
   ;
+
 
   return (
     <>

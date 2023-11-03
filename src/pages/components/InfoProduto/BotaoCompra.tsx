@@ -30,9 +30,13 @@ export function BotaoCompra(props: Props) {
   const { cartItem, setCartItem } = context;
 
   const handleAddCart = () => {
-
-    if (props._id !== undefined) {
-      setCartItem([...cartItem, props]);
+    if (cartItem.some(item => item._id === props._id)) {
+      // Produto já no carrinho, exibe um Swal de erro
+      alert("Produto já adicionado ao carrinho.");
+    } else {
+      // Produto não está no carrinho, adiciona ao carrinho e exibe um Swal de sucesso
+      setCartItem([...cartItem, props ]);
+      alert("Produto adicionado com sucesso.");
     }
   };
   localStorage.setItem("cart", JSON.stringify(cartItem));

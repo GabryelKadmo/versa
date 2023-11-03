@@ -3,6 +3,7 @@ import "./CardNovidades.css";
 import AppContext from "../Context/AppContext";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
+// import { Alert } from '@mantine/core';
 
 type Props = {
   _id: string;

@@ -16,7 +16,9 @@ interface Product {
   total: number;
 }
 
+
 function Provider({ children }: { children: ReactNode }) {
+
   const [produtos, setProdutos] = useState<Product[]>([]);
   const [cartItem, setCartItem] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);

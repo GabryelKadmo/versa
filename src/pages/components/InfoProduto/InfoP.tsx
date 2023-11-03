@@ -48,12 +48,12 @@ export function InfoP(props: Props) {
               </Text>
             </Flex>
 
-            <Flex gap={10} className="configP" w={422} justify={"end"}>
+            <Flex gap={10} className="configP" w={322} justify={"end"}>
               <ActionIcon w={60} color="red" radius="md" variant="light">
                 <IconHeart size="1.225rem" />
 
                 <Text ml={11} fw={600} lh={-90} fz={21}>
-                  0
+                  20
                 </Text>
               </ActionIcon>
 

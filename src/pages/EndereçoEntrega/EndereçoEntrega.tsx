@@ -1,17 +1,24 @@
 // import img from "../components/images/Logo/VERSA.png";
-import { Button } from "@mantine/core";
 import { TextInput } from "@mantine/core";
 // import img2 from "../components/images/Register/RegisterImage2.png";
 import Header from "./../components/Header/Header";
 import "./EndereçoEntrega.css";
 import { Select } from "@mantine/core";
 import { Checkbox } from "@mantine/core";
-import { useForm } from "@mantine/form";
+import { isNotEmpty, useForm } from "@mantine/form";
 import { useEffect, useState } from "react";
 import { pedido } from "../../../Utils/config";
+
 export default function RegisterPage2() {
+  const [isLoading, setIsLoading] = useState(false);
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleCheckboxChange = (event: any) => {
+    setIsChecked(event.target.checked);
+  };
 
   const [dados] = useState(JSON.parse(localStorage.getItem("endereço") as any));
+
   useEffect(() => {
     setSearchCep(
       dados.cep === "None" || dados.cep === undefined ? "" : dados.cep
@@ -19,9 +26,7 @@ export default function RegisterPage2() {
   }, [dados]);
 
   const [searchCep, setSearchCep] = useState("");
-
   const [cart] = useState(JSON.parse(localStorage.getItem("cart") ?? "[]"));
-
   const form = useForm({
     initialValues: {
       nome: dados === "None" ? "" : dados.nome,
@@ -35,7 +40,9 @@ export default function RegisterPage2() {
       logradouro: dados === "None" ? "" : dados.logradouro,
       pontoReferencia: dados === "None" ? "" : dados.pontoReferencia,
     },
-    validate: {},
+    validate: {
+      nome: isNotEmpty(""),
+    },
   });
 
   useEffect(() => {
@@ -51,7 +58,6 @@ export default function RegisterPage2() {
           if (data.erro) {
             throw new Error("CEP não encontrado");
           }
-          form.setFieldValue("nome", data.nome);
           form.setFieldValue("logradouro", data.logradouro);
           form.setFieldValue("bairro", data.bairro);
           form.setFieldValue("cidade", data.localidade);
@@ -63,45 +69,86 @@ export default function RegisterPage2() {
         });
     }
   }, [searchCep]);
+  const handlePaymentMethod = (event: any) => {
+    if (event && event.target) {
+      const tipo_pagamento = event.target.value;
+      localStorage.setItem("tipo_pagamento", tipo_pagamento);
+    } else {
+      console.error("Event or event.target is not defined.");
+    }
+  };
+  async function handleSubmit() {
+    if (isChecked) {
+      setIsLoading(true);
+      localStorage.removeItem("cart");
+      localStorage.removeItem("valor_total");
 
-  async function handleSubmit(event: any) {
-    console.log(form.values);
-    event.preventDefault();
-    const produtos =
-      cart &&
-      cart.map((item: any) => ({
-        id: item._id,
-        nome: item.titulo,
-        // quantidade: item.quantidade_estoque,
-        quantidade: 1,
-        preco_unitario: item.preco,
-      }));
+      // event.preventDefault();
+      const produtos =
+        cart &&
+        cart.map((item: any) => ({
+          id: item._id,
+          nome: item.titulo,
+          quantidade: item.quantidade,
+          preco_unitario: item.preco,
+        }));
 
-    const object = {
-      ...form.values,
-      cep: searchCep,
-    };
-    const order = {
-      nome: form.values.nome,
-      endereco: `${form.values.logradouro}, ${form.values.bairro}, ${form.values.complemento}, ${form.values.numero}`,
-      produtos: [...produtos],
-      telefone: form.values.celular,
-      tipo_pagamento: "PIX",
-    };
+      const metodoPagamento = localStorage.getItem("tipo_pagamento");
 
-    await pedido(order);
-    const produtosStr = produtos.map((produtos:any) => {
-      return `${produtos.nome} - R$ ${produtos.preco_unitario}`;
-    }).join("%0A");
-    const total = produtos.reduce((accumulator:any, produtos:any) => {
-      return accumulator + produtos.preco_unitario;
-    }, 0);
-    
-    const whatsapp = `*DETALHES%20DO%20PEDIDO*%3A%0A%0A*INFORMA%C3%87%C3%95ES%20DO%20CLIENTE*%3A%0A*NOME*%3A ${form.values.nome}%0A%0A*TELEFONE:* ${form.values.celular} %0A%0A*ENDEREÇO* ${form.values.logradouro}. ${form.values.bairro}, ${form.values.complemento}, Nº ${form.values.numero} %0A%0A*REFERÊNCIA:* ${form.values.pontoReferencia}%0A%0A*PRODUTOS:*%0A${produtosStr}%0A%0A *TOTAL:* R$ ${total}%0A%0A*FORMA DE PAGAMENTO:*%0A${"PIX"}`;
+      const object = {
+        ...form.values,
+        cep: searchCep,
+      };
+      const order = {
+        nome: form.values.nome,
+        endereco: `${form.values.logradouro}, ${form.values.bairro}, ${form.values.complemento}, ${form.values.numero}`,
+        produtos: [...produtos],
+        telefone: form.values.celular,
+        tipo_pagamento: metodoPagamento,
+      };
+      try {
+        await pedido(order); // Fazer a chamada à API
+        // Se a chamada for bem-sucedida, continue com o resto do código
+      } catch (error) {
+        // Se ocorrer um erro na chamada à API, você pode tratar o erro aqui
+        console.error("Erro na chamada à API:", error);
+      }
 
-    window.open(`https://wa.me/557391163838/?text=${whatsapp}`);
+      setIsLoading(false);
+      const produtosStr = produtos
+        .map((produtos: any) => {
+          return `⠀⠀⠀⠀● ${produtos.nome} - R$ ${produtos.preco_unitario} - *x ${produtos.quantidade}*`;
+        })
+        .join("%0A");
 
-    localStorage.setItem("endereço", JSON.stringify(object));
+      const total = produtos.reduce((accumulator: any, produtos: any) => {
+        return accumulator + produtos.preco_unitario * produtos.quantidade;
+      }, 0);
+      const totalComTresDecimais = parseFloat(total.toFixed(3));
+
+      const whatsapp = `*DETALHES%20DO%20PEDIDO*%3A%0A*NOME*%3A ${form.values.nome}%0A%0A*TELEFONE:* ${form.values.celular} %0A%0A*ENDEREÇO* ${form.values.logradouro}. ${form.values.bairro}, ${form.values.complemento}, Nº ${form.values.numero} %0A%0A*REFERÊNCIA:* ${form.values.pontoReferencia}%0A%0A*PRODUTOS:*%0A${produtosStr}%0A%0A *TOTAL:* R$ ${totalComTresDecimais}%0A%0A*FORMA DE PAGAMENTO:*%0A${metodoPagamento}`;
+
+      window.open(`https://wa.me/557391163838/?text=${whatsapp}`);
+
+      const deleteProdutos = localStorage.getItem("produtos");
+      for (let key in localStorage) {
+        if (key.startsWith("quantidade_")) {
+          localStorage.removeItem(key);
+        }
+      }
+      if (deleteProdutos) {
+        localStorage.setItem("produtos", deleteProdutos);
+      }
+      window.location.reload();
+
+      localStorage.setItem("endereço", JSON.stringify(object));
+    } else {
+      // event.preventDefault();
+      document.getElementById("checkbox-shake")?.classList.add("shakeit");
+      setTimeout(() => {
+        document.getElementById("checkbox-shake")?.classList.remove("shakeit");
+      }, 1000);
+    }
   }
 
   return (
@@ -114,9 +161,9 @@ export default function RegisterPage2() {
           <img className="logoregistro2" src={img} />
         </a> */}
 
-          <form>
+          <form onSubmit={form.onSubmit(handleSubmit)}>
             <div id="registerInputs">
-              <div id="Textos">
+              <div id="TextosEndereço">
                 <h1 id="registerText">Endereço de entrega</h1>
                 <h3 className="registerText">
                   Preencha os campos abaixo com seu endereço.
@@ -133,6 +180,7 @@ export default function RegisterPage2() {
                   <div className="col-md-4">
                     <h2 className="inputsRegistro">CEP</h2>
                     <TextInput
+                      pattern="\d{8}"
                       className="w-100"
                       type="text"
                       placeholder="00000-000"
@@ -214,12 +262,7 @@ export default function RegisterPage2() {
                 <Select
                   className="mt-3 formaPagamento"
                   placeholder="Escolha uma forma de pagamento"
-                  data={[
-                    "PIX",
-                    "Cartão de crédito",
-                    "Cartão de débito",
-                    "Xerecard",
-                  ]}
+                  data={["PIX", "Cartão de crédito", "Cartão de débito"]}
                   styles={(theme) => ({
                     input: {
                       "&:focus-within": {
@@ -242,32 +285,44 @@ export default function RegisterPage2() {
                       "&[data-hovered]": {},
                     },
                   })}
+                  onBlur={handlePaymentMethod} // Add onChange event handler
                 />
-                <Button
-                  onClick={handleSubmit}
-                  type="submit"
-                  className="mt-3 mb-3 w-100 "
-                  id="criarButton"
-                >
-                  Continuar no whatsapp
-                </Button>
+                {isLoading ? (
+                  <button
+                    type="submit"
+                    className="mt-3 mb-3 w-100"
+                    id="criarButton"
+                  >
+                    Encaminhando para o WhatsApp...
+                  </button>
+                ) : (
+                  <button
+                    type="submit"
+                    className="mt-3 mb-3 w-100"
+                    id="criarButton"
+                  >
+                    Continuar no WhatsApp
+                  </button>
+                )}
               </div>
             </div>
-            <Checkbox
-              color="blue" // Define a cor principal do checkbox
-              className="custom-checkbox"
-              label={
-                <>
-                  Eu aceito os{" "}
-                  <a
-                    href="https://www.instagram.com/grazimourao/"
-                    target="_blank"
-                  >
-                    termos e condições
-                  </a>
-                </>
-              }
-            />
+            <div id="checkbox-shake">
+              <Checkbox
+                className="custom-checkbox"
+                label={
+                  <>
+                    Eu aceito os{" "}
+                    <a
+                      href="https://www.instagram.com/vixenp_/"
+                      target="_blank"
+                    >
+                      termos e condições
+                    </a>
+                  </>
+                }
+                onChange={handleCheckboxChange}
+              />
+            </div>
           </form>
 
           {/* <div className="text-center mt-4">

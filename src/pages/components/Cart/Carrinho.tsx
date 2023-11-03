@@ -30,14 +30,14 @@ export default function Carrinho() {
   };
 
   const conteudo = (
-    <div className="cartTestArea" style={{ overflow: "hidden" }}>
+    <div className="cartTestArea">
       <h1 className="titleCart-h1 text-center pt-2 pb-2">SEU CARRINHO</h1>
       <hr />
       <div className="cartTestArea2" style={{ minHeight: "350px", maxHeight: "350px"}}>
         {quantidadeCarrinho >= 1 ? (
           <div
             className="cartContent"
-            style={{minHeight: "460px", maxHeight: "400px", overflowY: "scroll" }}
+            style={{minHeight: "460px", maxHeight: "400px", overflowY: "auto"}}
           >
             <div className="cart-items">
               {cartItem.map((item) => (
@@ -50,6 +50,7 @@ export default function Carrinho() {
                     img={item.imgurl}
                     cor={item.descricao}
                     tamanho={item.marca}
+                    quantidade={item.quantidade}
                   />
                   <hr />
                 </div>
