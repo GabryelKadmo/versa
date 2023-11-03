@@ -19,7 +19,7 @@ import {
 } from "@mantine/core";
 import Produtos from "../Produto/Produtos";
 import AppContext from "../Context/AppContext";
-import { useContext } from "react";
+import { ChangeEvent, useContext, useState } from "react";
 import SearchResult from "../../SearchResult/SearchResult";
 import { useDisclosure } from "@mantine/hooks";
 
@@ -94,6 +94,8 @@ const useStyles = createStyles((theme) => ({
 
 export function MeioFiltroProduto() {
 
+  const [, setFiltroOn] = useState(true);
+
   const context = useContext(AppContext);
 
   if (context === undefined) {
@@ -102,7 +104,87 @@ export function MeioFiltroProduto() {
   }
 
 
-  const { searchResults } = context
+  const { produtos, searchResults, setSearchResults } = context
+
+  const camisetaOnChange = (e: ChangeEvent<HTMLInputElement>) => {
+    
+    const checkOn = e.target.checked;
+    setFiltroOn(checkOn);
+
+    if (checkOn) {
+      setFiltroOn(true);
+      const camiseta = 'camiseta';
+      const filteredProducts = produtos.filter((product) =>
+        product.categoria.toLowerCase().includes(camiseta)
+      );
+      setSearchResults(filteredProducts);
+    } else {
+      setFiltroOn(false);
+      // Se desejar, pode limpar a lista de resultados aqui quando o checkbox for desmarcado.
+      setSearchResults([]);
+    }
+
+  };
+
+  const camisaOnChange = (e: ChangeEvent<HTMLInputElement>) => {
+    
+    const checkOn = e.target.checked;
+    setFiltroOn(checkOn);
+
+    if (checkOn) {
+      setFiltroOn(true);
+      const camiseta = 'camisa';
+      const filteredProducts = produtos.filter((product) =>
+        product.categoria.toLowerCase().includes(camiseta)
+      );
+      setSearchResults(filteredProducts);
+    } else {
+      setFiltroOn(false);
+      // Se desejar, pode limpar a lista de resultados aqui quando o checkbox for desmarcado.
+      setSearchResults([]);
+    }
+
+  };
+
+  const moletomOnChange = (e: ChangeEvent<HTMLInputElement>) => {
+    
+    const checkOn = e.target.checked;
+    setFiltroOn(checkOn);
+
+    if (checkOn) {
+      setFiltroOn(true);
+      const camiseta = 'moletom';
+      const filteredProducts = produtos.filter((product) =>
+        product.categoria.toLowerCase().includes(camiseta)
+      );
+      setSearchResults(filteredProducts);
+    } else {
+      setFiltroOn(false);
+      // Se desejar, pode limpar a lista de resultados aqui quando o checkbox for desmarcado.
+      setSearchResults([]);
+    }
+
+  };
+
+  const calcaOnChange = (e: ChangeEvent<HTMLInputElement>) => {
+    
+    const checkOn = e.target.checked;
+    setFiltroOn(checkOn);
+
+    if (checkOn) {
+      setFiltroOn(true);
+      const camiseta = 'calça';
+      const filteredProducts = produtos.filter((product) =>
+        product.categoria.toLowerCase().includes(camiseta)
+      );
+      setSearchResults(filteredProducts);
+    } else {
+      setFiltroOn(false);
+      // Se desejar, pode limpar a lista de resultados aqui quando o checkbox for desmarcado.
+      setSearchResults([]);
+    }
+
+  };
 
 const [opened, { toggle: abrirDrawer, close: fecharDrawer }] =
     useDisclosure(false);
@@ -132,73 +214,65 @@ const [opened, { toggle: abrirDrawer, close: fecharDrawer }] =
             <Accordion.Item value="item-1">
               <Accordion.Control>Categoria</Accordion.Control>
               <Accordion.Panel>
-
-               
-
-                  <Flex className="borda_teste">
-                    
-                    <Checkbox fz={13} label="Camisetas" value="Camisetas" />
-                  
-                    <Flex
-                      className="borda_teste"
-                      align={"end"}
-                      justify={"end"}
-                      w={173}
-                    >
-                      <Text ta={"right"} color="dimmed">
-                        (1)
-                      </Text>
-                    </Flex>
+                <Flex className="borda_teste">
+                  <Checkbox fz={13} label="Camisetas" />
+                  <Flex
+                    className="borda_teste"
+                    align={"end"}
+                    justify={"end"}
+                    w={173}
+                  >
+                    <Text ta={"right"} color="dimmed">
+                      (1)
+                    </Text>
                   </Flex>
-                  <Space h="sm" />
-                  <Flex className="borda_teste">
-                    <Checkbox
-                    fz={13} label="Camisas" value="Camisas" />
-                    <Flex
-                      className="borda_teste"
-                      align={"end"}
-                      justify={"end"}
-                      w={185}
-                    >
-                      <Text ta={"right"} color="dimmed">
-                        (10)
-                      </Text>
-                    </Flex>
+                </Flex>
+                <Space h="sm" />
+                <Flex className="borda_teste">
+                  <Checkbox fz={13} label="Camisas" />
+                  <Flex
+                    className="borda_teste"
+                    align={"end"}
+                    justify={"end"}
+                    w={185}
+                  >
+                    <Text ta={"right"} color="dimmed">
+                      (10)
+                    </Text>
                   </Flex>
-                  <Space h="sm" />
-                  <Flex className="borda_teste">
-                    <Checkbox
-                    fz={13} label="Moletom" value="Moletom" />
-                    <Flex
-                      className="borda_teste"
-                      align={"end"}
-                      justify={"end"}
-                      w={179}
-                    >
-                      <Text ta={"right"} color="dimmed">
-                        (4)
-                      </Text>
-                    </Flex>
+                </Flex>
+                <Space h="sm" />
+                <Flex className="borda_teste">
+                  <Checkbox fz={13} label="Moletom" />
+                  <Flex
+                    className="borda_teste"
+                    align={"end"}
+                    justify={"end"}
+                    w={179}
+                  >
+                    <Text ta={"right"} color="dimmed">
+                      (4)
+                    </Text>
                   </Flex>
-                  <Space h="sm" />
-                  <Flex className="borda_teste">
-                    <Checkbox
-                    fz={13} label="Calças" value="Calças" />
-                    <Flex
-                      className="borda_teste"
-                      align={"end"}
-                      justify={"end"}
-                      w={197}
-                    >
-                      <Text ta={"right"} color="dimmed">
-                        (5)
-                      </Text>
-                    </Flex>
+                </Flex>
+                <Space h="sm" />
+                <Flex className="borda_teste">
+                  <Checkbox fz={13} label="Calças" />
+                  <Flex
+                    className="borda_teste"
+                    align={"end"}
+                    justify={"end"}
+                    w={197}
+                  >
+                    <Text ta={"right"} color="dimmed">
+                      (5)
+                    </Text>
                   </Flex>
-                  <Space h="sm" />
-                  <Anchor fz={13} target="_blank">
-                    Mostrar mais
-                  </Anchor>
+                </Flex>
+                <Space h="sm" />
+                <Anchor fz={13} target="_blank">
+                  Mostrar mais
+                </Anchor>
               </Accordion.Panel>
             </Accordion.Item>
             <Accordion.Item value="item-2">
@@ -444,8 +518,8 @@ const [opened, { toggle: abrirDrawer, close: fecharDrawer }] =
           ]}
         >
           <>
-          {searchResults.length <= 0 ? <Produtos /> : <SearchResult />}
-          </>          
+           {searchResults.length <= 0 ? <Produtos /> : <SearchResult />}
+          </>
         </SimpleGrid>
       </Flex>
 

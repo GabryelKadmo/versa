@@ -51,7 +51,7 @@ export function FiltroCima(){
                 <Flex
                 justify={"flex-end"}
                 className="gap_search_button"
-                w={{base: 50,xs: 150, sm: 250, md: 450, lg: 650, xl: 880}} 
+                w={{base: 50,xs: 150, sm: 250, md: 490, lg: 650, xl: 880}} 
                 >
                     <SearchBar />
                 </Flex>

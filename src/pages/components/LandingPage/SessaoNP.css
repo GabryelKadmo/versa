@@ -1,6 +1,6 @@
 .container_np{
     /* border: 1px solid red; */
-    margin: 95px auto;
+    margin: 0px auto;
     width: 85%;
 }
 
@@ -15,7 +15,8 @@
 }
 
 .mais_pacotes{
-    margin-top: 99px;
+    margin-top: 49px;
+    margin-bottom: 100px;
     width: 100%;
     height: 88px;
     background: white;

@@ -1,5 +1,8 @@
 import "./SessaoNP.css"
-import Pacote from "../images/SessaoNP/Rectangle 51.png"
+import Pacote1 from "../images/SessaoNP/PacoteCasual.png"
+import Pacote2 from "../images/SessaoNP/PacoteMinimalista.png"
+import Pacote3 from "../images/SessaoNP/PacoteEsportivo.png"
+
 import { SimpleGrid, Flex, Card, Title, Text, Image, Group } from '@mantine/core';
 
 export function SessaoNP(){
@@ -22,7 +25,7 @@ export function SessaoNP(){
                 sx={{ fontFamily: 'Poppins, sans-serif' }}
                 fz={70}
                 weight={1}
-                mb={100}
+                mb={20}
                 >
                     NOSSOS PACOTES
                 </Title>
@@ -39,7 +42,7 @@ export function SessaoNP(){
                 <Card className="hover_click_np" shadow="sm" padding="lg" radius="md" withBorder>
                 <Card.Section>
                     <Image
-                    src={Pacote}
+                    src={Pacote3}
                     height={600}
                     alt="Streetwear"
                     />
@@ -78,7 +81,7 @@ export function SessaoNP(){
                 <Card className="hover_click_np" shadow="sm" padding="lg" radius="md" withBorder>
                     <Card.Section>
                     <Image
-                        src={Pacote}
+                        src={Pacote2}
                         height={600}
                         alt="Formal"
                     />
@@ -117,7 +120,7 @@ export function SessaoNP(){
                 <Card className="hover_click_np" shadow="sm" padding="lg" radius="md" withBorder>
                     <Card.Section>
                     <Image
-                        src={Pacote}
+                        src={Pacote1}
                         height={600}
                         alt="Norway"
                     />

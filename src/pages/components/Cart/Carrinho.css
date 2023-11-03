@@ -138,6 +138,7 @@
   background-color: #b8b8b8;
   border-radius: 10px;
   border: 3px none #ffffff;
+  position: sticky;
 }
 @media screen and (max-width: 1600px) and (max-height: 900px) {
   .cartFixed {
