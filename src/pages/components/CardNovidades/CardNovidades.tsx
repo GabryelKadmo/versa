@@ -3,8 +3,6 @@ import "./CardNovidades.css";
 import AppContext from "../Context/AppContext";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { toast } from "react-toastify";
-// import { Alert } from '@mantine/core';
 
 type Props = {
   _id: string;
@@ -23,50 +21,14 @@ type Props = {
 
 export function CardNovidades(props: Props) {
 
-  const notify = () => {
-    toast.success('Produto adicionado ao carrinho', {
-      position: "bottom-right",
-      autoClose: 1000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-      });
-  }
-
-  const notifyBad = () => {
-    toast.error('Produto já no carrinho', {
-      position: "bottom-right",
-      autoClose: 1000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-      });
-  }
-
   const context = useContext(AppContext);
 
   if (context === undefined) {
     // Trate o contexto indefinido aqui, se necessário
     return <div>Erro: Contexto não definido.</div>;
   }
-  const { cartItem, setCartItem } = context;
-  const handleAddCart = () => {
-    if (cartItem.some(item => item._id === props._id)) {
-      // Produto já no carrinho, exibe um Swal de erro
-      notifyBad();
-    } else {
-      // Produto não está no carrinho, adiciona ao carrinho e exibe um Swal de sucesso
-      setCartItem([...cartItem, props ]);
-      notify();
-    }
-  };
-  
+  const { cartItem } = context;
+
 
   localStorage.setItem("cart", JSON.stringify(cartItem));
   return (
@@ -101,9 +63,12 @@ export function CardNovidades(props: Props) {
           fullWidth
           mt="md"
           radius="lg"
-          onClick={handleAddCart}
+          component="a"
+          target="_blank"
+          rel="noopener noreferrer"
+          href={"/produto/" + props._id}
         >
-          Adicionar ao carrinho
+          Ver detalhes
         </Button>
       </Card>
     </div>
