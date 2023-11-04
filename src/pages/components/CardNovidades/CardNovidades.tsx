@@ -64,7 +64,6 @@ export function CardNovidades(props: Props) {
           mt="md"
           radius="lg"
           component="a"
-          target="_blank"
           rel="noopener noreferrer"
           href={"/produto/" + props._id}
         >
