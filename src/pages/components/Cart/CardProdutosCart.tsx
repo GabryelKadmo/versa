@@ -32,8 +32,8 @@ const CardProdutosCart = (props: Props) => {
     return localStorageValue
       ? parseInt(localStorageValue, 10)
       : cartProduct
-      ? cartProduct.quantidade
-      : 1;
+        ? cartProduct.quantidade
+        : 1;
   });
 
   useEffect(() => {
@@ -60,10 +60,10 @@ const CardProdutosCart = (props: Props) => {
     const updatedStorage = localStorageCart.filter(
       (item: { _id: string }) => item._id !== props._id
     );
-  
+
     // Remove the item from localStorage
     localStorage.removeItem(`quantidade_${props._id}`);
-  
+
     setCartItem(updatedItems);
     localStorage.setItem("cart", JSON.stringify(updatedStorage));
     // Verify the new state here

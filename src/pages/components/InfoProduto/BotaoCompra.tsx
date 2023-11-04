@@ -3,6 +3,7 @@ import { Button } from "@mantine/core";
 import { IconShoppingCart } from "@tabler/icons-react";
 import { useContext } from "react";
 import AppContext from "../Context/AppContext";
+import { toast } from "react-toastify";
 
 type Props = {
   _id: string;
@@ -29,10 +30,38 @@ export function BotaoCompra(props: Props) {
 
   const { cartItem, setCartItem } = context;
 
+  const notify = () => {
+    toast.success('Produto adicionado ao carrinho', {
+      position: "bottom-right",
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+  }
+
+  const notifyBad = () => {
+    toast.error('Produto já no carrinho', {
+      position: "bottom-right",
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+  }
+
   const handleAddCart = () => {
     if (cartItem.some(item => item._id === props._id)) {
+      notifyBad();
     } else {
-      setCartItem([...cartItem, props ]);
+      setCartItem([...cartItem, props]);
+      notify();
     }
   };
   localStorage.setItem("cart", JSON.stringify(cartItem));
