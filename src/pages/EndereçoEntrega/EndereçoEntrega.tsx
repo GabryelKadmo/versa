@@ -78,12 +78,6 @@ export default function RegisterPage2() {
       console.error("Event or event.target is not defined.");
     }
   };
-  async function handleSubmit() {
-    if (isChecked) {
-      setIsLoading(true);
-      localStorage.removeItem("cart");
-      localStorage.removeItem("valor_total");
-
       // event.preventDefault();
       const produtos =
         cart &&
@@ -92,10 +86,15 @@ export default function RegisterPage2() {
           nome: item.titulo,
           quantidade: item.quantidade,
           preco_unitario: item.preco,
+          tamanho: item.tamanho,
         }));
-
+        async function handleSubmit() {
+          if (isChecked) {
+            setIsLoading(true);
+            localStorage.removeItem("cart");
+            localStorage.removeItem("valor_total");
+      
       const metodoPagamento = localStorage.getItem("tipo_pagamento");
-
       const object = {
         ...form.values,
         cep: searchCep,
@@ -106,6 +105,7 @@ export default function RegisterPage2() {
         produtos: [...produtos],
         telefone: form.values.celular,
         tipo_pagamento: metodoPagamento,
+
       };
       try {
         await pedido(order); // Fazer a chamada à API
@@ -118,7 +118,7 @@ export default function RegisterPage2() {
       setIsLoading(false);
       const produtosStr = produtos
         .map((produtos: any) => {
-          return `⠀⠀⠀⠀● ${produtos.nome} - R$ ${produtos.preco_unitario} - *x ${produtos.quantidade}*`;
+          return `⠀⠀⠀⠀● ${produtos.nome} (${produtos.tamanho}) - R$ ${produtos.preco_unitario} - *x ${produtos.quantidade}*`;
         })
         .join("%0A");
 
@@ -133,7 +133,7 @@ export default function RegisterPage2() {
 
       const deleteProdutos = localStorage.getItem("produtos");
       for (let key in localStorage) {
-        if (key.startsWith("quantidade_")) {
+        if (key.startsWith("quantidade_"), key.startsWith("tamanho_")) {
           localStorage.removeItem(key);
         }
       }

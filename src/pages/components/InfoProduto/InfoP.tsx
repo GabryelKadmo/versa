@@ -1,7 +1,6 @@
 import { ActionIcon, Button, Divider, Flex, Text, Title } from "@mantine/core";
 import {
   IconBookmark,
-  IconHeart,
   IconRuler2,
   IconShare,
 } from "@tabler/icons-react";
@@ -9,10 +8,11 @@ import { CoresP } from "./CoresP";
 import "./InfoP.css";
 import { TamanhoP } from "./TamanhoP";
 // import { QuantidadeCompraP } from "./QuantidadeCompraP";
-import { BotaoCompra } from "./BotaoCompra";
-import { useDisclosure } from "@mantine/hooks";
 import { Modal } from "@mantine/core";
+import { useDisclosure } from "@mantine/hooks";
+import { useEffect, useState } from "react";
 import medidaMasculina from "./../images/TabelaMedidas/SizingChart.png";
+import { BotaoCompra } from "./BotaoCompra";
 type Props = {
   marca: string;
   categoria: string;
@@ -26,12 +26,33 @@ type Props = {
 };
 
 export function InfoP(props: Props) {
-  const descontoFake = props.preco
+  
+  const [opened, { open, close }] = useDisclosure(false);
+  const [selectedSize, setSelectedSize] = useState("");
+
+  // Construct a unique local storage key using the product's _id
+  const localStorageKey = `tamanho_${props._id}`;
+
+  const handleSizeChange = (size:string) => {
+    setSelectedSize(size);
+  };
+
+  useEffect(() => {
+    // Save the selected size to local storage using the unique key
+    localStorage.setItem(localStorageKey, selectedSize);
+  }, [selectedSize, localStorageKey]);
+
+  
+  const valorFormatado = props.preco.toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+  })
+const descontoFake = props.preco
     ? parseFloat((props.preco * 2).toFixed(2))
     : 0;
 
-  const [opened, { open, close }] = useDisclosure(false);
   return (
+
     <>
       <div>
         <Flex
@@ -48,14 +69,7 @@ export function InfoP(props: Props) {
               </Text>
             </Flex>
 
-            <Flex gap={10} className="configP" w={322} justify={"end"}>
-              <ActionIcon w={60} color="red" radius="md" variant="light">
-                <IconHeart size="1.225rem" />
-
-                <Text ml={11} fw={600} lh={-90} fz={21}>
-                  20
-                </Text>
-              </ActionIcon>
+            <Flex gap={10} className="configP" w={122} justify={"end"}>
 
               <ActionIcon color="dark" radius="md" variant="light">
                 <IconBookmark size="1.125rem" />
@@ -69,7 +83,7 @@ export function InfoP(props: Props) {
 
           <Divider my="sm" />
 
-          <Title mt="xs">R$ {props.preco}</Title>
+          <Title mt="xs">{valorFormatado}</Title>
 
           <Text color="dimmed" td="line-through" mb="xs">
             R$ {descontoFake}
@@ -89,7 +103,8 @@ export function InfoP(props: Props) {
             Escolha o tamanho:
           </Text>
 
-          <TamanhoP />
+          <TamanhoP onChange={handleSizeChange} productId={props._id} />
+
 
           <Divider my="sm" />
 
@@ -113,6 +128,7 @@ export function InfoP(props: Props) {
               quantidade={1}
               quantidade_estoque={""}
               total={0}
+              tamanho={selectedSize}
             />
 
             <Modal opened={opened} onClose={close} centered size={1020}>
