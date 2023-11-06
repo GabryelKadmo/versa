@@ -20,7 +20,6 @@ type Props = {
 };
 
 export function CardNovidades(props: Props) {
-
   const context = useContext(AppContext);
 
   if (context === undefined) {
@@ -29,8 +28,12 @@ export function CardNovidades(props: Props) {
   }
   const { cartItem } = context;
 
-
   localStorage.setItem("cart", JSON.stringify(cartItem));
+  const valorFormatado = props.preco.toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+  });
+
   return (
     <div>
       <Card shadow="sm" padding="lg" radius="md" withBorder>
@@ -45,7 +48,7 @@ export function CardNovidades(props: Props) {
           </Text>
         </Group>
         <Text ff={"Inter"} size="lg" weight={800}>
-          R${props.preco}
+          {valorFormatado}
         </Text>
         <Flex gap={12}>
           <Rating

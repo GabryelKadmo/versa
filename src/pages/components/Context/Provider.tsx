@@ -14,6 +14,7 @@ interface Product {
   quantidade_estoque: string;
   quantidade: number;
   total: number;
+  tamanho: string;
 }
 
 

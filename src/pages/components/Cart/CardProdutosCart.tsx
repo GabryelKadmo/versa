@@ -13,7 +13,7 @@ type Props = {
   tamanho: string;
   quantidade: number;
 };
-
+ 
 const CardProdutosCart = (props: Props) => {
   const context = useContext(AppContext);
 
@@ -63,11 +63,18 @@ const CardProdutosCart = (props: Props) => {
 
     // Remove the item from localStorage
     localStorage.removeItem(`quantidade_${props._id}`);
+    localStorage.removeItem(`tamanho_${props._id}`);
 
     setCartItem(updatedItems);
     localStorage.setItem("cart", JSON.stringify(updatedStorage));
     // Verify the new state here
   };
+
+  const valorFormatado = props.preco.toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+  })
+
   return (
     <div className="cardProdutosCart">
       <div className="imageLeft">
@@ -76,11 +83,10 @@ const CardProdutosCart = (props: Props) => {
 
       <div className="w-100 infoProdutosRight">
         <h6>{props.title}</h6>
-        <h6 className="precoProduto">R$ {props.preco}</h6>
+        <h6 className="precoProduto">{valorFormatado}</h6>
         <p>
-          {props.cor}
           <br />
-          {props.tamanho}
+          Tamanho: {props.tamanho}
         </p>
         <div className="inputQuantity">
           <NumberInput

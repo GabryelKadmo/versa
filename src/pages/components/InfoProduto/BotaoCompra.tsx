@@ -18,6 +18,7 @@ type Props = {
   quantidade_estoque: string;
   quantidade: number;
   total: number;
+  tamanho: string;
 };
 
 export function BotaoCompra(props: Props) {
@@ -56,7 +57,26 @@ export function BotaoCompra(props: Props) {
     });
   }
 
+  const notifySize = () => {
+    toast.error('Selecione um tamanho', {
+      position: "bottom-right",
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+  }
+
+
   const handleAddCart = () => {
+      if (!props.tamanho) {
+        // If selectedSize is empty, show an error or prevent adding to cart
+        notifySize();
+        return;
+      }
     if (cartItem.some(item => item._id === props._id)) {
       notifyBad();
     } else {

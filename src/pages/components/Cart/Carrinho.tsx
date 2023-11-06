@@ -49,7 +49,7 @@ export default function Carrinho() {
                     preco={item.preco}
                     img={item.imgurl}
                     cor={item.descricao}
-                    tamanho={item.marca}
+                    tamanho={item.tamanho}
                     quantidade={item.quantidade}
                   />
                   <hr />

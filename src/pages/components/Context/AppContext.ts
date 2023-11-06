@@ -14,6 +14,7 @@ interface AppContextType {
     quantidade_estoque: string;
     quantidade: number;
     total: number;
+    tamanho: string;
   }[];
   cartItem: {
     total: number;
@@ -28,6 +29,7 @@ interface AppContextType {
     imgurl: string;
     quantidade_estoque: string;
     quantidade: number;
+    tamanho: string;
   }[];
   loading: boolean;
   setLoading: React.Dispatch<React.SetStateAction<boolean>>;
@@ -46,6 +48,7 @@ interface AppContextType {
         quantidade_estoque: string;
         quantidade: number;
         total: number;
+        tamanho: string;
       }[]
     >
   >;
@@ -63,6 +66,7 @@ interface AppContextType {
         imgurl: string;
         quantidade_estoque: string;
         quantidade: number;
+        tamanho: string;
         total: number;
       }[]
     >
@@ -85,6 +89,7 @@ interface AppContextType {
     imgurl: string;
     quantidade_estoque: string;
     quantidade: number;
+    tamanho: string;
   }[];
   setSearchResults: React.Dispatch<
     React.SetStateAction<
@@ -101,10 +106,10 @@ interface AppContextType {
         quantidade_estoque: string;
         quantidade: number;
         total: number;
+        tamanho: string;
       }[]
     >
   >;
-  
 }
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
