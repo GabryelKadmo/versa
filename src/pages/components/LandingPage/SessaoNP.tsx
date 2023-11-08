@@ -20,26 +20,29 @@ export function SessaoNP() {
   return (
     <div className="container_np">
       <Flex direction={"column"} mb={200}>
-        <Title
-          order={1}
-          sx={{ fontFamily: "Poppins, sans-serif" }}
-          fz={70}
-          weight={800}
-        >
-          ASSINE
-        </Title>
+      <div className="titleText">
+          <Title
+            order={1}
+            sx={{ fontFamily: "Poppins, sans-serif" }}
+            fz={50}
+            weight={800}
+          >
+            ADQUIRA
+          </Title>
 
-        <Title
-          order={1}
-          sx={{ fontFamily: "Poppins, sans-serif" }}
-          fz={70}
-          weight={1}
-          mb={20}
-        >
-          NOSSOS PACOTES
-        </Title>
+          <Title
+            order={1}
+            sx={{ fontFamily: "Poppins, sans-serif" }}
+            fz={50}
+            weight={1}
+            mb={20}
+          >
+            NOSSOS PACOTES
+          </Title>
+        </div>
 
         <SimpleGrid
+          className="cardsGrid"
           cols={3}
           spacing="xl"
           breakpoints={[
@@ -57,7 +60,7 @@ export function SessaoNP() {
           >
             <Card.Section>
               <Link to={"/produto/" + "654b7291612bbb9957764cb2"}>
-                <Image src={Pacote3} height={600} alt="Streetwear" />
+                <Image src={Pacote3} height={420} alt="Streetwear" />
               </Link>
             </Card.Section>
             <Group position="center" mt="md" mb="xs">
@@ -76,6 +79,7 @@ export function SessaoNP() {
           color="dark"
           fullWidth
           mt="md"
+          mb={20}
           radius="lg"
           component="a"
           rel="noopener noreferrer"
@@ -93,7 +97,7 @@ export function SessaoNP() {
           >
             <Card.Section>
               <Link to={"/produto/" + "654b6ee91516552fe15a9fa4"}>
-                <Image src={Pacote1} height={600} alt="Norway" />
+                <Image src={Pacote1} height={420} alt="Norway" />
               </Link>
             </Card.Section>
 
@@ -129,8 +133,8 @@ export function SessaoNP() {
             withBorder
           >
             <Card.Section>
-              <Link to={"/produto/" + "654b6b01ab6ca861310cec50"}>
-                <Image src={Pacote2} height={600} alt="Formal" />
+              <Link to={"/produto/" + "654bb32febf579323f95c561"}>
+                <Image src={Pacote2} height={420} alt="Formal" />
               </Link>
             </Card.Section>
 
@@ -153,7 +157,7 @@ export function SessaoNP() {
               radius="lg"
               component="a"
               rel="noopener noreferrer"
-              href={"/produto/" + "654b6b01ab6ca861310cec50"}
+              href={"/produto/" + "654bb32febf579323f95c561"}
             >
               Ver detalhes
             </Button>
