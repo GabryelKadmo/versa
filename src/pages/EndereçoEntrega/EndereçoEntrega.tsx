@@ -5,7 +5,7 @@ import Header from "./../components/Header/Header";
 import "./EndereçoEntrega.css";
 import { Select } from "@mantine/core";
 import { Checkbox } from "@mantine/core";
-import { isNotEmpty, useForm } from "@mantine/form";
+import { useForm } from "@mantine/form";
 import { useEffect, useState } from "react";
 import { pedido } from "../../../Utils/config";
 
@@ -40,10 +40,7 @@ export default function RegisterPage2() {
       logradouro: dados === "None" ? "" : dados.logradouro,
       pontoReferencia: dados === "None" ? "" : dados.pontoReferencia,
     },
-    validate: {
-      nome: isNotEmpty(""),
-      CEP: isNotEmpty(""),
-    },
+    validate: {},
   });
 
   useEffect(() => {
