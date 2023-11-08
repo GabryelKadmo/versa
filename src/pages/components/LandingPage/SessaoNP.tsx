@@ -11,6 +11,7 @@ import {
   Text,
   Image,
   Group,
+  Button,
 } from "@mantine/core";
 
 import { Link } from "react-router-dom";
@@ -18,7 +19,7 @@ import { Link } from "react-router-dom";
 export function SessaoNP() {
   return (
     <div className="container_np">
-      <Flex direction={"column"}>
+      <Flex direction={"column"} mb={200}>
         <Title
           order={1}
           sx={{ fontFamily: "Poppins, sans-serif" }}
@@ -55,83 +56,33 @@ export function SessaoNP() {
             withBorder
           >
             <Card.Section>
-              <Link to={"/produto/" + "654b6ee91516552fe15a9fa4"}>
+              <Link to={"/produto/" + "654b7291612bbb9957764cb2"}>
                 <Image src={Pacote3} height={600} alt="Streetwear" />
               </Link>
             </Card.Section>
-            <Group position="apart" mt="md" mb="xs">
+            <Group position="center" mt="md" mb="xs">
               <Text
-                weight={600}
+                weight={400}
                 sx={{ fontFamily: "Roboto, sans-serif" }}
-                fz={36}
+                fz={30}
                 mt={15}
+                mb={15}
               >
-                PACOTE ESPORTIVO
+                PACOTE ESPORTIVO - R$250
               </Text>
             </Group>
 
-            <Text
-              weight={400}
-              sx={{ fontFamily: "Roboto, sans-serif" }}
-              fz={15}
-            >
-              Receba mensalmente em sua residência roupas esportivas de alta
-              qualidade com nossa assinatura mensal exclusiva. Aproveite o
-              conforto e o estilo que só encontrará em nossa loja.
-            </Text>
-
-            <Text
-              weight={400}
-              sx={{ fontFamily: "Roboto, sans-serif" }}
-              fz={25}
-              mt={50}
-            >
-              R$250
-            </Text>  
-          </Card>
-          <Card
-            className="hover_click_np"
-            shadow="sm"
-            padding="lg"
-            radius="md"
-            withBorder
-          > 
-            <Card.Section>
-              <Link to={"/produto/" + "654b6ee91516552fe15a9fa4"}>
-                <Image src={Pacote1} height={600} alt="Norway" />
-              </Link>
-            </Card.Section>
-
-            <Group position="apart" mt="md" mb="xs">
-              <Text
-                weight={600}
-                sx={{ fontFamily: "Roboto, sans-serif" }}
-                fz={36}
-                mt={15}
-              >
-                PACOTE CASUAL
-              </Text>
-            </Group>
-
-            <Text
-              weight={400}
-              sx={{ fontFamily: "Roboto, sans-serif" }}
-              fz={15}
-            >
-              Receba todo mês roupas confortáveis e versáteis, perfeitas para o
-              seu dia a dia, entregues diretamente à sua porta. Estilo sem
-              esforço ao seu alcance.
-            </Text>
-
-            <Text
-              weight={400}
-              sx={{ fontFamily: "Roboto, sans-serif" }}
-              fz={25}
-              mt={50}
-            >
-              R$200
-            </Text>
-        
+            <Button
+          color="dark"
+          fullWidth
+          mt="md"
+          radius="lg"
+          component="a"
+          rel="noopener noreferrer"
+          href={"/produto/" + "654b7291612bbb9957764cb2"}
+        >
+          Ver detalhes
+        </Button>
           </Card>
           <Card
             className="hover_click_np"
@@ -140,47 +91,75 @@ export function SessaoNP() {
             radius="md"
             withBorder
           >
-            
             <Card.Section>
-            <Link to={"/produto/" + "654b6b01ab6ca861310cec50"}>
-                <Image src={Pacote2} height={600} alt="Formal" />
-            </Link>
+              <Link to={"/produto/" + "654b6ee91516552fe15a9fa4"}>
+                <Image src={Pacote1} height={600} alt="Norway" />
+              </Link>
             </Card.Section>
 
-            <Group position="apart" mt="md" mb="xs">
+            <Group position="center" mt="md" mb="xs">
               <Text
-                weight={600}
+                weight={400}
                 sx={{ fontFamily: "Roboto, sans-serif" }}
+                fz={30}
                 mt={15}
-                fz={36}
+                mb={15}
               >
-                PACOTE MINIMALISTA
+                PACOTE CASUAL - R$200
               </Text>
             </Group>
 
-            <Text
-              weight={400}
-              sx={{ fontFamily: "Roboto, sans-serif" }}
-              fz={15}
-            >
-              Receba mensalmente peças de roupa de design simples, cortes limpos
-              e cores neutras, garantindo um estilo sofisticado e descomplicado,
-              diretamente na sua porta.
-            </Text>
+            <Button
+          color="dark"
+          fullWidth
+          mt="md"
+          radius="lg"
+          component="a"
+          rel="noopener noreferrer"
+          href={"/produto/" + "654b6ee91516552fe15a9fa4"}
+        >
+          Ver detalhes
+        </Button>
+          </Card>
+          <Card
+            className="hover_click_np"
+            shadow="sm"
+            padding="lg"
+            radius="md"
+            withBorder
+          >
+            <Card.Section>
+              <Link to={"/produto/" + "654b6b01ab6ca861310cec50"}>
+                <Image src={Pacote2} height={600} alt="Formal" />
+              </Link>
+            </Card.Section>
 
-            <Text
-              weight={400}
-              sx={{ fontFamily: "Roboto, sans-serif" }}
-              fz={25}
-              mt={50}
+            <Group position="center" mt="md" mb="xs">
+              <Text
+                weight={400}
+                sx={{ fontFamily: "Roboto, sans-serif" }}
+                mt={15}
+                fz={30}
+                mb={15}
+              >
+                PACOTE MINIMALISTA - R$180
+              </Text>
+            </Group>
+            <Button
+              color="dark"
+              fullWidth
+              mt="md"
+              mb={15}
+              radius="lg"
+              component="a"
+              rel="noopener noreferrer"
+              href={"/produto/" + "654b6b01ab6ca861310cec50"}
             >
-              R$180
-            </Text>
-            
+              Ver detalhes
+            </Button>
           </Card>
         </SimpleGrid>
       </Flex>
-      <button className="mais_pacotes">MAIS PACOTES</button>
     </div>
   );
 }
