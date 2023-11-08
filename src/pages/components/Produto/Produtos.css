@@ -1,0 +1,5 @@
+.affixProdutos:hover{
+    cursor: pointer;
+    transform: scale(0.98);
+    background-color: #3f3d3d;
+}

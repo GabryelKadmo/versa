@@ -20,7 +20,7 @@ export function SessaoNP() {
   return (
     <div className="container_np">
       <Flex direction={"column"} mb={200}>
-      <div className="titleText">
+        <div className="titleText">
           <Title
             order={1}
             sx={{ fontFamily: "Poppins, sans-serif" }}
@@ -76,17 +76,17 @@ export function SessaoNP() {
             </Group>
 
             <Button
-          color="dark"
-          fullWidth
-          mt="md"
-          mb={20}
-          radius="lg"
-          component="a"
-          rel="noopener noreferrer"
-          href={"/produto/" + "654b7291612bbb9957764cb2"}
-        >
-          Ver detalhes
-        </Button>
+              color="dark"
+              fullWidth
+              mt="md"
+              mb={20}
+              radius="lg"
+              component="a"
+              rel="noopener noreferrer"
+              href={"/produto/" + "654b7291612bbb9957764cb2"}
+            >
+              Ver detalhes
+            </Button>
           </Card>
           <Card
             className="hover_click_np"
@@ -114,16 +114,16 @@ export function SessaoNP() {
             </Group>
 
             <Button
-          color="dark"
-          fullWidth
-          mt="md"
-          radius="lg"
-          component="a"
-          rel="noopener noreferrer"
-          href={"/produto/" + "654b6ee91516552fe15a9fa4"}
-        >
-          Ver detalhes
-        </Button>
+              color="dark"
+              fullWidth
+              mt="md"
+              radius="lg"
+              component="a"
+              rel="noopener noreferrer"
+              href={"/produto/" + "654b6ee91516552fe15a9fa4"}
+            >
+              Ver detalhes
+            </Button>
           </Card>
           <Card
             className="hover_click_np"
