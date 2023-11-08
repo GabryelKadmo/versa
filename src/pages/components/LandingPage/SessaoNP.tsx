@@ -13,6 +13,8 @@ import {
   Group,
 } from "@mantine/core";
 
+import { Link } from "react-router-dom";
+
 export function SessaoNP() {
   return (
     <div className="container_np">
@@ -53,9 +55,10 @@ export function SessaoNP() {
             withBorder
           >
             <Card.Section>
-              <Image src={Pacote3} height={600} alt="Streetwear" />
+              <Link to={"/produto/" + "654b6ee91516552fe15a9fa4"}>
+                <Image src={Pacote3} height={600} alt="Streetwear" />
+              </Link>
             </Card.Section>
-
             <Group position="apart" mt="md" mb="xs">
               <Text
                 weight={600}
@@ -84,7 +87,7 @@ export function SessaoNP() {
               mt={50}
             >
               R$250
-            </Text>
+            </Text>  
           </Card>
           <Card
             className="hover_click_np"
@@ -92,9 +95,11 @@ export function SessaoNP() {
             padding="lg"
             radius="md"
             withBorder
-          >
+          > 
             <Card.Section>
-              <Image src={Pacote1} height={600} alt="Norway" />
+              <Link to={"/produto/" + "654b6ee91516552fe15a9fa4"}>
+                <Image src={Pacote1} height={600} alt="Norway" />
+              </Link>
             </Card.Section>
 
             <Group position="apart" mt="md" mb="xs">
@@ -126,6 +131,7 @@ export function SessaoNP() {
             >
               R$200
             </Text>
+        
           </Card>
           <Card
             className="hover_click_np"
@@ -134,8 +140,11 @@ export function SessaoNP() {
             radius="md"
             withBorder
           >
+            
             <Card.Section>
-              <Image src={Pacote2} height={600} alt="Formal" />
+            <Link to={"/produto/" + "654b6b01ab6ca861310cec50"}>
+                <Image src={Pacote2} height={600} alt="Formal" />
+            </Link>
             </Card.Section>
 
             <Group position="apart" mt="md" mb="xs">
@@ -167,6 +176,7 @@ export function SessaoNP() {
             >
               R$180
             </Text>
+            
           </Card>
         </SimpleGrid>
       </Flex>
