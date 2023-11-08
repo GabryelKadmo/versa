@@ -21,6 +21,10 @@ type Props = {
   tamanho: string;
 };
 
+const idNotifyBad = "id-notify-bad-yes";
+const idNotifySize = "id-notify-size-yes";
+const idNotify = "id-notify-yes";
+
 export function BotaoCompra(props: Props) {
   const context = useContext(AppContext);
 
@@ -33,11 +37,12 @@ export function BotaoCompra(props: Props) {
 
   const notify = () => {
     toast.success('Produto adicionado ao carrinho', {
+      toastId: idNotify,
       position: "bottom-right",
       autoClose: 1000,
       hideProgressBar: false,
-      closeOnClick: false,
-      pauseOnHover: false,
+      closeOnClick: true,
+      pauseOnHover: true,
       draggable: true,
       progress: undefined,
       theme: "light",
@@ -46,11 +51,12 @@ export function BotaoCompra(props: Props) {
 
   const notifyBad = () => {
     toast.error('Produto já no carrinho', {
+      toastId: idNotifyBad,
       position: "bottom-right",
       autoClose: 1000,
       hideProgressBar: false,
-      closeOnClick: false,
-      pauseOnHover: false,
+      closeOnClick: true,
+      pauseOnHover: true,
       draggable: true,
       progress: undefined,
       theme: "light",
@@ -59,11 +65,12 @@ export function BotaoCompra(props: Props) {
 
   const notifySize = () => {
     toast.error('Selecione um tamanho', {
+      toastId: idNotifySize,
       position: "bottom-right",
       autoClose: 1000,
-      hideProgressBar: true,
-      closeOnClick: false,
-      pauseOnHover: false,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
       draggable: true,
       progress: undefined,
       theme: "light",
