@@ -62,10 +62,14 @@
   border: 1px solid red;
 }
 .texto_op_produto{
+  /* border: 1px solid red; */
   text-decoration: none;
   color: black;
   font-family: Poppins;
   font-size: 0.9rem;
   font-weight: 500;
   line-height: normal;
+}
+.off_sublinhado{
+  text-decoration: none;
 }
