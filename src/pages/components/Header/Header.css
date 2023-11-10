@@ -61,7 +61,18 @@
 .bordinha_teste_header{
   border: 1px solid red;
 }
-
+.texto_op_produto{
+  /* border: 1px solid red; */
+  text-decoration: none;
+  color: black;
+  font-family: Poppins;
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: normal;
+}
+.off_sublinhado{
+  text-decoration: none;
+}
 @media (min-width: 930px) and (max-width: 991px){
   .align_button_mobile{
     margin-left: 430px;

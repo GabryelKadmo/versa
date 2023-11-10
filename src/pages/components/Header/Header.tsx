@@ -9,16 +9,23 @@ import {
   ScrollArea,
   createStyles,
   rem,
+  Menu,
+  Text,
+  UnstyledButton,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 //---------
 import { Link } from "react-router-dom";
 import Carrinho from "../Cart/Carrinho";
 import "./Header.css";
+import { IconShirtFilled } from '@tabler/icons-react';
+import { PiPantsFill } from "react-icons/pi";
+import { PiCoatHangerBold } from "react-icons/pi";
+import { GiPirateCoat } from "react-icons/gi";
+import AppContext from "../Context/AppContext";
+import { useContext } from "react";
 
-// const [mostrarHeader, setMostrarHeader] = useState(true);
 
-//---------
 const useStyles = createStyles((theme) => ({
   link: {
     display: "flex",
@@ -89,9 +96,37 @@ const useStyles = createStyles((theme) => ({
 }));
 
 export default function HeaderMegaMenu() {
+
   const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] =
     useDisclosure(false);
   const { classes, theme } = useStyles();
+
+  const context = useContext(AppContext);
+
+  if (context === undefined) {
+    // Trate o contexto indefinido aqui, se necessário
+    return <div>Erro: Contexto não definido.</div>;
+  }
+
+  const { produtos, setSearchResults } = context
+
+  function AddResultCalça(){
+    const valueOp = "calça";
+    const filteredProducts = produtos.filter((product) => product.categoria.toLowerCase().includes(valueOp));
+      setSearchResults(filteredProducts);
+  }
+
+  function AddResultCamisa(){
+    const valueOp = "camisa";
+    const filteredProducts = produtos.filter((product) => product.categoria.toLowerCase().includes(valueOp));
+      setSearchResults(filteredProducts);
+  }
+
+  function AddResultMoletom(){
+    const valueOp = "moletom";
+    const filteredProducts = produtos.filter((product) => product.categoria.toLowerCase().includes(valueOp));
+      setSearchResults(filteredProducts);
+  }
 
   return (
     <Box pb={40}>
@@ -117,16 +152,61 @@ export default function HeaderMegaMenu() {
             <a href="/" id="header-things" className={classes.link}>
               Home
             </a>
+            <Menu width={200}>
 
-            <a href="/produtos" id="header-things" className={classes.link}>
-              Produtos
-            </a>
-            {/* <a href="#" id="header-things" className={classes.link}>
-              Camisas
-            </a>
-            <a href="#" id="header-things" className={classes.link}>
-              Moletons
-            </a> */}
+              <Menu.Target>
+                <UnstyledButton className={classes.link}>
+                  <Text id="header-things">
+                    Produtos  
+                  </Text>      
+                </UnstyledButton>
+              </Menu.Target>
+
+              <Menu.Dropdown>
+                <Menu.Label>Geral</Menu.Label>
+                
+                <Menu.Item icon={<PiCoatHangerBold size={14} />}>
+                  <a href="/produtos" className="texto_op_produto">
+                    Produtos
+                  </a>
+                </Menu.Item>
+                
+                <Menu.Divider />
+
+                <Menu.Label>
+                  Roupas
+                </Menu.Label>
+              
+                  <Link to={"/produtosesp"} className="off_sublinhado">
+                    <Menu.Item  onClick={AddResultCalça} icon={<PiPantsFill size={14} />}>
+                      <Text className="texto_op_produto" >
+                        Calças
+                      </Text>
+                    </Menu.Item>
+                  </Link>
+              
+               
+                  <Link to={"/produtosesp"} className="off_sublinhado">
+                    <Menu.Item onClick={AddResultCamisa} icon={<IconShirtFilled size={14} />}>
+                      <Text className="texto_op_produto" >
+                        Camisas
+                      </Text>
+                    </Menu.Item>
+                  </Link>
+          
+              
+                  <Link to={"/produtosesp"} className="off_sublinhado">
+                    <Menu.Item onClick={AddResultMoletom} icon={<GiPirateCoat size={14} />}>
+                      <Text className="texto_op_produto" >
+                        Moletons
+                      </Text>
+                    </Menu.Item>
+                  </Link>
+          
+
+              </Menu.Dropdown>
+
+            </Menu>
             <a href="/pacotes" id="header-things" className={classes.link}>
               Pacotes
             </a>
