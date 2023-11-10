@@ -2,13 +2,11 @@ import {
   Box,
   Burger,
   Button,
-  Center,
   Divider,
   Drawer,
   Group,
   Header,
   ScrollArea,
-  UnstyledButton,
   createStyles,
   rem,
 } from "@mantine/core";
@@ -93,7 +91,6 @@ const useStyles = createStyles((theme) => ({
 export default function HeaderMegaMenu() {
   const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] =
     useDisclosure(false);
-  const [, { toggle: toggleLinks }] = useDisclosure(false);
   const { classes, theme } = useStyles();
 
   return (
@@ -154,7 +151,7 @@ export default function HeaderMegaMenu() {
         onClose={closeDrawer}
         size="100%"
         padding="md"
-        title="Navigation"
+        title="VERSA"
         className={classes.hiddenDesktop}
         zIndex={1000000}
       >
@@ -164,23 +161,13 @@ export default function HeaderMegaMenu() {
             color={theme.colorScheme === "dark" ? "dark.5" : "gray.1"}
           />
 
-          <a href="#" className={classes.link}>
+          <a href="/" className={classes.link}>
             Home
           </a>
-          <UnstyledButton className={classes.link} onClick={toggleLinks}>
-            <Center inline>
-              <Box component="span" mr={5}>
-                Produtos
-              </Box>
-            </Center>
-          </UnstyledButton>
-          {/* <a href="#" className={classes.link}>
-            Camisas
+          <a href="/produtos" className={classes.link}>
+            Produtos
           </a>
-          <a href="#" className={classes.link}>
-            Moletons
-          </a> */}
-          <a href="#" className={classes.link}>
+          <a href="/pacotes" className={classes.link}>
             Pacotes
           </a>
           <Divider
