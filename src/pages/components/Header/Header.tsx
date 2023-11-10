@@ -9,12 +9,19 @@ import {
   ScrollArea,
   createStyles,
   rem,
+  Menu,
+  Text,
+  UnstyledButton,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 //---------
 import { Link } from "react-router-dom";
 import Carrinho from "../Cart/Carrinho";
 import "./Header.css";
+import { IconShirtFilled } from '@tabler/icons-react';
+import { PiPantsFill } from "react-icons/pi";
+import { PiCoatHangerBold } from "react-icons/pi";
+import { GiPirateCoat } from "react-icons/gi";
 
 // const [mostrarHeader, setMostrarHeader] = useState(true);
 
@@ -117,16 +124,48 @@ export default function HeaderMegaMenu() {
             <a href="/" id="header-things" className={classes.link}>
               Home
             </a>
+            <Menu>
 
-            <a href="/produtos" id="header-things" className={classes.link}>
-              Produtos
-            </a>
-            {/* <a href="#" id="header-things" className={classes.link}>
-              Camisas
-            </a>
-            <a href="#" id="header-things" className={classes.link}>
-              Moletons
-            </a> */}
+              <Menu.Target>
+                <UnstyledButton className={classes.link}>
+                  <Text id="header-things">
+                    Produtos  
+                  </Text>      
+                </UnstyledButton>
+              </Menu.Target>
+
+              <Menu.Dropdown>
+                <Menu.Label>Geral</Menu.Label>
+                <Menu.Item icon={<PiCoatHangerBold size={14} />}>
+                  <a href="/produtos" className="texto_op_produto">
+                    Produtos
+                  </a>
+                </Menu.Item>
+                
+                <Menu.Divider />
+
+                <Menu.Label>
+                  Roupas
+                </Menu.Label>
+                <Menu.Item icon={<PiPantsFill size={14} />}>
+                  <Text className="texto_op_produto" >
+                    Calças
+                  </Text>
+                </Menu.Item>
+                <Menu.Item icon={<IconShirtFilled size={14} />}>
+                  <Text className="texto_op_produto" >
+                    Camisas
+                  </Text>
+                </Menu.Item>
+                <Menu.Item icon={<GiPirateCoat size={14} />}>
+                  <Text className="texto_op_produto" >
+                    Moletons
+                  </Text>
+                </Menu.Item>
+
+              </Menu.Dropdown>
+
+            </Menu>
             <a href="/pacotes" id="header-things" className={classes.link}>
               Pacotes
             </a>

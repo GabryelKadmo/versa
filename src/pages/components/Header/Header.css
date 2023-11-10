@@ -61,3 +61,11 @@
 .bordinha_teste_header{
   border: 1px solid red;
 }
+.texto_op_produto{
+  text-decoration: none;
+  color: black;
+  font-family: Poppins;
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: normal;
+}
