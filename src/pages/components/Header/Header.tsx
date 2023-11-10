@@ -132,9 +132,11 @@ export default function HeaderMegaMenu() {
             </a>
           </Group>
 
-          <Group className={classes.hiddenMobile}>
+          <Group className="align_button_mobile" >
             <Carrinho />
-            <Link to="/Login" id="LoginButton">Entrar</Link>
+            <Group className={classes.hiddenMobile}>
+              <Link to="/Login" id="LoginButton">Entrar</Link>
+            </Group>
           </Group>
 
           <Burger
