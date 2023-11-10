@@ -33,16 +33,15 @@ export default function Carrinho() {
     <div className="cartTestArea">
       <h1 className="titleCart-h1 text-center pt-2 pb-2">SEU CARRINHO</h1>
       <hr />
-      <div className="cartTestArea2" style={{ minHeight: "350px", maxHeight: "350px"}}>
+      <div
+        className="cartTestArea2"
+        style={{ minHeight: "350px", maxHeight: "350px" }}
+      >
         {quantidadeCarrinho >= 1 ? (
-          <div
-            className="cartContent"
-            style={{minHeight: "460px", maxHeight: "400px", overflowY: "auto"}}
-          >
+          <div className="cartContent">
             <div className="cart-items">
               {cartItem.map((item) => (
                 <div key={item._id}>
-                  
                   <CardProdutosCart
                     _id={item._id}
                     title={item.titulo}

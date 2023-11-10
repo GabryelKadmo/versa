@@ -3,6 +3,9 @@ import ImagemAS from "../images/SessaoAS/imagem AS.png";
 import { Flex, Image, Text, Button } from '@mantine/core';
 
 export function SessaoAS() {
+  function redirectProdutos(){
+    window.location.href = '/produtos';
+  }
   return (
     <div className="container_as">
       <Image src={ImagemAS} >
@@ -17,6 +20,7 @@ export function SessaoAS() {
         </Text>
 
         <Button 
+        onClick={redirectProdutos}
         variant="outline" 
         color="dark" 
         radius={"xl"} 

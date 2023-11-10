@@ -4,6 +4,9 @@
   border-radius: 20px;
   height: 600px;
 }
+.img_slide:hover {
+  cursor: pointer;
+}
 .caixa_slide {
   margin-top: -100px;
   /* border: 1px solid red; */
