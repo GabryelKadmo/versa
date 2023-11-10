@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Syne:wght@800&display=swap");
 
-.img_slide{
+.img_slide {
   border-radius: 20px;
 }
 .caixa_slide {
@@ -10,7 +10,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
 }
 
 .slide_centro {
@@ -19,7 +18,6 @@
   flex-direction: column;
   width: 85%;
   margin-top: 100px;
-
 }
 
 .texto_versa {

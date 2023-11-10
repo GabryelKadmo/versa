@@ -75,22 +75,22 @@ export default function RegisterPage2() {
       console.error("Event or event.target is not defined.");
     }
   };
-      // event.preventDefault();
-      const produtos =
-        cart &&
-        cart.map((item: any) => ({
-          id: item._id,
-          nome: item.titulo,
-          quantidade: item.quantidade,
-          preco_unitario: item.preco,
-          tamanho: item.tamanho,
-        }));
-        async function handleSubmit() {
-          if (isChecked) {
-            setIsLoading(true);
-            localStorage.removeItem("cart");
-            localStorage.removeItem("valor_total");
-      
+  // event.preventDefault();
+  const produtos =
+    cart &&
+    cart.map((item: any) => ({
+      id: item._id,
+      nome: item.titulo,
+      quantidade: item.quantidade,
+      preco_unitario: item.preco,
+      tamanho: item.tamanho,
+    }));
+  async function handleSubmit() {
+    if (isChecked) {
+      setIsLoading(true);
+      localStorage.removeItem("cart");
+      localStorage.removeItem("valor_total");
+
       const metodoPagamento = localStorage.getItem("tipo_pagamento");
       const object = {
         ...form.values,
@@ -102,7 +102,6 @@ export default function RegisterPage2() {
         produtos: [...produtos],
         telefone: form.values.celular,
         tipo_pagamento: metodoPagamento,
-
       };
       try {
         await pedido(order); // Fazer a chamada à API
@@ -124,13 +123,13 @@ export default function RegisterPage2() {
       }, 0);
       const totalComTresDecimais = parseFloat(total.toFixed(3));
 
-      const whatsapp = `*DETALHES%20DO%20PEDIDO*%3A%0A✄- - - - - - - - - - - - - - - -%0A*NOME*%3A ${form.values.nome}%0A%0A*TELEFONE:* ${form.values.celular} %0A%0A*ENDEREÇO:* ${form.values.logradouro}. ${form.values.bairro}, ${form.values.complemento}, Nº ${form.values.numero} %0A%0A*REFERÊNCIA:* ${form.values.pontoReferencia}%0A%0A*PRODUTOS:*%0A${produtosStr}%0A%0A✄- - - - - - - - - - - - - - - -%0A*TOTAL:* R$ ${totalComTresDecimais}%0A%0A*FORMA DE PAGAMENTO: ${metodoPagamento}`;
+      const whatsapp = `*DETALHES%20DO%20PEDIDO*%3A%0A✄- - - - - - - - - - - - - - - -%0A*NOME*%3A ${form.values.nome}%0A%0A*TELEFONE:* ${form.values.celular} %0A%0A*ENDEREÇO:* ${form.values.logradouro}. ${form.values.bairro}, ${form.values.complemento}, Nº ${form.values.numero} %0A%0A*REFERÊNCIA:* ${form.values.pontoReferencia}%0A%0A*PRODUTOS:*%0A${produtosStr}%0A✄- - - - - - - - - - - - - - - -%0A*TOTAL:* R$ ${totalComTresDecimais}%0A%0A*FORMA DE PAGAMENTO:* ${metodoPagamento}`;
 
       window.open(`https://wa.me/557391163838/?text=${whatsapp}`);
 
       const deleteProdutos = localStorage.getItem("produtos");
       for (let key in localStorage) {
-        if (key.startsWith("quantidade_"), key.startsWith("tamanho_")) {
+        if ((key.startsWith("quantidade_"), key.startsWith("tamanho_"))) {
           localStorage.removeItem(key);
         }
       }
