@@ -5,6 +5,10 @@ import ImagemDireita from "../images/SessaoCO/Direita.png";
 import { SimpleGrid, Flex, Card, Title, Text, Image, Group } from '@mantine/core';
 
 export function SessaoCO() {
+  function redirectProdutos(){
+    window.location.href = '/produtos';
+  }
+
   return (
     <div className="container_co">
       <Flex direction={"column"}>
@@ -132,7 +136,7 @@ export function SessaoCO() {
 
       </Flex>
 
-      <button className="mais_estilos">MAIS ESTILOS</button>
+      <button onClick={redirectProdutos} className="mais_estilos">MAIS ESTILOS</button>
     </div>
   );
 }

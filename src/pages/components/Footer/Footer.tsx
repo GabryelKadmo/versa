@@ -1,8 +1,7 @@
 import img from "./../images/Logo/logo.png";
 import img2 from "./../images/Footer/whatsappFooter.png";
-import img3 from "./../images/Footer/telegramFooter.png";
 import img4 from "./../images/Footer/2023Footer.png";
-
+import img5 from "./../images/Footer/intalogo.png";
 import "./Footer.css";
 import { useState } from "react";
 
@@ -21,7 +20,9 @@ export default function Footer() {
     "Quem Somos",
     "Compra Segura",
   ]);
-
+  function redirectInsta() {
+    window.open("https://www.instagram.com/versastore.tsx/", "_blank");
+  }
   return (
     <>
       <footer className="py-5">
@@ -70,15 +71,19 @@ export default function Footer() {
           </div>
           <div>
             <button className="btn text-white mb-3">Entre em Contato</button>
-            <p className="text-white mb-0">+55 (75) 99999-9999</p>
-            <p className="text-white">versa@example.com</p>
+            <p className="text-white mb-0">+55 (77) 99702-4742</p>
+            <p className="text-white">versa@onlineversa.com</p>
           </div>
         </div>
 
         <div className="footerDown d-flex justify-content-between px-5">
           <div className="redes-sociais">
-            <img className="me-3" src={img2} alt="Whatsapp icon" />
-            <img src={img3} alt="Telegram icon" />
+            <img
+              className="logoFooterSocialMedia me-3"
+              src={img2}
+              alt="Whatsapp icon"
+            />
+            <img className="logoFooterSocialMedia" onClick={redirectInsta} src={img5} alt="insta aqui" />
           </div>
           <img src={img4} alt="Year icon" />
         </div>

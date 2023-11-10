@@ -73,3 +73,74 @@
 .off_sublinhado{
   text-decoration: none;
 }
+@media (min-width: 930px) and (max-width: 991px){
+  .align_button_mobile{
+    margin-left: 430px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 929px){
+  .align_button_mobile{
+    margin-left: 380px;
+  }
+}
+
+@media (min-width: 730px) and (max-width: 768px){
+  .align_button_mobile{
+    margin-left: 225px;
+  }
+}
+
+@media (min-width: 680px) and (max-width: 729px){
+  .align_button_mobile{
+    margin-left: 180px;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 679px){
+  .align_button_mobile{
+    margin-left: 130px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 639px){
+  .align_button_mobile{
+    margin-left: 90px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 599px){
+  .align_button_mobile{
+    margin-left: 60px;
+  }
+}
+
+@media (min-width: 530px) and (max-width: 575px){
+  .align_button_mobile{
+    margin-left: 180px;
+  }
+}
+
+@media (min-width: 490px) and (max-width: 529px){
+  .align_button_mobile{
+    margin-left: 140px;
+  }
+}
+
+@media (min-width: 450px) and (max-width: 489px){
+  .align_button_mobile{
+    margin-left: 100px;
+  }
+}
+
+@media (min-width: 410px) and (max-width: 449px){
+  .align_button_mobile{
+    margin-left: 60px;
+  }
+}
+
+@media (min-width: 370px) and (max-width: 409px){
+  .align_button_mobile{
+    margin-left: 25px;
+  }
+}
