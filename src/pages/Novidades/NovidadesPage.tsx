@@ -4,6 +4,7 @@ import { FiltroCima } from "../components/SessaoFc/SessaoFC";
 import { MeioFiltroProduto } from "../components/SessaoFP/SessaoFP";
 import versaBF from "./../components/images/Novidades/VERSABLACKFRIDAY.png";
 import Header from "./../components/Header/Header";
+import {Affix} from "../components/Affix/Affix"
 
 export default function NovidadesPage() {
   return (
@@ -15,6 +16,7 @@ export default function NovidadesPage() {
       <Novidade />
       <FiltroCima />
       <MeioFiltroProduto />
+      <Affix />
     </div>
   );
 }

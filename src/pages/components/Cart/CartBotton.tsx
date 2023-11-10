@@ -26,7 +26,6 @@ const CartBotton = () => {
     (total, item) => total + (item.preco * item.quantidade),0 
   ).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
   localStorage.setItem("valor_total",(totalPrice));
-  ;
 
 
   return (
