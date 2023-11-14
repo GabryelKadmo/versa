@@ -61,7 +61,6 @@ export default function Carrinho() {
             className="imgEmptyCart"
             src={cartSVG}
             alt="imagem carrinho vazio"
-            style={{ width: "90%", height: "auto" }}
           />
         )}
       </div>
