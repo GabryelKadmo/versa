@@ -128,6 +128,10 @@ export default function HeaderMegaMenu() {
       setSearchResults(filteredProducts);
   }
 
+  function AddResultProdutos(){
+    setSearchResults([]);
+  }
+
   return (
     <Box pb={40}>
       <Header height={60} px="md" sx={{ position: 'fixed'}}>
@@ -165,11 +169,18 @@ export default function HeaderMegaMenu() {
               <Menu.Dropdown>
                 <Menu.Label>Geral</Menu.Label>
                 
-                <Menu.Item icon={<PiCoatHangerBold size={14} />}>
+                {/* <Menu.Item icon={<PiCoatHangerBold size={14} />}>
                   <a href="/produtos" className="texto_op_produto">
                     Produtos
                   </a>
-                </Menu.Item>
+                </Menu.Item> */}
+                <Link to={"/produtos"} className="off_sublinhado">
+                    <Menu.Item onClick={AddResultProdutos} icon={<PiCoatHangerBold size={14} />}>
+                      <Text className="texto_op_produto" >
+                        Produtos
+                      </Text>
+                    </Menu.Item>
+                  </Link>
                 
                 <Menu.Divider />
 
