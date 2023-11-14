@@ -35,7 +35,6 @@ export default function Carrinho() {
       <hr />
       <div
         className="cartTestArea2"
-        style={{ minHeight: "350px", maxHeight: "350px" }}
       >
         {quantidadeCarrinho >= 1 ? (
           <div className="cartContent">
