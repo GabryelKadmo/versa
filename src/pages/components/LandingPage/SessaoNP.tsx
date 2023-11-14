@@ -22,6 +22,7 @@ export function SessaoNP() {
       <Flex direction={"column"} mb={200}>
         <div className="titleText">
           <Title
+            className="titleTextPackage"
             order={1}
             sx={{ fontFamily: "Poppins, sans-serif" }}
             fz={50}
@@ -31,11 +32,12 @@ export function SessaoNP() {
           </Title>
 
           <Title
+            className="titleTextPackage"
             order={1}
             sx={{ fontFamily: "Poppins, sans-serif" }}
             fz={50}
             weight={1}
-            mb={20}
+            mb={5}
           >
             NOSSOS PACOTES
           </Title>
@@ -60,11 +62,16 @@ export function SessaoNP() {
           >
             <Card.Section>
               <Link to={"/produto/" + "654b7291612bbb9957764cb2"}>
-                <Image src={Pacote3} height={420} alt="Streetwear" />
+                <Image
+                  className="imagePackages"
+                  src={Pacote3}
+                  alt="Streetwear"
+                />
               </Link>
             </Card.Section>
             <Group position="center" mt="md" mb="xs">
               <Text
+                className="cardsText"
                 weight={400}
                 sx={{ fontFamily: "Roboto, sans-serif" }}
                 fz={30}
@@ -97,12 +104,13 @@ export function SessaoNP() {
           >
             <Card.Section>
               <Link to={"/produto/" + "654b6ee91516552fe15a9fa4"}>
-                <Image src={Pacote1} height={420} alt="Norway" />
+                <Image className="imagePackages" src={Pacote1} alt="Norway" />
               </Link>
             </Card.Section>
 
             <Group position="center" mt="md" mb="xs">
               <Text
+                className="cardsText"
                 weight={400}
                 sx={{ fontFamily: "Roboto, sans-serif" }}
                 fz={30}
@@ -134,12 +142,13 @@ export function SessaoNP() {
           >
             <Card.Section>
               <Link to={"/produto/" + "654bb32febf579323f95c561"}>
-                <Image src={Pacote2} height={420} alt="Formal" />
+                <Image className="imagePackages" src={Pacote2} alt="Formal" />
               </Link>
             </Card.Section>
 
             <Group position="center" mt="md" mb="xs">
               <Text
+                className="cardsText"
                 weight={400}
                 sx={{ fontFamily: "Roboto, sans-serif" }}
                 mt={15}
