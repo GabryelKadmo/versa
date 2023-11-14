@@ -2,7 +2,6 @@ import "./SessaoNP.css";
 import Pacote1 from "../images/SessaoNP/PacoteCasual.jpg";
 import Pacote2 from "../images/SessaoNP/PacoteMinimalista.jpg";
 import Pacote3 from "../images/SessaoNP/PacoteEsportivo.jpg";
-
 import {
   SimpleGrid,
   Flex,
@@ -13,16 +12,13 @@ import {
   Group,
   Button,
 } from "@mantine/core";
-
 import { Link } from "react-router-dom";
-
 export function SessaoNP() {
   return (
     <div className="container_np">
       <Flex direction={"column"} mb={200}>
         <div className="titleText">
           <Title
-            className="titleTextPackage"
             order={1}
             sx={{ fontFamily: "Poppins, sans-serif" }}
             fz={50}
@@ -32,17 +28,15 @@ export function SessaoNP() {
           </Title>
 
           <Title
-            className="titleTextPackage"
             order={1}
             sx={{ fontFamily: "Poppins, sans-serif" }}
             fz={50}
             weight={1}
-            mb={5}
+            mb={20}
           >
             NOSSOS PACOTES
           </Title>
         </div>
-
         <SimpleGrid
           className="cardsGrid"
           cols={3}
@@ -62,16 +56,11 @@ export function SessaoNP() {
           >
             <Card.Section>
               <Link to={"/produto/" + "654b7291612bbb9957764cb2"}>
-                <Image
-                  className="imagePackages"
-                  src={Pacote3}
-                  alt="Streetwear"
-                />
+                <Image src={Pacote3} height={420} alt="Streetwear" />
               </Link>
             </Card.Section>
             <Group position="center" mt="md" mb="xs">
               <Text
-                className="cardsText"
                 weight={400}
                 sx={{ fontFamily: "Roboto, sans-serif" }}
                 fz={30}
@@ -81,7 +70,6 @@ export function SessaoNP() {
                 PACOTE ESPORTIVO - R$250
               </Text>
             </Group>
-
             <Button
               color="dark"
               fullWidth
@@ -104,13 +92,12 @@ export function SessaoNP() {
           >
             <Card.Section>
               <Link to={"/produto/" + "654b6ee91516552fe15a9fa4"}>
-                <Image className="imagePackages" src={Pacote1} alt="Norway" />
+                <Image src={Pacote1} height={420} alt="Norway" />
               </Link>
             </Card.Section>
 
             <Group position="center" mt="md" mb="xs">
               <Text
-                className="cardsText"
                 weight={400}
                 sx={{ fontFamily: "Roboto, sans-serif" }}
                 fz={30}
@@ -120,7 +107,6 @@ export function SessaoNP() {
                 PACOTE CASUAL - R$200
               </Text>
             </Group>
-
             <Button
               color="dark"
               fullWidth
@@ -142,13 +128,12 @@ export function SessaoNP() {
           >
             <Card.Section>
               <Link to={"/produto/" + "654bb32febf579323f95c561"}>
-                <Image className="imagePackages" src={Pacote2} alt="Formal" />
+                <Image src={Pacote2} height={420} alt="Formal" />
               </Link>
             </Card.Section>
 
             <Group position="center" mt="md" mb="xs">
               <Text
-                className="cardsText"
                 weight={400}
                 sx={{ fontFamily: "Roboto, sans-serif" }}
                 mt={15}
@@ -172,7 +157,7 @@ export function SessaoNP() {
             </Button>
           </Card>
         </SimpleGrid>
-      </Flex>
+        </Flex>
     </div>
   );
 }
