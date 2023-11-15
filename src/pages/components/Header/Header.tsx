@@ -206,7 +206,7 @@ export default function HeaderMegaMenu() {
                   </Link>
           
               
-                  <Link to={"/moletoms"} className="off_sublinhado">
+                  <Link to={"/moletons"} className="off_sublinhado">
                     <Menu.Item onClick={AddResultMoletom} icon={<GiPirateCoat size={14} />}>
                       <Text className="texto_op_produto" >
                         Moletons
