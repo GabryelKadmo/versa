@@ -1,11 +1,21 @@
 import { useContext } from "react";
 import AppContext from "../Context/AppContext";
+import { toast } from "react-toastify";
 
 const CartBotton = () => {
   function redirectToEndereço() {
     if (cartItem.length === 0) {
       // Carrinho vazio, exibe uma mensagem de erro ou faz alguma ação apropriada
-      alert("Seu carrinho está vazio.");
+      toast.error('Seu carrinho está vazio.', {
+        position: "bottom-right",
+        autoClose: 1300,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        });
     } else {
       // Fazer o esquema da API de pedidos aqui
 
