@@ -26,7 +26,6 @@ function SearchResult(props: Props) {
   }, [setProdutos, setLoading]);
 
   const valueOp = props.props
-  console.log(props.props)
   const filteredProducts = produtos.filter((product) => product.categoria.toLowerCase().includes(valueOp));
 
   return loading ? (
