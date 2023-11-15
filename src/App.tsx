@@ -56,7 +56,7 @@ export default function App() {
             <Route path="/carrinho" element={<Carrinho />} />
             <Route path="/calcas" element={<PaginaCalca />} />
             <Route path="/camisas" element={<PaginaCamisa />} />
-            <Route path="/moletoms" element={<PaginaMoletom />} />
+            <Route path="/moletons" element={<PaginaMoletom />} />
           </Routes>
         </Provider>
         <ToastContainer />
