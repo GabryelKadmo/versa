@@ -75,7 +75,7 @@ export default function LoginPage() {
               >
                 {load ? "Carregando..." : "Entrar"}
               </button>
-              <div className="mt-3">
+              <div className="mt-3 text-center">
                 Deseja <a href="./Register">criar uma conta?</a>
               </div>
             </form>
