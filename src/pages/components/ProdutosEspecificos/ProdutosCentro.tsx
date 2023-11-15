@@ -1,9 +1,12 @@
 import "./ProdutosCentro.css"
 import { SimpleGrid } from "@mantine/core";
-import SearchResult from "../../SearchResult/SearchResult";
+import ProdutosFiltrados from "../../SearchResult/ProdutosFiltrados";
 
-export function ProdutosCentro() {
+type Props = {
+  props: string
+}
 
+export function ProdutosCentro(props: Props) {
 
   return (
     <div>
@@ -21,7 +24,7 @@ export function ProdutosCentro() {
           ]}
         >
         
-           <SearchResult />
+           <ProdutosFiltrados props={props.props} />
           
         </SimpleGrid>
     </div>

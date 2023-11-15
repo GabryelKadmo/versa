@@ -188,7 +188,7 @@ export default function HeaderMegaMenu() {
                   Roupas
                 </Menu.Label>
               
-                  <Link to={"/produtosesp"} className="off_sublinhado">
+                  <Link to={"/calcas"} className="off_sublinhado">
                     <Menu.Item  onClick={AddResultCalça} icon={<PiPantsFill size={14} />}>
                       <Text className="texto_op_produto" >
                         Calças
@@ -197,7 +197,7 @@ export default function HeaderMegaMenu() {
                   </Link>
               
                
-                  <Link to={"/produtosesp"} className="off_sublinhado">
+                  <Link to={"/camisas"} className="off_sublinhado">
                     <Menu.Item onClick={AddResultCamisa} icon={<IconShirtFilled size={14} />}>
                       <Text className="texto_op_produto" >
                         Camisas
@@ -206,7 +206,7 @@ export default function HeaderMegaMenu() {
                   </Link>
           
               
-                  <Link to={"/produtosesp"} className="off_sublinhado">
+                  <Link to={"/moletoms"} className="off_sublinhado">
                     <Menu.Item onClick={AddResultMoletom} icon={<GiPirateCoat size={14} />}>
                       <Text className="texto_op_produto" >
                         Moletons

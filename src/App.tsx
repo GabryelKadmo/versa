@@ -14,7 +14,9 @@ import Carrinho from "./pages/components/Cart/Carrinho";
 import InfoProduto from "./pages/InfoProduto/InfoProduto";
 import Provider from "./pages/components/Context/Provider";
 import PacotesPage from "./pages/Pacotes/PacotesPage";
-import PodutosEscpecificos from "./pages/ProdutosEspecificos/ProdutosEspecificos"
+import PaginaCalca from "./pages/ProdutosEspecificos/PaginaCalca"
+import PaginaCamisa from "./pages/ProdutosEspecificos/PaginaCamisa"
+import PaginaMoletom from "./pages/ProdutosEspecificos/PaginaMoletom"
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -52,7 +54,9 @@ export default function App() {
             <Route path="/codigo" element={<RecuperarSenha2 />} />
             <Route path="/redefinir" element={<RecuperarSenha3 />} />
             <Route path="/carrinho" element={<Carrinho />} />
-            <Route path="/produtosesp" element={<PodutosEscpecificos />} />
+            <Route path="/calcas" element={<PaginaCalca />} />
+            <Route path="/camisas" element={<PaginaCamisa />} />
+            <Route path="/moletoms" element={<PaginaMoletom />} />
           </Routes>
         </Provider>
         <ToastContainer />

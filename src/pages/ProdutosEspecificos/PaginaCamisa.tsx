@@ -1,7 +1,7 @@
 import "./ProdutosEspecificos.css"
 import { ProdutosCentro } from "../components/ProdutosEspecificos/ProdutosCentro";
 import versaBF from "./../components/images/Novidades/VERSABLACKFRIDAY.png";
-import Header from "./../components/Header/Header";
+import Header from "../components/Header/Header";
 import {Affix} from "../components/Affix/Affix"
 import { Space } from '@mantine/core';
 
@@ -13,7 +13,7 @@ export default function ProdutosEspecificos() {
 
       <Space h={50} ></Space>
       <Header />  
-      <ProdutosCentro />
+      <ProdutosCentro props="camisa" />
       <Affix />
       <Space h={100} ></Space>
 
