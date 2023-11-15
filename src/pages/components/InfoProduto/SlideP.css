@@ -1,11 +1,17 @@
-.configImagemP{
-height: 730px;
-border-radius: 20px;
+.configImagemP {
+  height: 730px;
+  border-radius: 20px;
 }
 
 .imagem_teste button {
-        background-image: url('../images/InfoProduto/SliderCrop1.png');
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center center;
+  background-image: url("../images/InfoProduto/SliderCrop1.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+@media (min-width: 1360px) and (min-height: 600px) and (max-width: 1400px) and (max-height: 900px) {
+  .configImagemP {
+    height: 480px;
+  }
 }

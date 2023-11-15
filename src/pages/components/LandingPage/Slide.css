@@ -46,3 +46,15 @@
   font-style: normal;
   text-transform: uppercase;
 }
+@media (min-width: 1360px) and (min-height: 600px) and (max-width: 1400px) and (max-height: 900px) {
+  .slide_centro {
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    height: 300px;
+    margin-top: 100px;
+    margin-bottom: 30px;
+  }
+
+}

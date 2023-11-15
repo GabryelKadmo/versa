@@ -28,7 +28,16 @@
   transform: scale(0.99); 
   cursor: pointer;
 }
-@media (min-width: 1360px) and (min-height: 760px){
+@media (min-width: 1360px) and (min-height: 600px) and (max-width: 1400px) and (max-height: 900px){
+  .titleTextNP{
+    font-size: 30px;
+  }
+  .pacoteTitle{
+    font-size: 20px;
+  }
+  .imagePacotes{
+    height: 17.25rem;
+  }
   .container_np{
     /* border: 1px solid red; */
     margin: 0px auto;
@@ -37,21 +46,19 @@
     justify-content: center;
     align-items: center;
     display: flex;
-    height: 480px;
-    width: 1500px;
+    height: 380px;
+    width: 1200px;
   }
-  .cardsGrid{
-    height: 400px;
-    /* border: 1px solid rgb(6, 126, 6); */
+  /* Não mexer no cardsGrid */
+  .cardsGrid{ 
+    height: 360px; 
   }
   .titleText{
     margin-top: 220px;
     /* height: 300px; */
-    /* border: 1px solid blue; */
   }
   .hover_click_np{
-    height: 600px;
-    /* border: 1px solid red; */
+    height: 420px;
     transition: transform 0.5s;
   }
   

@@ -8,7 +8,7 @@
   justify-content: space-between;
 }
 .cartTestArea2 {
-  height: 150px;
+  height: 470px;
 }
 .precoProduto {
   margin-bottom: 0px;
@@ -19,7 +19,7 @@
   color: #323334;
 }
 .cartContent {
-  max-height: 400px;
+  max-height: 500px;
   overflow-y: auto;
 }
 .titleCart-h1 {
@@ -87,6 +87,7 @@
 }
 .cart-items {
   min-height: 400px !important;
+  overflow-y: auto !important;
 }
 .infoValorTotal div {
   flex: 1;
@@ -210,7 +211,7 @@
   }
   .hrTotal {
     margin-top: 5px !important;
-    margin-bottom: 10px !important;
+    margin-bottom: 0px !important;
   }
   .imgEmptyCart {
     width: 100% !important;
@@ -219,12 +220,26 @@
   .cartBottonText {
     font-size: 15px;
   }
+  .pagamentoButton {
+  background-color: #1d242d;
+  font-family: "Poppins", sans-serif;
+  border-radius: 100px;
+  color: #fff;
+  gap: 16px;
+  width: 100%;
+  font-size: 15px;
+  height: 35px;
 }
-@media (min-width: 1979px) and (min-height: 1079px) {
+}
+@media (min-width: 1360px) and (min-height: 600px) and (max-width: 1400px) and (max-height: 900px){
   .cartFixed {
     position: sticky;
     display: inline;
     margin-top: 20px;
+  }
+  .cart-items {
+    min-height: 400px !important;
+    overflow-y: scroll !important;
   }
   .inputCupom {
     width: 100% !important;
@@ -236,6 +251,7 @@
     margin-right: 0px;
   }
   .cartContent {
+    overflow: hidden;
     max-height: 300px !important;
     min-height: 510px !important;
   }
@@ -252,8 +268,9 @@
     font-size: 20px;
   }
   .cartTestArea2 {
-    height: 500px !important;
+    height: 240px !important;
     max-height: 500px !important;
+    overflow: scroll;
   }
   .infoValorTotal {
     display: flex;
@@ -265,14 +282,18 @@
   }
   .hrTotal {
     margin-top: 5px !important;
-    margin-bottom: 15px !important;
+    margin-bottom: 0px !important;
   }
 }
-@media screen and (max-width: 2560px) and (max-height: 1080px) {
+@media screen and (min-width: 2450px) and (min-height: 1000px) {
   .cartFixed {
     position: sticky;
     display: inline;
     margin-top: 20px;
+  }
+  .cart-items {
+    min-height: 400px !important;
+    overflow-y: scroll !important;
   }
   .inputCupom {
     width: 100% !important;
@@ -284,8 +305,8 @@
     margin-right: 0px;
   }
   .cartContent {
-    max-height: 300px !important;
-    min-height: 510px !important;
+    max-height: 610px !important;
+    min-height: 610px !important;
   }
   .cartBottonText {
     font-size: 20px;
@@ -300,8 +321,9 @@
     font-size: 20px;
   }
   .cartTestArea2 {
-    height: 500px !important;
+    height: 440px !important;
     max-height: 500px !important;
+    overflow: scroll;
   }
   .infoValorTotal {
     display: flex;
@@ -313,6 +335,6 @@
   }
   .hrTotal {
     margin-top: 5px !important;
-    margin-bottom: 15px !important;
+    margin-bottom: 0px !important;
   }
 }

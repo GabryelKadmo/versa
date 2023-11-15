@@ -27,7 +27,7 @@ export function SessaoCO() {
         sx={{ fontFamily: 'Poppins, sans-serif' }}
         fz={70}
         weight={1} 
-        mb={100}>
+        mb={30}>
           POR OCASIÃO
         </Title>
 
