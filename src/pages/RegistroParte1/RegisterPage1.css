@@ -3,12 +3,6 @@
   max-height: 900px;
   margin-top: -50px !important;
 }
-
-.registerText {
-  color: #525252;
-  opacity: 50%;
-  font-size: 18px;
-}
 .logoregistro1 {
   margin-bottom: 0px;
   margin-top: 40px;
@@ -65,13 +59,23 @@
   margin-right: 0px;
   margin-left: 0px;
 }
-@media (max-width: 1491px) {
-  .fisrt-inf-index {
-    padding: 10px;
+@media (min-width: 1360px) and (max-width: 1400px) {
+  .logoregistro1 {
+    margin: 0px !important;
+    padding: 0px;
   }
-}
-@media (max-width: 998px) {
-  .fisrt-inf-index {
-    padding: 25px;
+  .fisrt-inf-index-Register {
+    padding: 0px;
+    padding-left: 20px;
+  }
+  #criarButton {
+    background-color: #272525;
+    font-family: "Poppins", sans-serif;
+    border-radius: 10px;
+    color: #fff;
+    padding: 24px, 32px, 24px, 32px;
+    gap: 16px;
+    width: 388px;
+    height: 35px;
   }
 }

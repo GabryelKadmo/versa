@@ -47,11 +47,6 @@ export default function RegisterPage1() {
             <h1 className="mt-5" id="registerText">
               Crie sua conta
             </h1>
-            <h3 className="registerText">
-              Para começar a aproveitar todos os benefícios e recursos
-              disponíveis, por favor, crie uma conta gratuita. É simples e
-              rápido.
-            </h3>
             <form onSubmit={handleSubmit}>
               <h5 className={`text-danger text-center`}>
                 {error ? error : ""}
@@ -102,7 +97,7 @@ export default function RegisterPage1() {
               />
               <button
                 type="submit"
-                className={`mt-5 w-100 ${load && "disabled"} `}
+                className={`mt-0 w-100 ${load && "disabled"} `}
                 id="criarButton"
               >
                 {load ? "Carregando..." : "Continuar"}
