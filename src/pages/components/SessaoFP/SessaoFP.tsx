@@ -215,7 +215,7 @@ const [opened, { toggle: abrirDrawer, close: fecharDrawer }] =
               <Accordion.Control>Categoria</Accordion.Control>
               <Accordion.Panel>
                 <Flex className="borda_teste">
-                  <Checkbox fz={13} label="Camisetas" onChange={camisetaOnChange}/>
+                  <Checkbox color="dark" fz={13} label="Camisetas" onChange={camisetaOnChange}/>
                   <Flex
                     className="borda_teste"
                     align={"end"}
@@ -229,7 +229,7 @@ const [opened, { toggle: abrirDrawer, close: fecharDrawer }] =
                 </Flex>
                 <Space h="sm" />
                 <Flex className="borda_teste">
-                  <Checkbox fz={13} label="Camisas" onChange={camisaOnChange}/>
+                  <Checkbox color="dark" fz={13} label="Camisas" onChange={camisaOnChange}/>
                   <Flex
                     className="borda_teste"
                     align={"end"}
@@ -243,7 +243,7 @@ const [opened, { toggle: abrirDrawer, close: fecharDrawer }] =
                 </Flex>
                 <Space h="sm" />
                 <Flex className="borda_teste">
-                  <Checkbox fz={13} label="Moletom" onChange={moletomOnChange}/>
+                  <Checkbox color="dark" fz={13} label="Moletom" onChange={moletomOnChange}/>
                   <Flex
                     className="borda_teste"
                     align={"end"}
@@ -257,7 +257,7 @@ const [opened, { toggle: abrirDrawer, close: fecharDrawer }] =
                 </Flex>
                 <Space h="sm" />
                 <Flex className="borda_teste">
-                  <Checkbox fz={13} label="Calças" onChange={calcaOnChange}/>
+                  <Checkbox color="dark" fz={13} label="Calças" onChange={calcaOnChange}/>
                   <Flex
                     className="borda_teste"
                     align={"end"}
@@ -383,7 +383,7 @@ const [opened, { toggle: abrirDrawer, close: fecharDrawer }] =
                 </Flex>
                 <Space h="sm" />
                 <Flex className="borda_teste">
-                  <Checkbox fz={13} label="Nike" value="Nike" />
+                  <Checkbox color="dark" fz={13} label="Nike" value="Nike" />
                   <Flex
                     className="borda_teste"
                     align={"end"}
