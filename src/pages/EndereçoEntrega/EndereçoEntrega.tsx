@@ -111,6 +111,9 @@ export default function RegisterPage2() {
         console.error("Erro na chamada à API:", error);
       }
 
+      const discount = localStorage.getItem("cupom");
+      const discountAsNumber = Number(discount) || 0; // Convert to number, default to 0 if not a valid number
+
       setIsLoading(false);
       const produtosStr = produtos
         .map((produtos: any) => {
@@ -123,7 +126,9 @@ export default function RegisterPage2() {
       }, 0);
       const totalComTresDecimais = parseFloat(total.toFixed(3));
 
-      const whatsapp = `*DETALHES%20DO%20PEDIDO*%3A%0A✄- - - - - - - - - - - - - - - -%0A*NOME*%3A ${form.values.nome}%0A%0A*TELEFONE:* ${form.values.celular} %0A%0A*ENDEREÇO:* ${form.values.logradouro}. ${form.values.bairro}, ${form.values.complemento}, Nº ${form.values.numero} %0A%0A*REFERÊNCIA:* ${form.values.pontoReferencia}%0A%0A*PRODUTOS:*%0A${produtosStr}%0A✄- - - - - - - - - - - - - - - -%0A*TOTAL:* R$ ${totalComTresDecimais}%0A%0A*FORMA DE PAGAMENTO:* ${metodoPagamento}`;
+      const totalComDesconto = totalComTresDecimais - (totalComTresDecimais * discountAsNumber) / 100;
+
+      const whatsapp = `*DETALHES%20DO%20PEDIDO*%3A%0A✄- - - - - - - - - - - - - - - -%0A*NOME*%3A ${form.values.nome}%0A%0A*TELEFONE:* ${form.values.celular} %0A%0A*ENDEREÇO:* ${form.values.logradouro}. ${form.values.bairro}, ${form.values.complemento}, Nº ${form.values.numero} %0A%0A*REFERÊNCIA:* ${form.values.pontoReferencia}%0A%0A*PRODUTOS:*%0A${produtosStr}%0A✄- - - - - - - - - - - - - - - -%0A*TOTAL:* R$ ${totalComDesconto}%0A%0A*FORMA DE PAGAMENTO:* ${metodoPagamento}`;
 
       window.open(`https://wa.me/557391163838/?text=${whatsapp}`);
 

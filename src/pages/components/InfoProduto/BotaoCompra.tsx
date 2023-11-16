@@ -38,7 +38,7 @@ export function BotaoCompra(props: Props) {
   const notify = () => {
     toast.success('Produto adicionado ao carrinho', {
       toastId: idNotify,
-      position: "bottom-right",
+      position: "bottom-left",
       autoClose: 1000,
       hideProgressBar: false,
       closeOnClick: false,
@@ -52,7 +52,7 @@ export function BotaoCompra(props: Props) {
   const notifyBad = () => {
     toast.error('Produto já no carrinho', {
       toastId: idNotifyBad,
-      position: "bottom-right",
+      position: "bottom-left",
       autoClose: 1000,
       hideProgressBar: false,
       closeOnClick: false,
@@ -66,7 +66,7 @@ export function BotaoCompra(props: Props) {
   const notifySize = () => {
     toast.error('Selecione um tamanho', {
       toastId: idNotifySize,
-      position: "bottom-right",
+      position: "bottom-left",
       autoClose: 1000,
       hideProgressBar: false,
       closeOnClick: false,

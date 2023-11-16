@@ -8,17 +8,20 @@ const CartBotton = () => {
   const [descontoAplicado, setDescontoAplicado] = useState<boolean>(false);
   const [valorDoDesconto, setValorDoDesconto] = useState<number>(0);
   const [valorComDesconto, setValorComDesconto] = useState<number>(0);
+  const idNotifyBad = "id-notify-bad-yes";
+  const idNotifyCupom = "id-notify-cupom-yes";
 
   function redirectToEndereço() {
 
     if (cartItem.length === 0) {
       // Carrinho vazio, exibe uma mensagem de erro ou faz alguma ação apropriada
       toast.error('Seu carrinho está vazio.', {
-        position: "bottom-right",
-        autoClose: 1300,
+        toastId: idNotifyBad,
+        position: "bottom-left",
+        autoClose: 1000,
         hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
+        closeOnClick: false,
+        pauseOnHover: false,
         draggable: true,
         progress: undefined,
         theme: "light",
@@ -45,7 +48,9 @@ const CartBotton = () => {
   ).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
   
   descontoAplicado ? localStorage.setItem("valor_total", (valorComDesconto.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }))) 
-    : localStorage.setItem("valor_total", (totalPrice));
+    : localStorage.setItem("valor_total", (totalPrice))
+    localStorage.setItem("cupom", valorDoDesconto.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }));
+    ;
 
   const valorTotal = cartItem.reduce(
     (total, item) => total + (item.preco * item.quantidade), 0
@@ -56,30 +61,47 @@ const CartBotton = () => {
 
   const darDesconto = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
-    if (cupomValue === '10%OFF') {
+    if (cupomValue === 'primeiracompra10') {
       setDescontoAplicado(true);
-      const desconto = (valorTotal * 0.1);
+      const desconto = valorTotal * 0.1;
       setValorDoDesconto(desconto);
       const novoValorTotal = valorTotal - desconto;
       setValorComDesconto(novoValorTotal);
+
+      toast.success('Cupom aplicado!', {
+        toastId: idNotifyCupom,
+        position: "bottom-left",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
     } else {
       setDescontoAplicado(false);
       setValorDoDesconto(0);
       setValorComDesconto(0);
-      if(cupomValue){
+      if (cupomValue) {
         toast.error('Cupom inválido!', {
-        position: "bottom-right",
-        autoClose: 1000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
+          position: "bottom-left",
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
         });
       }
     }
-  }; 
+    const finalValue = descontoAplicado
+    ? valorComDesconto
+    : valorTotal;
+
+  localStorage.setItem("valor_total", finalValue.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }));
+};
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setCupomValue(event.target.value);
