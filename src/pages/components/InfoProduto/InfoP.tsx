@@ -131,8 +131,8 @@ const descontoFake = props.preco
               tamanho={selectedSize}
             />
 
-            <Modal opened={opened} onClose={close} centered size={1020}>
-              <img src={medidaMasculina} alt="Tabela de medidas" />
+            <Modal className="tabelaMedidaModal" opened={opened} onClose={close} centered size={1020}>
+              <img className="imgTabela" src={medidaMasculina} alt="Tabela de medidas" />
             </Modal>
             <Button onClick={open} className="tabelaMedida">
               <IconRuler2 size={20} />
