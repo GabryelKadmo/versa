@@ -209,7 +209,7 @@ const [opened, { toggle: abrirDrawer, close: fecharDrawer }] =
         >
           <Accordion
             multiple
-            defaultValue={["item-1", "item-2", "item-3", "item-4"]}
+            defaultValue={["item-1"]}
           >
             <Accordion.Item value="item-1">
               <Accordion.Control>Categoria</Accordion.Control>
