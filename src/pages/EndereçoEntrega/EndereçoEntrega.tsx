@@ -110,20 +110,12 @@ export default function RegisterPage2() {
         console.error("Erro na chamada à API:", error);
       }
 
-      const discount = localStorage.getItem("cupom");
-      const discountAsNumber = Number(discount) || 0; // Convert to number, default to 0 if not a valid number
-
       setIsLoading(false);
       const produtosStr = produtos
         .map((produtos: any) => {
           return `⠀⠀⠀⠀● ${produtos.nome} (${produtos.tamanho}) - R$ ${produtos.preco_unitario} - *x ${produtos.quantidade}*`;
         })
         .join("%0A");
-
-      const total = produtos.reduce((accumulator: any, produtos: any) => {
-        return accumulator + produtos.preco_unitario * produtos.quantidade;
-      }, 0);
-      const totalComTresDecimais = parseFloat(total.toFixed(3));
 
       // const totalComDesconto = totalComTresDecimais - (totalComTresDecimais * discountAsNumber) / 100;
       const totalComDesconto = localStorage.getItem("valor_total");
