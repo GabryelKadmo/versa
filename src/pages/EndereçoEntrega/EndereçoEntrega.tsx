@@ -89,7 +89,6 @@ export default function RegisterPage2() {
     if (isChecked) {
       setIsLoading(true);
       localStorage.removeItem("cart");
-      localStorage.removeItem("valor_total");
 
       const metodoPagamento = localStorage.getItem("tipo_pagamento");
       const object = {
@@ -126,10 +125,11 @@ export default function RegisterPage2() {
       }, 0);
       const totalComTresDecimais = parseFloat(total.toFixed(3));
 
-      const totalComDesconto = totalComTresDecimais - (totalComTresDecimais * discountAsNumber) / 100;
-
+      // const totalComDesconto = totalComTresDecimais - (totalComTresDecimais * discountAsNumber) / 100;
+      const totalComDesconto = localStorage.getItem("valor_total");
+      console.log(totalComDesconto);
       const whatsapp = `*DETALHES%20DO%20PEDIDO*%3A%0A✄- - - - - - - - - - - - - - - -%0A*NOME*%3A ${form.values.nome}%0A%0A*TELEFONE:* ${form.values.celular} %0A%0A*ENDEREÇO:* ${form.values.logradouro}. ${form.values.bairro}, ${form.values.complemento}, Nº ${form.values.numero} %0A%0A*REFERÊNCIA:* ${form.values.pontoReferencia}%0A%0A*PRODUTOS:*%0A${produtosStr}%0A✄- - - - - - - - - - - - - - - -%0A*TOTAL:* R$ ${totalComDesconto}%0A%0A*FORMA DE PAGAMENTO:* ${metodoPagamento}`;
-
+      localStorage.removeItem("valor_total");
       window.open(`https://wa.me/557391163838/?text=${whatsapp}`);
 
       const deleteProdutos = localStorage.getItem("produtos");
