@@ -2,7 +2,7 @@ import "./Novidades.css";
 import { Novidade } from "../components/SessaoN/SessaoN";
 import { FiltroCima } from "../components/SessaoFc/SessaoFC";
 import { MeioFiltroProduto } from "../components/SessaoFP/SessaoFP";
-import versaBF from "./../components/images/Novidades/VERSABLACKFRIDAY.png";
+import versaBF from "./../components/images/Novidades/VersaLogoProdutos.jpg";
 import Header from "./../components/Header/Header";
 import {Affix} from "../components/Affix/Affix"
 

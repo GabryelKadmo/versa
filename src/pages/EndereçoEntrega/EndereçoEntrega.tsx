@@ -89,6 +89,14 @@ export default function RegisterPage2() {
     if (isChecked) {
       setIsLoading(true);
       localStorage.removeItem("cart");
+      localStorage.removeItem("valorDoDesconto");
+      localStorage.removeItem("cupom");
+      localStorage.removeItem("valor_total");
+      localStorage.removeItem("descontoAplicado");
+      localStorage.removeItem(`quantidade_ ${produtos[0].id}`);
+
+
+
 
       const metodoPagamento = localStorage.getItem("tipo_pagamento");
       const object = {
