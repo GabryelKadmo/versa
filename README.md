@@ -1,3 +1,1 @@
-WIP
-----
-Work in progress
+Trabalho já apresentado na feira tecnológica da Faculdade.
